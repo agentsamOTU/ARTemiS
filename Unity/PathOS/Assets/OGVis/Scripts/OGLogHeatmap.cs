@@ -144,7 +144,7 @@ public class OGLogHeatmap : MonoBehaviour
         mesh.uv = uv;
         mesh.triangles = triangles;
 
-        tex.Resize((int)gridSize.x, (int)gridSize.z);
+        tex.Reinitialize((int)gridSize.x, (int)gridSize.z);
         ClearTex();
         tex.Apply();
     }
