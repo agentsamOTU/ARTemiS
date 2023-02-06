@@ -35,6 +35,10 @@ public class PathOSAgentWindow : EditorWindow
     private SerializedProperty experienceScale;
     private SerializedProperty timeScale;
 
+    private bool showCombatCharacteristics = true;
+    private SerializedProperty accuracy;
+    private SerializedProperty evasion;
+
     private bool showPlayerCharacteristics = true;
 
     private SerializedProperty freezeAgent;
@@ -248,6 +252,16 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.PropertyField(timeScale);
         EditorGUILayout.PropertyField(freezeAgent);
 
+        showCombatCharacteristics = EditorGUILayout.Foldout(
+            showCombatCharacteristics, "Combat Characteristics", foldoutStyle);
+
+        if (showCombatCharacteristics)
+        {
+            agentReference.accuracy = EditorGUILayout.Slider("Accuracy",agentReference.accuracy, 0.0f, 100.0f);
+            agentReference.evasion = EditorGUILayout.Slider("Evasion",agentReference.evasion, 0.0f, 100.0f);
+
+        }
+
         showPlayerCharacteristics = EditorGUILayout.Foldout(
             showPlayerCharacteristics, "Player Characteristics", foldoutStyle);
 
@@ -362,15 +376,24 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.Space(15);
 
         DrawUIRow(enemy_low, 30, 25, "Low Enemy Damage", ref agentReference.lowEnemyDamage);
+        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Low Enemy Accuracy", agentReference.lowEnemyAccuracy);
+        agentReference.lowEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Low Enemy Evasion", agentReference.lowEnemyEvasion);
+
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_med, 30, 25, "Medium Enemy Damage", ref agentReference.medEnemyDamage);
+        agentReference.medEnemyAccuracy = DrawUIRow(enemy_med, 30, 25, "Medium Enemy Accuracy", agentReference.medEnemyAccuracy);
+        agentReference.medEnemyEvasion = DrawUIRow(enemy_med, 30, 25, "Medium Enemy Evasion", agentReference.medEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_high, 30, 25, "High Enemy Damage", ref agentReference.highEnemyDamage);
+        agentReference.highEnemyAccuracy = DrawUIRow(enemy_high, 30, 25, "High Enemy Accuracy", agentReference.highEnemyAccuracy);
+        agentReference.highEnemyEvasion = DrawUIRow(enemy_high, 30, 25, "High Enemy Evasion", agentReference.highEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Damage", ref agentReference.bossEnemyDamage);
+        agentReference.bossEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Boss Enemy Accuracy", agentReference.bossEnemyAccuracy);
+        agentReference.bossEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Boss Enemy Evasion", agentReference.bossEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_hazard, 30, 25, "Hazard Damage", ref agentReference.hazardDamage);
@@ -410,6 +433,15 @@ public class PathOSAgentWindow : EditorWindow
                100.0f);
         EditorGUILayout.EndHorizontal();
     }
+    private float DrawUIRow(Texture2D icon, float width, float height, string label, float reference)
+    {
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Label(icon, GUILayout.Width(width), GUILayout.Height(height));
+        float temp = EditorGUILayout.Slider(label,reference,0.0f,100.0f);
+        EditorGUILayout.EndHorizontal();
+        return temp;
+    }
+
     public void SetAgentReference(PathOSAgent reference)
     {
         agentReference = reference;

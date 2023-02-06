@@ -24,6 +24,10 @@ public class PathOSAgentInspector : Editor
     private SerializedProperty timeScale;
     private SerializedProperty heuristicList;
 
+    private bool showCombatCharacteristics = false;
+    private SerializedProperty accuracy;
+    private SerializedProperty evasion;
+
     private bool showPlayerCharacteristics = true;
 
     private SerializedProperty freezeAgent;
@@ -51,6 +55,9 @@ public class PathOSAgentInspector : Editor
         timeScale = serial.FindProperty("timeScale");
         experienceScale = serial.FindProperty("experienceScale");
         heuristicList = serial.FindProperty("heuristicScales");
+
+        accuracy = serial.FindProperty("accuracy");
+        evasion = serial.FindProperty("evasion");
 
         freezeAgent = serial.FindProperty("freezeAgent");
 
@@ -91,6 +98,16 @@ public class PathOSAgentInspector : Editor
         EditorGUILayout.LabelField("General", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(timeScale);
         EditorGUILayout.PropertyField(freezeAgent);
+
+        showCombatCharacteristics = EditorGUILayout.Foldout(
+            showCombatCharacteristics, "Combat Characteristics", foldoutStyle);
+
+        if(showCombatCharacteristics)
+        {
+            EditorGUILayout.Slider(accuracy,0.0f,100.0f);
+            EditorGUILayout.Slider(evasion, 0.0f, 100.0f);
+
+        }
 
         showPlayerCharacteristics = EditorGUILayout.Foldout(
             showPlayerCharacteristics, "Player Characteristics", foldoutStyle);

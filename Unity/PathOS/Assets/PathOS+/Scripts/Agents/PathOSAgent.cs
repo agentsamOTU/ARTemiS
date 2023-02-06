@@ -109,6 +109,12 @@ public class PathOSAgent : MonoBehaviour
 
     private List<Vector3> unreachableReference;
 
+    //on a scale of 0-100
+    //100 will hit 100% on an enemy with 0 evasiveness
+    public float accuracy = 90.0f;
+    //evasiveness directly modifies enemy accuracy
+    public float evasion = 10.0f;
+
     //Health variables
     private float health = 100.0f;
     private bool dead = false;
@@ -117,6 +123,16 @@ public class PathOSAgent : MonoBehaviour
         hazardDamage = new TimeRange(10,20), lowHealthGain = new TimeRange(10, 30),
         medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70,100);
     private int cautionIndex, aggressionIndex, adrenalineIndex;
+
+    public float lowEnemyAccuracy = 60.0f;
+    public float lowEnemyEvasion = 5.0f;
+    public float medEnemyAccuracy = 70.0f;
+    public float medEnemyEvasion = 10.0f;
+    public float highEnemyAccuracy = 80.0f;
+    public float highEnemyEvasion = 15.0f;
+    public float bossEnemyAccuracy = 90.0f;
+    public float bossEnemyEvasion = 20.0f;
+
 
     private GameObject cameraObject;
     private static bool cameraFollow = false;
@@ -1083,16 +1099,48 @@ public class PathOSAgent : MonoBehaviour
         switch (entityType)
         {
             case EntityType.ET_HAZARD_ENEMY_LOW:
-                health -= GetEnemyDamage(lowEnemyDamage.min, lowEnemyDamage.max);
+                if(lowEnemyAccuracy-evasion>Random.Range(0,100))
+                {
+                    Debug.Log("Low Hit");
+                    health -= GetEnemyDamage(lowEnemyDamage.min, lowEnemyDamage.max);
+                }
+                else
+                {
+                    Debug.Log("Low Miss");
+                }
                 break;
             case EntityType.ET_HAZARD_ENEMY_MED:
-                health -= GetEnemyDamage(medEnemyDamage.min, medEnemyDamage.max);
+                if (medEnemyAccuracy - evasion > Random.Range(0, 100))
+                {
+                    Debug.Log("Med Hit");
+                    health -= GetEnemyDamage(medEnemyDamage.min, medEnemyDamage.max);
+                }
+                else
+                {
+                    Debug.Log("Med Miss");
+                }
                 break;
             case EntityType.ET_HAZARD_ENEMY_HIGH:
-                health -= GetEnemyDamage(highEnemyDamage.min, highEnemyDamage.max);
+                if (highEnemyAccuracy - evasion > Random.Range(0, 100))
+                {
+                    Debug.Log("High Hit");
+                    health -= GetEnemyDamage(highEnemyDamage.min, highEnemyDamage.max);
+                }
+                else
+                {
+                    Debug.Log("High Miss");
+                }
                 break;
             case EntityType.ET_HAZARD_ENEMY_BOSS:
-                health -= GetEnemyDamage(bossEnemyDamage.min, bossEnemyDamage.max);  
+                if (highEnemyAccuracy - evasion > Random.Range(0, 100))
+                {
+                    Debug.Log("Boss Hit");
+                    health -= GetEnemyDamage(bossEnemyDamage.min, bossEnemyDamage.max);
+                }
+                else
+                {
+                    Debug.Log("Boss Miss");
+                }
                 break;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 health -= GetEnemyDamage(hazardDamage.min, hazardDamage.max);
