@@ -85,6 +85,9 @@ namespace PathOS
                 { EntityType.ET_HAZARD_ENEMY_HIGH,           "Enemy High" },
                 { EntityType.ET_HAZARD_ENEMY_BOSS,           "Boss" },
                 { EntityType.ET_HAZARD_ENVIRONMENT,     "Environment Hazard" },
+                { EntityType.ET_IE_LOW,          "ie_low" },
+                { EntityType.ET_IE_MEDIUM,       "ie_medium" },
+                { EntityType.ET_IE_HIGH,         "ie_high" },
                 { EntityType.ET_POI,                    "POI" },
                 { EntityType.ET_POI_NPC,                "NPC" }
             };
@@ -104,6 +107,9 @@ namespace PathOS
             entityLabels[EntityType.ET_HAZARD_ENEMY_HIGH],
             entityLabels[EntityType.ET_HAZARD_ENEMY_BOSS],
             entityLabels[EntityType.ET_HAZARD_ENVIRONMENT],
+            entityLabels[EntityType.ET_IE_LOW],
+            entityLabels[EntityType.ET_IE_MEDIUM],
+            entityLabels[EntityType.ET_IE_HIGH],
             entityLabels[EntityType.ET_POI],
             entityLabels[EntityType.ET_POI_NPC]
         };
@@ -124,6 +130,9 @@ namespace PathOS
                 { "Enemy High",              EntityType.ET_HAZARD_ENEMY_HIGH },
                 { "Boss",               EntityType.ET_HAZARD_ENEMY_BOSS },
                 { "Environment Hazard", EntityType.ET_HAZARD_ENVIRONMENT },
+                { "Low Challenge Event", EntityType.ET_IE_LOW },
+                { "Medium Challenge Event", EntityType.ET_IE_MEDIUM },
+                { "High Challenge Event", EntityType.ET_IE_HIGH },
                 { "POI",                EntityType.ET_POI },
                 { "NPC",                EntityType.ET_POI_NPC }
             };

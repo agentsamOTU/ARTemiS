@@ -124,6 +124,7 @@ public class PathOSAgent : MonoBehaviour
         medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70,100);
     private int cautionIndex, aggressionIndex, adrenalineIndex;
 
+    //Accuracy & Evasion variables (for enemies)
     public float lowEnemyAccuracy = 60.0f;
     public float lowEnemyEvasion = 5.0f;
     public float medEnemyAccuracy = 70.0f;
@@ -132,6 +133,16 @@ public class PathOSAgent : MonoBehaviour
     public float highEnemyEvasion = 15.0f;
     public float bossEnemyAccuracy = 90.0f;
     public float bossEnemyEvasion = 20.0f;
+
+    //Interaction Event Variables
+    public float lowIEChallenge = 0.0f;
+    public float lowIEInterval = 0.0f;
+
+    public float mediumIEChallenge = 0.0f;
+    public float mediumIEInterval = 0.0f;
+
+    public float highIEChallenge = 0.0f;
+    public float highIEInterval = 0.0f;
 
 
     private GameObject cameraObject;

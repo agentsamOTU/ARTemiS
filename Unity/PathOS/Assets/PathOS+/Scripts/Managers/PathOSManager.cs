@@ -44,6 +44,9 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_HAZARD_ENEMY_HIGH, "hazard_enemy_high" },
         {EntityType.ET_HAZARD_ENEMY_BOSS, "hazard_enemy_boss" },
         {EntityType.ET_HAZARD_ENVIRONMENT, "hazard_environment" },
+        {EntityType.ET_IE_LOW, "event_low" },
+        {EntityType.ET_IE_MEDIUM, "event_medium" },
+        {EntityType.ET_IE_HIGH, "event_high" },
         {EntityType.ET_POI, "poi_environment" },
         {EntityType.ET_POI_NPC, "poi_npc" }
     };
@@ -64,6 +67,9 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_HAZARD_ENEMY_HIGH, "Enemy Hazard High" },
         {EntityType.ET_HAZARD_ENEMY_BOSS, "Enemy Hazard Boss" },
         {EntityType.ET_HAZARD_ENVIRONMENT, "Environmental Hazard" },
+        {EntityType.ET_IE_LOW, "Low Challenge Event" },
+        {EntityType.ET_IE_MEDIUM, "Medium Challenge Event" },
+        {EntityType.ET_IE_HIGH, "High Challenge Event" },
         {EntityType.ET_POI, "Point-of-Interest (e.g., setpiece)" },
         {EntityType.ET_POI_NPC, "NPC (non-hostile)" }
     };

@@ -53,7 +53,7 @@ public class PathOSAgentWindow : EditorWindow
     private SerializedProperty exploreTargetMargin;
 
     //Properties for health
-    private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, health_low, health_med, health_high;
+    private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, interaction_event, health_low, health_med, health_high;
 
     private Dictionary<Heuristic, string> heuristicLabels;
 
@@ -77,6 +77,7 @@ public class PathOSAgentWindow : EditorWindow
         enemy_med = Resources.Load<Texture2D>("hazard_enemy_medium");
         enemy_high = Resources.Load<Texture2D>("hazard_enemy_high");
         enemy_boss = Resources.Load<Texture2D>("hazard_enemy_boss");
+        interaction_event = Resources.Load<Texture2D>("hazard_environment");
         enemy_hazard = Resources.Load<Texture2D>("hazard_environment");
         health_low = Resources.Load<Texture2D>("resource_preservation_low");
         health_med = Resources.Load<Texture2D>("resource_preservation_med");
@@ -397,6 +398,21 @@ public class PathOSAgentWindow : EditorWindow
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_hazard, 30, 25, "Hazard Damage", ref agentReference.hazardDamage);
+
+        EditorGUILayout.Space(15);
+        EditorGUILayout.LabelField("Interaction Events", EditorStyles.boldLabel);
+        EditorGUILayout.Space(15);
+
+        agentReference.lowIEChallenge = DrawUIRow(interaction_event, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
+        agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
+        EditorGUILayout.Space(20);
+
+        agentReference.mediumIEChallenge = DrawUIRow(interaction_event, 30, 25, "Medium Event Challenge", agentReference.mediumIEChallenge);
+        agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
+        EditorGUILayout.Space(20);
+
+        agentReference.highIEChallenge = DrawUIRow(interaction_event, 30, 25, "High Event Challenge", agentReference.highIEChallenge);
+        agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
 
         EditorGUILayout.Space(15);
         EditorGUILayout.LabelField("Resource Values", EditorStyles.boldLabel);

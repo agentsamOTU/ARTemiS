@@ -27,7 +27,10 @@ namespace PathOS
         ET_HAZARD_ENEMY_BOSS = 230,
         ET_HAZARD_ENVIRONMENT = 250,
         ET_POI = 300,
-        ET_POI_NPC = 350
+        ET_POI_NPC = 350,
+        ET_IE_LOW = 400,
+        ET_IE_MEDIUM = 410,
+        ET_IE_HIGH = 420
     };
 
     /* AGENT HEURISTICS */

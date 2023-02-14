@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.723456, y: 1.162, z: -3.3622823}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2783143267940123911}
   m_Father: {fileID: 0}
@@ -277,7 +278,7 @@ MonoBehaviour:
       weight: 0
     - entype: 350
       weight: 0
-  endSimulationOnDeath: 0
+  endSimulationOnDeath: 1
 --- !u!114 &5005646905853620062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +418,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5005646905853620060}
   m_RootOrder: 0
