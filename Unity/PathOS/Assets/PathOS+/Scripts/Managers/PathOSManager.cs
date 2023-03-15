@@ -44,9 +44,9 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_HAZARD_ENEMY_HIGH, "hazard_enemy_high" },
         {EntityType.ET_HAZARD_ENEMY_BOSS, "hazard_enemy_boss" },
         {EntityType.ET_HAZARD_ENVIRONMENT, "hazard_environment" },
-        {EntityType.ET_IE_LOW, "event_low" },
-        {EntityType.ET_IE_MEDIUM, "event_medium" },
-        {EntityType.ET_IE_HIGH, "event_high" },
+        {EntityType.ET_IE_LOW, "hazard_environment" },
+        {EntityType.ET_IE_MEDIUM, "hazard_environment" },
+        {EntityType.ET_IE_HIGH, "hazard_environment" },
         {EntityType.ET_POI, "poi_environment" },
         {EntityType.ET_POI_NPC, "poi_npc" }
     };
