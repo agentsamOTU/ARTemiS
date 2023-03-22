@@ -291,12 +291,13 @@ public class PathOSManagerWindow : EditorWindow
             heuristicLabelList[i] = UI.heuristicLabels.Values[i];
         }
 
-
+        
         //Todo: Just in case. Remove if this gets in the way
         if (markupToggles.Count <= 0)
         {//Set up toggles for level markup.
             foreach (EntityType entype in System.Enum.GetValues(typeof(EntityType)))
             {
+                //NEW: Icon issue is here
                 markupToggles.Add(new MarkupToggle(entype,
                     managerReference.entityLabelLookup[entype],
                     Resources.Load<Texture2D>(managerReference.entityGizmoLookup[entype]),

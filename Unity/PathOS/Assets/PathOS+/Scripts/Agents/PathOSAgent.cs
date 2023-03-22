@@ -1153,6 +1153,24 @@ public class PathOSAgent : MonoBehaviour
                     Debug.Log("Boss Miss");
                 }
                 break;
+            case EntityType.ET_IE_LOW:
+                if (accuracy - lowIEChallenge > Random.Range(0,100))
+                {
+                    Debug.Log("Low Event Failed")
+                }
+                break;
+            case EntityType.ET_IE_MEDIUM:
+                if (accuracy - mediumIEChallenge > Random.Range(0, 100))
+                {
+                    Debug.Log("Medium Event Failed")
+                }
+                break;
+            case EntityType.ET_IE_HIGH:
+                if (accuracy - highIEChallenge > Random.Range(0, 100))
+                {
+                    Debug.Log("High Event Failed")
+                }
+                break;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 health -= GetEnemyDamage(hazardDamage.min, hazardDamage.max);
                 break;

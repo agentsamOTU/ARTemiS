@@ -52,7 +52,13 @@ MonoBehaviour:
   endOnCompletionGoal: 1
   showLevelMarkup: 1
   ignoredEntities: []
-  levelEntities: []
+  levelEntities:
+  - name: space_man_model (6)
+    objectRef: {fileID: 0}
+    entityType: 300
+    alwaysKnown: 0
+    overrideVisitRadius: 0
+    objectVisitRadius: 1
   heuristicWeights:
   - heuristic: 0
     weights:
@@ -86,6 +92,12 @@ MonoBehaviour:
       weight: 0.9
     - entype: 350
       weight: 0.9
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 10
     weights:
     - entype: 0
@@ -117,6 +129,12 @@ MonoBehaviour:
     - entype: 300
       weight: 0
     - entype: 350
+      weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
       weight: 0
   - heuristic: 15
     weights:
@@ -150,6 +168,12 @@ MonoBehaviour:
       weight: 0.1
     - entype: 350
       weight: 0.1
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 20
     weights:
     - entype: 0
@@ -181,6 +205,12 @@ MonoBehaviour:
     - entype: 300
       weight: 0
     - entype: 350
+      weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
       weight: 0
   - heuristic: 25
     weights:
@@ -214,6 +244,12 @@ MonoBehaviour:
       weight: 0
     - entype: 350
       weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 30
     weights:
     - entype: 0
@@ -246,6 +282,12 @@ MonoBehaviour:
       weight: 0
     - entype: 350
       weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 35
     weights:
     - entype: 0
@@ -277,6 +319,12 @@ MonoBehaviour:
     - entype: 300
       weight: 0
     - entype: 350
+      weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
       weight: 0
   endSimulationOnDeath: 1
 --- !u!114 &5005646905853620062
