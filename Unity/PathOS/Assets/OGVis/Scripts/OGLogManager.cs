@@ -36,7 +36,8 @@ public class OGLogManager : OGSingleton<OGLogManager>
     {
         POSITION = 0,
         INTERACTION,
-        HEADER
+        HEADER,
+        TIME
     };
 
     //Queried by loggers for timestamps.
@@ -171,6 +172,17 @@ public class OGLogManager : OGSingleton<OGLogManager>
 
             if (loggers.ContainsKey(instanceID))
                 loggers[instanceID].LogInteraction(interacted.name, interacted.transform);
+        }
+    }
+
+    public void SendTimeEvent(GameObject caller, int pit, int pct)
+    {
+        if (enableLogging)
+        {
+            int instanceID = caller.GetInstanceID();
+
+            if (loggers.ContainsKey(instanceID))
+                loggers[instanceID].LogTime(pit, pct);
         }
     }
 }

@@ -144,6 +144,9 @@ public class PathOSAgent : MonoBehaviour
     public float highIEChallenge = 0.0f;
     public float highIEInterval = 0.0f;
 
+    public int penaltyTimeC=0;
+    public int penaltyTimeI=0;
+
 
     private GameObject cameraObject;
     private static bool cameraFollow = false;
@@ -1121,6 +1124,7 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("Low Miss");
                     }
+                    penaltyTimeC += 1;
 
                 } while (accuracy - lowEnemyEvasion > Random.Range(0, 100));
                 break;
@@ -1136,6 +1140,8 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("Med Miss");
                     }
+                    penaltyTimeC += 1;
+
                 } while (accuracy - medEnemyEvasion > Random.Range(0, 100));
                 break;
             case EntityType.ET_HAZARD_ENEMY_HIGH:
@@ -1150,6 +1156,8 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("High Miss");
                     }
+                    penaltyTimeC += 1;
+
                 } while (accuracy - highEnemyEvasion > Random.Range(0, 100)) ;
                 break;
             case EntityType.ET_HAZARD_ENEMY_BOSS:
@@ -1164,25 +1172,36 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("Boss Miss");
                     }
+                    penaltyTimeC += 1;
+
                 } while (accuracy - bossEnemyEvasion > Random.Range(0, 100));
                 break;
             case EntityType.ET_IE_LOW:
-                if (accuracy - lowIEChallenge > Random.Range(0,100))
+                do
                 {
-                    Debug.Log("Low Event Failed")
+                    penaltyTimeI += 1;
+                    Debug.Log("Low Event Failed");
+
                 }
+                while (accuracy - lowIEChallenge > Random.Range(0, 100));
                 break;
             case EntityType.ET_IE_MEDIUM:
-                if (accuracy - mediumIEChallenge > Random.Range(0, 100))
+                do
                 {
-                    Debug.Log("Medium Event Failed")
+                    penaltyTimeI += 1;
+                    Debug.Log("Medium Event Failed");
+
                 }
+                while (accuracy - mediumIEChallenge > Random.Range(0, 100));
                 break;
             case EntityType.ET_IE_HIGH:
-                if (accuracy - highIEChallenge > Random.Range(0, 100))
+                do
                 {
-                    Debug.Log("High Event Failed")
+                    penaltyTimeI += 1;
+                    Debug.Log("High Event Failed");
+
                 }
+                while (accuracy - highIEChallenge > Random.Range(0, 100));
                 break;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 health -= GetEnemyDamage(hazardDamage.min, hazardDamage.max);
@@ -1203,7 +1222,7 @@ public class PathOSAgent : MonoBehaviour
         //Making sure the health values don't get messed up
         if (health < 0) health = 0;
         else if (health > 100) health = 100;
-
+        memory.LogTime();
         //Updates weights based on the player's health
         UpdateWeightsBasedOnHealth();
     }

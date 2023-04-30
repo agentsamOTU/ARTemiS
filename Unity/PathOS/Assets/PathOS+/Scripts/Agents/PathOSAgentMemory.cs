@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PathOS;
+using static UnityEngine.EventSystems.EventTrigger;
 
 /*
 PathOSAgentMemory.cs 
@@ -414,5 +415,11 @@ public class PathOSAgentMemory : MonoBehaviour
         }
 
         return penalty;
+    }
+
+    public void LogTime()
+    {
+        if(PathOSAgent.logger!=null)
+            PathOSAgent.logger.SendTimeEvent(this.gameObject, agent.penaltyTimeI,agent.penaltyTimeC);
     }
 }

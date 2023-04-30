@@ -109,6 +109,19 @@ public class OGLogger : MonoBehaviour
         WriteLogLine(line);
     }
 
+    public void LogTime(int pit, int pct)
+    {
+        //pit is penalty time from interaction events
+        //pct is penalty time from combat events
+        string line = OGLogManager.LogItemType.TIME + "," +
+           mgr.gameTimer + "," +
+           pit + "," +
+           pct + "," +
+           (mgr.gameTimer + pit + pct) + ",";
+
+        WriteLogLine(line);
+    }
+
     public void WriteLogLine(string line)
     {
         if (null == logOutput)
