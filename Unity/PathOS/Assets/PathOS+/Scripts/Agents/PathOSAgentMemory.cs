@@ -417,9 +417,15 @@ public class PathOSAgentMemory : MonoBehaviour
         return penalty;
     }
 
-    public void LogTime()
+    public void LogCombat(string level,int misses, float deltaH, float health)
     {
         if(PathOSAgent.logger!=null)
-            PathOSAgent.logger.SendTimeEvent(this.gameObject, agent.penaltyTimeI,agent.penaltyTimeC);
+            PathOSAgent.logger.SendCombatEvent(this.gameObject,level,agent.penaltyTimeC, misses,deltaH,health,agent.totalTime);
+    }
+
+    public void LogInteractionEvent(string level, int delta)
+    {
+        if (PathOSAgent.logger != null)
+            PathOSAgent.logger.SendInteractionEvent(this.gameObject,level, delta,agent.lowTime,agent.medTime,agent.highTime,agent.penaltyTimeC);
     }
 }

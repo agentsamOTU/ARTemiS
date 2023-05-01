@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Rendering;
+using static OGVis.PlayerLog;
 
 /*
 OGLogger.cs
@@ -120,6 +122,39 @@ public class OGLogger : MonoBehaviour
            (mgr.gameTimer + pit + pct) + ",";
 
         WriteLogLine(line);
+    }
+    public void LogCombat(string level, int missesT, int missesD, float healthD, float healthR,float ieTime)
+    {
+        //logs total combat missses, misses from this event, delta health, remaining health, time loss from ie, and total time
+        string line = OGLogManager.LogItemType.COMBAT + "," +
+          mgr.gameTimer + "," +
+          level + "," +
+          missesT + "," +
+          missesD + "," +
+          healthD + "," +
+          healthR + "," +
+          ieTime + "," +
+          (mgr.gameTimer + missesT + ieTime) + ",";
+
+        WriteLogLine(line);
+
+    }
+
+    public void LogInteractionEvent(string level,int misses, float lowT, float medT, float highT, int combatT)
+    {
+        string line = OGLogManager.LogItemType.INTERACTIONEVENT + "," +
+          mgr.gameTimer + "," +
+          level + "," +
+          misses + "," +
+          lowT + "," +
+          medT + "," +
+          highT + "," +
+          (lowT + medT + highT) + "," +
+          combatT + "," +
+          (mgr.gameTimer + combatT + lowT+medT+highT) + ",";
+
+        WriteLogLine(line);
+
     }
 
     public void WriteLogLine(string line)

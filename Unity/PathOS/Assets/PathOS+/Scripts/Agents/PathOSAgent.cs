@@ -144,9 +144,23 @@ public class PathOSAgent : MonoBehaviour
     public float highIEChallenge = 0.0f;
     public float highIEInterval = 0.0f;
 
+    public int combatCount = 0;
     public int penaltyTimeC=0;
-    public int penaltyTimeI=0;
 
+    public int IECount=0;
+    public int penaltyTimeI = 0;
+    public int penaltyTimeI1=0;
+    public int penaltyTimeI2 = 0;
+    public int penaltyTimeI3 = 0;
+
+    public float penLowCost = 1.0f;
+    public float penMedCost = 1.0f;
+    public float penHighCost = 1.0f;
+
+    public float lowTime;
+    public float medTime;
+    public float highTime;
+    public float totalTime;
 
     private GameObject cameraObject;
     private static bool cameraFollow = false;
@@ -266,6 +280,7 @@ public class PathOSAgent : MonoBehaviour
     private void Start()
     {
         LogAgentData();
+        LogEventCosts();
         PerceptionUpdate();
 
         //Stochastic initialization of look time.
@@ -285,6 +300,24 @@ public class PathOSAgent : MonoBehaviour
             {
                 header += scale.heuristic + "," + scale.scale + ",";
             }
+
+            logger.WriteHeader(this.gameObject, header);
+        }
+    }
+
+    private void LogEventCosts()
+    {
+        if (logger != null)
+        {
+            string header = "";
+
+            header += "Low,";
+            header += penLowCost + ",";
+            header += "Med,";
+            header += penMedCost + ",";
+            header += "High,";
+            header += penHighCost + ",";
+
 
             logger.WriteHeader(this.gameObject, header);
         }
@@ -1110,9 +1143,15 @@ public class PathOSAgent : MonoBehaviour
     //Needs to be improved/edited
     private void CalculateHealth(EntityType entityType)
     {
+        float startHealth = health;
+        int startPenC = penaltyTimeC;
+        int startPenI = penaltyTimeI;
+
         switch (entityType)
         {
             case EntityType.ET_HAZARD_ENEMY_LOW:
+                combatCount += 1;
+                penaltyTimeC -= 1;
                 do
                 {
                     if (lowEnemyAccuracy - evasion > Random.Range(0, 100))
@@ -1127,8 +1166,11 @@ public class PathOSAgent : MonoBehaviour
                     penaltyTimeC += 1;
 
                 } while (accuracy - lowEnemyEvasion > Random.Range(0, 100));
+                memory.LogCombat("Low",penaltyTimeC-startPenC, health-startHealth,health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_MED:
+                combatCount += 1;
+                penaltyTimeC -= 1;
                 do
                 { 
                     if (medEnemyAccuracy - evasion > Random.Range(0, 100))
@@ -1143,8 +1185,11 @@ public class PathOSAgent : MonoBehaviour
                     penaltyTimeC += 1;
 
                 } while (accuracy - medEnemyEvasion > Random.Range(0, 100));
+                memory.LogCombat("Med", penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_HIGH:
+                combatCount += 1;
+                penaltyTimeC -= 1;
                 do
                 {
                     if (highEnemyAccuracy - evasion > Random.Range(0, 100))
@@ -1159,8 +1204,11 @@ public class PathOSAgent : MonoBehaviour
                     penaltyTimeC += 1;
 
                 } while (accuracy - highEnemyEvasion > Random.Range(0, 100)) ;
+                memory.LogCombat("High",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_BOSS:
+                combatCount += 1;
+                penaltyTimeC -= 1;
                 do
                 {
                     if (highEnemyAccuracy - evasion > Random.Range(0, 100))
@@ -1175,33 +1223,46 @@ public class PathOSAgent : MonoBehaviour
                     penaltyTimeC += 1;
 
                 } while (accuracy - bossEnemyEvasion > Random.Range(0, 100));
+                memory.LogCombat("Boss",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_IE_LOW:
+                penaltyTimeI -= 1;
+                IECount += 1;
                 do
                 {
-                    penaltyTimeI += 1;
+                    penaltyTimeI1 += 1;
                     Debug.Log("Low Event Failed");
 
                 }
                 while (accuracy - lowIEChallenge > Random.Range(0, 100));
+                RecalculatePenalty();
+                memory.LogInteractionEvent("Low",penaltyTimeI-startPenI);
                 break;
             case EntityType.ET_IE_MEDIUM:
+                penaltyTimeI2 -= 1;
+                IECount += 1;
                 do
                 {
-                    penaltyTimeI += 1;
+                    penaltyTimeI2 += 1;
                     Debug.Log("Medium Event Failed");
 
                 }
                 while (accuracy - mediumIEChallenge > Random.Range(0, 100));
+                RecalculatePenalty();
+                memory.LogInteractionEvent("Med",penaltyTimeI-startPenI);
                 break;
             case EntityType.ET_IE_HIGH:
+                penaltyTimeI3 -= 1;
+                IECount += 1;
                 do
                 {
-                    penaltyTimeI += 1;
+                    penaltyTimeI3 += 1;
                     Debug.Log("High Event Failed");
 
                 }
                 while (accuracy - highIEChallenge > Random.Range(0, 100));
+                RecalculatePenalty();
+                memory.LogInteractionEvent("High",penaltyTimeI-startPenI);
                 break;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 health -= GetEnemyDamage(hazardDamage.min, hazardDamage.max);
@@ -1222,7 +1283,6 @@ public class PathOSAgent : MonoBehaviour
         //Making sure the health values don't get messed up
         if (health < 0) health = 0;
         else if (health > 100) health = 100;
-        memory.LogTime();
         //Updates weights based on the player's health
         UpdateWeightsBasedOnHealth();
     }
@@ -1260,5 +1320,15 @@ public class PathOSAgent : MonoBehaviour
     public bool IsDead()
     {
         return dead;
+    }
+
+    public void RecalculatePenalty()
+    {
+        penaltyTimeI = penaltyTimeI1 + penaltyTimeI2 + penaltyTimeI3;
+        lowTime = penaltyTimeI1 * penLowCost;
+        medTime = penaltyTimeI2 * penMedCost;
+        highTime = penaltyTimeI3 * penHighCost;
+        totalTime = lowTime + medTime + highTime;
+
     }
 }

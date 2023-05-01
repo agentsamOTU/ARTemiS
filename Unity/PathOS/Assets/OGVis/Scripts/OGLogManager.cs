@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Rendering;
 
 /*
 OGLogManager.cs
@@ -37,7 +38,9 @@ public class OGLogManager : OGSingleton<OGLogManager>
         POSITION = 0,
         INTERACTION,
         HEADER,
-        TIME
+        TIME,
+        COMBAT,
+        INTERACTIONEVENT
     };
 
     //Queried by loggers for timestamps.
@@ -183,6 +186,28 @@ public class OGLogManager : OGSingleton<OGLogManager>
 
             if (loggers.ContainsKey(instanceID))
                 loggers[instanceID].LogTime(pit, pct);
+        }
+    }
+
+    public void SendCombatEvent(GameObject caller,string level,int totalmisses, int deltamisses, float healthDelta, float health, float ieTime)
+    {
+        if (enableLogging)
+        {
+            int instanceID = caller.GetInstanceID();
+
+            if (loggers.ContainsKey(instanceID))
+                loggers[instanceID].LogCombat(level,totalmisses,deltamisses,healthDelta,health,ieTime);
+        }
+    }
+
+    public void SendInteractionEvent(GameObject caller,string level, int misses, float costLow, float costMed, float costHigh, int combat)
+    {
+        if (enableLogging)
+        {
+            int instanceID = caller.GetInstanceID();
+
+            if (loggers.ContainsKey(instanceID))
+                loggers[instanceID].LogInteractionEvent(level,misses,costLow,costMed,costHigh,combat);
         }
     }
 }
