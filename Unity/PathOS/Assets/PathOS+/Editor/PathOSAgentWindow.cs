@@ -66,6 +66,7 @@ public class PathOSAgentWindow : EditorWindow
 
     private Color bgColor, bgDark1, bgDark2, bgDark3, redColor;
 
+
     private void OnEnable()
     {
         //Load saved settings.
@@ -371,7 +372,10 @@ public class PathOSAgentWindow : EditorWindow
 
         serial.Update();
 
+
         //EditorGUIUtility.labelWidth = 150.0f;
+        
+        
 
         EditorGUILayout.LabelField("Enemy Damage Values", EditorStyles.boldLabel);
         EditorGUILayout.Space(15);
@@ -401,6 +405,13 @@ public class PathOSAgentWindow : EditorWindow
 
         EditorGUILayout.Space(15);
         EditorGUILayout.LabelField("Interaction Events", EditorStyles.boldLabel);
+
+        agentReference.difficulty = EditorGUILayout.Popup("Difficulty", agentReference.difficulty, new string[] { "Easy", "Medium", "Hard" });
+        if (GUILayout.Button("Confirm Difficulty"))
+        {
+            agentReference.diffSet();
+        }
+
         EditorGUILayout.Space(15);
 
         agentReference.lowIEChallenge = DrawUIRow(interaction_event, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
@@ -466,5 +477,18 @@ public class PathOSAgentWindow : EditorWindow
     public void SetAgentReference(PathOSAgent reference)
     {
         agentReference = reference;
+    }
+
+    public void SetEasy()
+    {
+
+    }
+    public void SetMedium()
+    {
+
+    }
+    public void SetHard()
+    {
+        
     }
 }

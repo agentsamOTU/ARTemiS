@@ -154,13 +154,27 @@ public class PathOSAgent : MonoBehaviour
     public int penaltyTimeI3 = 0;
 
     public float penLowCost = 1.0f;
-    public float penMedCost = 1.0f;
-    public float penHighCost = 1.0f;
+    public float penMedCost = 2.0f;
+    public float penHighCost = 4.0f;
+
+    private float penELowCost = 0.5f;
+    private float penEMedCost = 1.0f;
+    private float penEHighCost = 2.0f;
+
+    private float penMLowCost = 1.0f;
+    private float penMMedCost = 2.0f;
+    private float penMHighCost = 4.0f;
+
+    private float penHLowCost = 2.0f;
+    private float penHMedCost = 4.0f;
+    private float penHHighCost = 8.0f;
 
     public float lowTime;
     public float medTime;
     public float highTime;
     public float totalTime;
+
+    public int difficulty = 1;
 
     private GameObject cameraObject;
     private static bool cameraFollow = false;
@@ -1329,6 +1343,30 @@ public class PathOSAgent : MonoBehaviour
         medTime = penaltyTimeI2 * penMedCost;
         highTime = penaltyTimeI3 * penHighCost;
         totalTime = lowTime + medTime + highTime;
+
+    }
+
+    public void diffSet()
+    {
+        switch (difficulty)
+        {
+            case 0:
+                penLowCost = penELowCost;
+                penMedCost = penEMedCost;
+                penHighCost = penEHighCost;
+                break;
+            case 1:
+                penLowCost = penMLowCost;
+                penMedCost = penMMedCost;
+                penHighCost = penMHighCost;
+                break;
+            case 2:
+                penLowCost = penHLowCost;
+                penMedCost = penHMedCost;
+                penHighCost = penHHighCost;
+                break;
+        }
+
 
     }
 }

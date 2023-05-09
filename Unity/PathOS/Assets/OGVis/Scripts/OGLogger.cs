@@ -125,7 +125,7 @@ public class OGLogger : MonoBehaviour
     }
     public void LogCombat(string level, int missesT, int missesD, float healthD, float healthR,float ieTime)
     {
-        //logs total combat missses, misses from this event, delta health, remaining health, time loss from ie, and total time
+        //logs game time, diffculty of combat, total combat missses, misses from this event, delta health, remaining health, time loss from ie, and total time
         string line = OGLogManager.LogItemType.COMBAT + "," +
           mgr.gameTimer + "," +
           level + "," +
@@ -142,6 +142,7 @@ public class OGLogger : MonoBehaviour
 
     public void LogInteractionEvent(string level,int misses, float lowT, float medT, float highT, int combatT)
     {
+        //logs game time, difficulty of combat, misses at this event, current cost of low misses, medium misses, high misses, total cost of misses, combat time loss, and total time
         string line = OGLogManager.LogItemType.INTERACTIONEVENT + "," +
           mgr.gameTimer + "," +
           level + "," +
