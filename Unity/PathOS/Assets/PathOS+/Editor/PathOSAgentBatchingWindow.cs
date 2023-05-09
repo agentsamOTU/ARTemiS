@@ -112,8 +112,11 @@ public class PathOSAgentBatchingWindow : EditorWindow
     private Dictionary<PathOS.Heuristic, float> fixedLookup =
         new Dictionary<PathOS.Heuristic, float>();
 
+    //Here is where we add non-heuristic agent traits for fixed trait batching
     [SerializeField]
     private float fixedExp;
+    private float fixedAccuracy;
+    private float fixedEvasion;
 
     [SerializeField]
     private List<PathOS.HeuristicRange> rangeHeuristics =
@@ -130,8 +133,11 @@ public class PathOSAgentBatchingWindow : EditorWindow
     private List<string> profileNames = new List<string>();
     private int profileIndex = 0;
 
+    //Here is where we add non-heuristic agent traits for range trait batching
     [SerializeField]
     private PathOS.FloatRange rangeExp;
+    private PathOS.FloatRange accRange;
+    private PathOS.FloatRange evRange;
 
     [SerializeField]
     private string loadHeuristicsFile = "--";
@@ -143,7 +149,10 @@ public class PathOSAgentBatchingWindow : EditorWindow
     [System.Serializable]
     private class HeuristicSet
     {
+
         public float exp;
+        public float accuracy;
+        public float evasion;
         public List<PathOS.HeuristicScale> scales = 
             new List<PathOS.HeuristicScale>();
 
@@ -462,6 +471,10 @@ public class PathOSAgentBatchingWindow : EditorWindow
 
                 fixedExp = EditorGUILayout.Slider("Experience Scale",
                     fixedExp, 0.0f, 1.0f);
+                fixedAccuracy = EditorGUILayout.Slider("Accuracy", fixedAccuracy, 0.0f, 1.0f);
+                fixedEvasion = EditorGUILayout.Slider("Evasion", fixedEvasion, 0.0f, 1.0f);
+                //accuracy = EditorGUILayout.Slider("Accuracy", agentReference.accuracy, 0.0f, 100.0f);
+                //evasion = EditorGUILayout.Slider("Evasion", agentReference.evasion, 0.0f, 100.0f);
 
                 for (int i = 0; i < fixedHeuristics.Count; ++i)
                 {
@@ -469,7 +482,6 @@ public class PathOSAgentBatchingWindow : EditorWindow
                         heuristicLabels[fixedHeuristics[i].heuristic],
                         fixedHeuristics[i].scale, 0.0f, 1.0f);
                 }
-
                 break;
             
             //Define an acceptable range of values for each motive.
@@ -501,7 +513,10 @@ public class PathOSAgentBatchingWindow : EditorWindow
                         ref rangeHeuristics[i].range.max);
                 }
 
-                if(EditorGUI.EndChangeCheck())
+                PathOS.EditorUI.FullMinMaxSlider("Accuracy", ref accRange.min, ref accRange.max);
+                PathOS.EditorUI.FullMinMaxSlider("Evasion", ref evRange.min, ref evRange.max);
+
+                if (EditorGUI.EndChangeCheck())
                 {
                     selectedProfile = customProfile;
                     profileIndex = profileNames.Count - 1;
@@ -701,6 +716,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
         }
 
         rangeExp = profile.expRange;
+        accRange = profile.accRange;
+        evRange = profile.evRange;
     }
 
     //Reconcile UI selection of custom profile with collection of profiles
@@ -801,6 +818,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
         }
 
         fixedExp = agentReference.experienceScale;
+        fixedAccuracy = agentReference.accuracy;
+        fixedEvasion = agentReference.evasion;
     }
 
     private void SyncFixedLookup()
@@ -853,6 +872,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
                 }
 
                 agent.experienceScale = fixedExp;
+                agent.accuracy = fixedAccuracy;
+                agent.evasion = fixedEvasion;
                 break;
 
             case HeuristicMode.RANGE:
@@ -866,6 +887,7 @@ public class PathOSAgentBatchingWindow : EditorWindow
                 }
 
                 agent.experienceScale = Random.Range(rangeExp.min, rangeExp.max);
+                agent.accuracy = Random.Range(accRange.min, accRange.max);
                 break;
 
             case HeuristicMode.LOAD:

@@ -31,11 +31,14 @@ public class PathOSAgent : MonoBehaviour
     public bool freezeAgent;
     private bool verboseDebugging = false;
 
-    /* PLAYER CHARACTERISTICS */
+    //* COMBAT CHARACTERISTICS *\\
+    [Range(0.0f, 100.0f)]
+    public float accuracy;
+    public float evasion;
 
+    /* PLAYER CHARACTERISTICS */
     [Range(0.0f, 1.0f)]
     public float experienceScale;
-
     public List<HeuristicScale> heuristicScales, modifiableHeuristicScales;
     private Dictionary<Heuristic, float> heuristicScaleLookup;
     private Dictionary<(Heuristic, EntityType), float> entityScoringLookup;
@@ -111,9 +114,9 @@ public class PathOSAgent : MonoBehaviour
 
     //on a scale of 0-100
     //100 will hit 100% on an enemy with 0 evasiveness
-    public float accuracy = 90.0f;
+    //public float accuracy = 90.0f;
     //evasiveness directly modifies enemy accuracy
-    public float evasion = 10.0f;
+    //public float evasion = 10.0f;
 
     //Health variables
     private float health = 100.0f;
@@ -1158,6 +1161,8 @@ public class PathOSAgent : MonoBehaviour
     private void CalculateHealth(EntityType entityType)
     {
         float startHealth = health;
+        float enemyAcc = 0.0f;
+        float ieChallenge = 0.0f;
         int startPenC = penaltyTimeC;
         int startPenI = penaltyTimeI;
 
@@ -1166,9 +1171,10 @@ public class PathOSAgent : MonoBehaviour
             case EntityType.ET_HAZARD_ENEMY_LOW:
                 combatCount += 1;
                 penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((lowEnemyAccuracy - evasion), 1);
                 do
                 {
-                    if (lowEnemyAccuracy - evasion > Random.Range(0, 100))
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("Low Hit");
                         health -= GetEnemyDamage(lowEnemyDamage.min, lowEnemyDamage.max);
@@ -1179,15 +1185,16 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (accuracy - lowEnemyEvasion > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - lowEnemyEvasion, 1) > Random.Range(0, 100));
                 memory.LogCombat("Low",penaltyTimeC-startPenC, health-startHealth,health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_MED:
                 combatCount += 1;
                 penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((medEnemyAccuracy - evasion), 1);
                 do
-                { 
-                    if (medEnemyAccuracy - evasion > Random.Range(0, 100))
+                {
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("Med Hit");
                         health -= GetEnemyDamage(medEnemyDamage.min, medEnemyDamage.max);
@@ -1198,15 +1205,16 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (accuracy - medEnemyEvasion > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - medEnemyEvasion, 1) > Random.Range(0, 100));
                 memory.LogCombat("Med", penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_HIGH:
                 combatCount += 1;
                 penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((highEnemyAccuracy - evasion), 1);
                 do
                 {
-                    if (highEnemyAccuracy - evasion > Random.Range(0, 100))
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("High Hit");
                         health -= GetEnemyDamage(highEnemyDamage.min, highEnemyDamage.max);
@@ -1217,15 +1225,16 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (accuracy - highEnemyEvasion > Random.Range(0, 100)) ;
+                } while (Mathf.Max(accuracy - highEnemyEvasion, 1) > Random.Range(0, 100));
                 memory.LogCombat("High",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_BOSS:
                 combatCount += 1;
                 penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((bossEnemyAccuracy - evasion), 1);
                 do
                 {
-                    if (highEnemyAccuracy - evasion > Random.Range(0, 100))
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("Boss Hit");
                         health -= GetEnemyDamage(bossEnemyDamage.min, bossEnemyDamage.max);
@@ -1236,45 +1245,48 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (accuracy - bossEnemyEvasion > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - bossEnemyEvasion, 1) > Random.Range(0, 100));
                 memory.LogCombat("Boss",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_IE_LOW:
                 penaltyTimeI -= 1;
                 IECount += 1;
+                ieChallenge = Mathf.Max((accuracy - lowIEChallenge), 1);
                 do
                 {
                     penaltyTimeI1 += 1;
                     Debug.Log("Low Event Failed");
 
                 }
-                while (accuracy - lowIEChallenge > Random.Range(0, 100));
+                while (ieChallenge > Random.Range(0, 100));
                 RecalculatePenalty();
                 memory.LogInteractionEvent("Low",penaltyTimeI-startPenI);
                 break;
             case EntityType.ET_IE_MEDIUM:
                 penaltyTimeI2 -= 1;
                 IECount += 1;
+                ieChallenge = Mathf.Max((accuracy - mediumIEChallenge), 1);
                 do
                 {
                     penaltyTimeI2 += 1;
                     Debug.Log("Medium Event Failed");
 
                 }
-                while (accuracy - mediumIEChallenge > Random.Range(0, 100));
+                while (ieChallenge > Random.Range(0, 100));
                 RecalculatePenalty();
                 memory.LogInteractionEvent("Med",penaltyTimeI-startPenI);
                 break;
             case EntityType.ET_IE_HIGH:
                 penaltyTimeI3 -= 1;
                 IECount += 1;
+                ieChallenge = Mathf.Max((accuracy - highIEChallenge), 1);
                 do
                 {
                     penaltyTimeI3 += 1;
                     Debug.Log("High Event Failed");
 
                 }
-                while (accuracy - highIEChallenge > Random.Range(0, 100));
+                while (ieChallenge > Random.Range(0, 100));
                 RecalculatePenalty();
                 memory.LogInteractionEvent("High",penaltyTimeI-startPenI);
                 break;
