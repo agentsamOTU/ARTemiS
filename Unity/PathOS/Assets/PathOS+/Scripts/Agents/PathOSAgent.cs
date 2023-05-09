@@ -327,12 +327,15 @@ public class PathOSAgent : MonoBehaviour
         if (logger != null)
         {
             string header = "";
-
-            header += "Low,";
+            header += "Accuracy" + ",";
+            header += accuracy + ",";
+            header += "Evasion" + ",";
+            header += evasion + ",";
+            header += "Low Cost,";
             header += penLowCost + ",";
-            header += "Med,";
+            header += "Med Cost,";
             header += penMedCost + ",";
-            header += "High,";
+            header += "High Cost,";
             header += penHighCost + ",";
 
 
