@@ -137,10 +137,12 @@ namespace PathOS
     public class AgentProfile
     {
         public string name;
-        
+
         [SerializeField]
         public List<HeuristicRange> heuristicRanges;
         public FloatRange expRange;
+        public FloatRange accRange;
+        public FloatRange evRange;
 
         public AgentProfile()
         {
@@ -148,8 +150,10 @@ namespace PathOS
             heuristicRanges = new List<HeuristicRange>();
 
             expRange = new FloatRange { min = 0.0f, max = 1.0f };
+            accRange = new FloatRange { min = 0.0f, max = 100.0f };
+            evRange = new FloatRange { min = 0.0f, max = 100.0f };
 
-            foreach(Heuristic heuristic in System.Enum.GetValues(typeof(Heuristic)))
+            foreach (Heuristic heuristic in System.Enum.GetValues(typeof(Heuristic)))
             {
                 heuristicRanges.Add(new HeuristicRange(heuristic));
             }
@@ -177,6 +181,16 @@ namespace PathOS
                 min = other.expRange.min,
                 max = other.expRange.max
             };
+            accRange = new FloatRange
+            {
+                min = other.accRange.min,
+                max = other.accRange.max
+            };
+            evRange = new FloatRange
+            {
+                min = other.evRange.min,
+                max = other.evRange.max
+            };
         }
 
         public void Clear()
@@ -185,6 +199,12 @@ namespace PathOS
 
             expRange.min = 0.0f;
             expRange.max = 1.0f;
+
+            accRange.min = 50.0f;
+            accRange.max = 95.0f;
+
+            evRange.min = 10.0f;
+            evRange.max = 30.0f;
 
             foreach (HeuristicRange hr in heuristicRanges)
             {

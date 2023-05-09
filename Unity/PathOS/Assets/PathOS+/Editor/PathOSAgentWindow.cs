@@ -213,6 +213,8 @@ public class PathOSAgentWindow : EditorWindow
     {
         serial = new SerializedObject(agentReference);
         experienceScale = serial.FindProperty("experienceScale");
+        accuracy = serial.FindProperty("accuracy");
+        evasion = serial.FindProperty("evasion");
         timeScale = serial.FindProperty("timeScale");
         freezeAgent = serial.FindProperty("freezeAgent");
         exploreDegrees = serial.FindProperty("exploreDegrees");
@@ -258,6 +260,8 @@ public class PathOSAgentWindow : EditorWindow
 
         if (showCombatCharacteristics)
         {
+            //EditorGUILayout.PropertyField(accuracy);
+            //EditorGUILayout.PropertyField(evasion);
             agentReference.accuracy = EditorGUILayout.Slider("Accuracy",agentReference.accuracy, 0.0f, 100.0f);
             agentReference.evasion = EditorGUILayout.Slider("Evasion",agentReference.evasion, 0.0f, 100.0f);
 
@@ -321,6 +325,8 @@ public class PathOSAgentWindow : EditorWindow
                 }
 
                 agentReference.experienceScale = Random.Range(profile.expRange.min, profile.expRange.max);
+                agentReference.accuracy = Random.Range(profile.accRange.min, profile.accRange.max);
+                agentReference.evasion = Random.Range(profile.evRange.min, profile.evRange.max);
             }
 
             EditorGUILayout.EndHorizontal();

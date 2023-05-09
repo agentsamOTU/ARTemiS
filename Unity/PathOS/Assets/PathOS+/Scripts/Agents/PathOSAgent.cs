@@ -31,11 +31,14 @@ public class PathOSAgent : MonoBehaviour
     public bool freezeAgent;
     private bool verboseDebugging = false;
 
-    /* PLAYER CHARACTERISTICS */
+    //* COMBAT CHARACTERISTICS *\\
+    [Range(0.0f, 100.0f)]
+    public float accuracy;
+    public float evasion;
 
+    /* PLAYER CHARACTERISTICS */
     [Range(0.0f, 1.0f)]
     public float experienceScale;
-
     public List<HeuristicScale> heuristicScales, modifiableHeuristicScales;
     private Dictionary<Heuristic, float> heuristicScaleLookup;
     private Dictionary<(Heuristic, EntityType), float> entityScoringLookup;
@@ -111,9 +114,9 @@ public class PathOSAgent : MonoBehaviour
 
     //on a scale of 0-100
     //100 will hit 100% on an enemy with 0 evasiveness
-    public float accuracy = 90.0f;
+    //public float accuracy = 90.0f;
     //evasiveness directly modifies enemy accuracy
-    public float evasion = 10.0f;
+    //public float evasion = 10.0f;
 
     //Health variables
     private float health = 100.0f;
