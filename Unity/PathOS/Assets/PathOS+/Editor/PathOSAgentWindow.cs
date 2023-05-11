@@ -387,7 +387,7 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.Space(15);
 
         DrawUIRow(enemy_low, 30, 25, "Low Enemy Damage", ref agentReference.lowEnemyDamage);
-        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Low Enemy Accuracy", agentReference.lowEnemyAccuracy);
+        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Low Enemy Accuracy", agentReference.lowEnemyAccuracy,0,10); //example of setting min and max
         agentReference.lowEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Low Enemy Evasion", agentReference.lowEnemyEvasion);
 
 
@@ -476,6 +476,15 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.BeginHorizontal();
         GUILayout.Label(icon, GUILayout.Width(width), GUILayout.Height(height));
         float temp = EditorGUILayout.Slider(label,reference,0.0f,100.0f);
+        EditorGUILayout.EndHorizontal();
+        return temp;
+    }
+
+    private float DrawUIRow(Texture2D icon, float width, float height, string label, float reference,float customMin, float customMax)
+    {
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Label(icon, GUILayout.Width(width), GUILayout.Height(height));
+        float temp = EditorGUILayout.Slider(label, reference, customMin, customMax);
         EditorGUILayout.EndHorizontal();
         return temp;
     }
