@@ -1407,6 +1407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeScale: 1
   freezeAgent: 0
+  accuracy: 0
+  evasion: 0
   experienceScale: 0.8052799
   heuristicScales:
   - heuristic: 0
@@ -1468,6 +1470,35 @@ MonoBehaviour:
   highHealthGain:
     min: 70
     max: 100
+  lowEnemyAccuracy: 60
+  lowEnemyEvasion: 5
+  medEnemyAccuracy: 70
+  medEnemyEvasion: 10
+  highEnemyAccuracy: 80
+  highEnemyEvasion: 15
+  bossEnemyAccuracy: 90
+  bossEnemyEvasion: 20
+  lowIEChallenge: 0
+  lowIEInterval: 0
+  mediumIEChallenge: 0
+  mediumIEInterval: 0
+  highIEChallenge: 0
+  highIEInterval: 0
+  combatCount: 0
+  penaltyTimeC: 0
+  IECount: 0
+  penaltyTimeI: 0
+  penaltyTimeI1: 0
+  penaltyTimeI2: 0
+  penaltyTimeI3: 0
+  penLowCost: 1
+  penMedCost: 2
+  penHighCost: 4
+  lowTime: 0
+  medTime: 0
+  highTime: 0
+  totalTime: 0
+  difficulty: 1
 --- !u!114 &114482611139781848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,6 +1546,7 @@ MonoBehaviour:
   showPlayerView: 1
   viewScreenSize: 256
   showHealthBar: 1
+  showTargetData: 1
 --- !u!1 &1218624666145408
 GameObject:
   m_ObjectHideFlags: 0
