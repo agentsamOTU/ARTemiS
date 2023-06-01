@@ -348,9 +348,9 @@ class ExpertEvaluation
         health_low = Resources.Load<Texture2D>("resource_preservation_low");
         health_med = Resources.Load<Texture2D>("resource_preservation_med");
         health_high = Resources.Load<Texture2D>("resource_preservation_high");
-        event_low = Resources.Load<Texture2D>("hazard_environment");
-        event_medium = Resources.Load<Texture2D>("hazard_environment");
-        event_high = Resources.Load<Texture2D>("hazard_environment");
+        event_low = Resources.Load<Texture2D>("ie_low");
+        event_medium = Resources.Load<Texture2D>("ie_medium");
+        event_high = Resources.Load<Texture2D>("ie_high");
         poi = Resources.Load<Texture2D>("poi_environment");
         npc = Resources.Load<Texture2D>("poi_npc");
 

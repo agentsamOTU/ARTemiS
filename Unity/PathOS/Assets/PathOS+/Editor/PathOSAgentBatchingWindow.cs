@@ -524,8 +524,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
 
                 fixedExp = EditorGUILayout.Slider("Experience Scale",
                     fixedExp, 0.0f, 1.0f);
-                fixedAccuracy = EditorGUILayout.Slider("Accuracy", fixedAccuracy, 0.0f, 1.0f);
-                fixedEvasion = EditorGUILayout.Slider("Evasion", fixedEvasion, 0.0f, 1.0f);
+                fixedAccuracy = EditorGUILayout.Slider("Accuracy", fixedAccuracy, 0.0f, 100.0f);
+                fixedEvasion = EditorGUILayout.Slider("Evasion", fixedEvasion, 0.0f, 100.0f);
                 //accuracy = EditorGUILayout.Slider("Accuracy", agentReference.accuracy, 0.0f, 100.0f);
                 //evasion = EditorGUILayout.Slider("Evasion", agentReference.evasion, 0.0f, 100.0f);
 
@@ -566,8 +566,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
                         ref rangeHeuristics[i].range.max);
                 }
 
-                PathOS.EditorUI.FullMinMaxSlider("Accuracy", ref accRange.min, ref accRange.max);
-                PathOS.EditorUI.FullMinMaxSlider("Evasion", ref evRange.min, ref evRange.max);
+                PathOS.EditorUI.FullMinMaxSlider("Accuracy", ref accRange.min, ref accRange.max, 0, 100);
+                PathOS.EditorUI.FullMinMaxSlider("Evasion", ref evRange.min, ref evRange.max, 0, 100);
 
                 if (EditorGUI.EndChangeCheck())
                 {
