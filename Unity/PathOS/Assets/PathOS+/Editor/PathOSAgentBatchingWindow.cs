@@ -139,6 +139,32 @@ public class PathOSAgentBatchingWindow : EditorWindow
     private PathOS.FloatRange accRange;
     private PathOS.FloatRange evRange;
 
+    private PathOS.FloatRange lEnemyDamage;
+    private PathOS.FloatRange mEnemyDamage;
+    private PathOS.FloatRange hEnemyDamage;
+    private PathOS.FloatRange bEnemyDamage;
+
+    private PathOS.FloatRange lAccuracy;
+    private PathOS.FloatRange mAccuracy;
+    private PathOS.FloatRange hAccuracy;
+    private PathOS.FloatRange bAccuracy;
+
+    private PathOS.FloatRange lEvasion;
+    private PathOS.FloatRange mEvasion;
+    private PathOS.FloatRange hEvasion;
+    private PathOS.FloatRange bEvasion;
+
+    private PathOS.FloatRange lChallenge;
+    private PathOS.FloatRange mChallenge;
+    private PathOS.FloatRange hChallenge;
+
+    private PathOS.FloatRange lPenalty;
+    private PathOS.FloatRange mPenalty;
+    private PathOS.FloatRange hPenalty;
+
+    private bool usingRanges;
+
+
     [SerializeField]
     private string loadHeuristicsFile = "--";
 
@@ -450,7 +476,34 @@ public class PathOSAgentBatchingWindow : EditorWindow
         //                    agentID = agentReference.GetInstanceID();
         //            }
         //        }
+        EditorGUILayout.LabelField("Combat Values", headerStyle);
 
+        usingRanges=EditorGUILayout.Toggle("Use Ranges",usingRanges);
+
+        PathOS.EditorUI.FullMinMaxSlider("Low Enemy Damage",ref lEnemyDamage.min, ref lEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Low Enemy Accuracy", ref lAccuracy.min, ref lAccuracy.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Low Enemy Evasion", ref lEvasion.min, ref lEvasion.max, 0, 100);
+
+        PathOS.EditorUI.FullMinMaxSlider("Medium Enemy Damage", ref mEnemyDamage.min, ref mEnemyDamage.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Medium Enemy Accuracy", ref mAccuracy.min, ref mAccuracy.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Medium Enemy Evasion", ref mEvasion.min, ref mEvasion.max, 0, 100);
+
+        PathOS.EditorUI.FullMinMaxSlider("High Enemy Damage", ref hEnemyDamage.min, ref hEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("High Enemy Accuracy", ref hAccuracy.min, ref hAccuracy.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("High Enemy Evasion", ref hEvasion.min, ref hEvasion.max,0,100);
+                                                                                        
+        PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Damage", ref bEnemyDamage.min, ref bEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Accuracy", ref bAccuracy.min, ref bAccuracy.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Evasion", ref bEvasion.min, ref bEvasion.max,0,100);
+                                                                                           
+        PathOS.EditorUI.FullMinMaxSlider("Low IE Challenge", ref lChallenge.min, ref lChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Low IE Penalty", ref lPenalty.min, ref lPenalty.max,0,100);
+
+        PathOS.EditorUI.FullMinMaxSlider("Medium IE Challenge", ref mChallenge.min, ref mChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Medium IE Penalty", ref mPenalty.min, ref mPenalty.max,0,100);
+
+        PathOS.EditorUI.FullMinMaxSlider("High IE Challenge", ref hChallenge.min, ref hChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("High IE Penalty", ref hPenalty.min, ref hPenalty.max, 0, 100);
 
         EditorGUILayout.LabelField("Agent Motives", headerStyle);
 

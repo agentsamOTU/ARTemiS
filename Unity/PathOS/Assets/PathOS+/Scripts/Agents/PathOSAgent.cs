@@ -12,7 +12,7 @@ PathOSAgent (c) Samantha Stahlke and Atiya Nova 2018
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(PathOSAgentMemory))]
 [RequireComponent(typeof(PathOSAgentEyes))]
-public class PathOSAgent : MonoBehaviour 
+public class PathOSAgent : MonoBehaviour
 {
     /* OBJECT REFERENCES AND DEBUGGING */
     private NavMeshAgent navAgent;
@@ -53,7 +53,7 @@ public class PathOSAgent : MonoBehaviour
     [Tooltip("How many degrees should separate lines of " +
         "sight checked for \"explorability\" by the agent?")]
     public float exploreDegrees = 5.0f;
-    
+
     [DisplayName("Explore Degrees (Back)")]
     [Tooltip("How many degrees should separate paths checked for " +
         "\"explorability\" behind (out of sight of) the agent?")]
@@ -62,7 +62,7 @@ public class PathOSAgent : MonoBehaviour
     [Tooltip("How many degrees should the agent sway to either " +
         "side when looking around?")]
     public float lookDegrees = 60.0f;
-    
+
     [Tooltip("How close do two \"exploration\" goals have to " +
         "be to be considered the same?")]
     public float exploreThreshold = 2.0f;
@@ -121,10 +121,10 @@ public class PathOSAgent : MonoBehaviour
     //Health variables
     private float health = 100.0f;
     private bool dead = false;
-    public TimeRange lowEnemyDamage = new TimeRange(10,30), medEnemyDamage = new TimeRange(30,50),
-        highEnemyDamage = new TimeRange(50,70), bossEnemyDamage = new TimeRange(70,100),
-        hazardDamage = new TimeRange(10,20), lowHealthGain = new TimeRange(10, 30),
-        medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70,100);
+    public TimeRange lowEnemyDamage = new TimeRange(10, 30), medEnemyDamage = new TimeRange(30, 50),
+        highEnemyDamage = new TimeRange(50, 70), bossEnemyDamage = new TimeRange(70, 100),
+        hazardDamage = new TimeRange(10, 20), lowHealthGain = new TimeRange(10, 30),
+        medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70, 100);
     private int cautionIndex, aggressionIndex, adrenalineIndex;
 
     //Accuracy & Evasion variables (for enemies)
@@ -148,11 +148,11 @@ public class PathOSAgent : MonoBehaviour
     public float highIEInterval = 0.0f;
 
     public int combatCount = 0;
-    public int penaltyTimeC=0;
+    public int penaltyTimeC = 0;
 
-    public int IECount=0;
+    public int IECount = 0;
     public int penaltyTimeI = 0;
-    public int penaltyTimeI1=0;
+    public int penaltyTimeI1 = 0;
     public int penaltyTimeI2 = 0;
     public int penaltyTimeI3 = 0;
 
@@ -182,7 +182,7 @@ public class PathOSAgent : MonoBehaviour
     private GameObject cameraObject;
     private static bool cameraFollow = false;
     private void Awake()
-    { 
+    {
         eyes = GetComponent<PathOSAgentEyes>();
         memory = GetComponent<PathOSAgentMemory>();
 
@@ -200,7 +200,7 @@ public class PathOSAgent : MonoBehaviour
         heuristicScaleLookup = new Dictionary<Heuristic, float>();
         entityScoringLookup = new Dictionary<(Heuristic, EntityType), float>();
 
-        if(null == manager)
+        if (null == manager)
             manager = PathOSManager.instance;
 
         if (null == logger)
@@ -231,23 +231,23 @@ public class PathOSAgent : MonoBehaviour
             }
         }
 
-        foreach(HeuristicWeightSet curSet in manager.heuristicWeights)
+        foreach (HeuristicWeightSet curSet in manager.heuristicWeights)
         {
-            for(int j = 0; j < curSet.weights.Count; ++j)
+            for (int j = 0; j < curSet.weights.Count; ++j)
             {
                 entityScoringLookup.Add((curSet.heuristic, curSet.weights[j].entype), curSet.weights[j].weight);
             }
         }
 
-          float avgAggressionScore =  0.2f *
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_LOW)] +
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_MED)]) +
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_HIGH)]) +
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_BOSS)]) +
-          entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENVIRONMENT)]);
+        float avgAggressionScore = 0.2f *
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_LOW)] +
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_MED)]) +
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_HIGH)]) +
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_BOSS)]) +
+        entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENVIRONMENT)]);
 
         float avgAdrenalineScore = 0.2f
-            * (entityScoringLookup[(Heuristic.ADRENALINE, EntityType.ET_HAZARD_ENEMY_LOW)] + 
+            * (entityScoringLookup[(Heuristic.ADRENALINE, EntityType.ET_HAZARD_ENEMY_LOW)] +
               (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_MED)]) +
               (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_HIGH)]) +
               (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_BOSS)]) +
@@ -283,8 +283,8 @@ public class PathOSAgent : MonoBehaviour
             PathOS.Constants.Behaviour.LOOK_TIME_MAX,
             heuristicScaleLookup[Heuristic.CURIOSITY]);
 
-        float memPathScale = (heuristicScaleLookup[Heuristic.CAUTION] 
-            + 1.0f - heuristicScaleLookup[Heuristic.CURIOSITY]) 
+        float memPathScale = (heuristicScaleLookup[Heuristic.CAUTION]
+            + 1.0f - heuristicScaleLookup[Heuristic.CURIOSITY])
             * 0.5f;
 
         memPathChance = Mathf.Lerp(PathOS.Constants.Behaviour.MEMORY_NAV_CHANCE_MIN,
@@ -306,14 +306,14 @@ public class PathOSAgent : MonoBehaviour
 
     private void LogAgentData()
     {
-        if(logger != null)
+        if (logger != null)
         {
             string header = "";
 
             header += "HEURISTICS,";
             header += "EXPERIENCE," + experienceScale + ",";
 
-            foreach(HeuristicScale scale in modifiableHeuristicScales)
+            foreach (HeuristicScale scale in modifiableHeuristicScales)
             {
                 header += scale.heuristic + "," + scale.scale + ",";
             }
@@ -327,21 +327,48 @@ public class PathOSAgent : MonoBehaviour
         if (logger != null)
         {
             string header = "";
+            header += "EVENTVALUES" + ",";
             header += "Accuracy" + ",";
             header += accuracy + ",";
             header += "Evasion" + ",";
             header += evasion + ",";
-            header += "Low Cost,";
+            header += "Low Cost"+",";
             header += penLowCost + ",";
-            header += "Med Cost,";
+            header += "Med Cost"+",";
             header += penMedCost + ",";
-            header += "High Cost,";
+            header += "High Cost"+",";
             header += penHighCost + ",";
+            header += "LEnemyDamage"+",";
+            header += lowEnemyDamage + ",";
+            header += "LEnemyAccuracy" + ",";
+            header += lowEnemyAccuracy + ",";
+            header += "LEnemyEvasion"+",";
+            header += lowEnemyEvasion + ",";
+            header += "MEnemyDamage" + ",";
+            header += medEnemyDamage + ",";
+            header += "MEnemyAccuracy" + ",";
+            header += medEnemyAccuracy + ",";
+            header += "MEnemyEvasion" + ",";
+            header += medEnemyEvasion + ",";
+            header += "HEnemyDamage" + ",";
+            header += highEnemyDamage + ",";
+            header += "HEnemyAccuracy" + ",";
+            header += highEnemyAccuracy + ",";
+            header += "HEnemyEvasion" + ",";
+            header += highEnemyEvasion + ",";
+            header += "BEnemyDamage" + ",";
+            header += bossEnemyDamage + ",";
+            header += "BEnemyAccuracy" + ",";
+            header += bossEnemyAccuracy + ",";
+            header += "BEnemyEvasion" + ",";
+            header += bossEnemyEvasion + ",";
+
 
 
             logger.WriteHeader(this.gameObject, header);
         }
     }
+
 
     public Vector3 GetPosition()
     {
