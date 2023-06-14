@@ -421,18 +421,18 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.Space(15);
 
         agentReference.lowIEChallenge = DrawUIRow(interaction_event, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
-        agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
+        //agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
         agentReference.penLowCost = DrawUIRow(interaction_event, 30, 25, "Low Event Failure Time Cost", agentReference.penLowCost);
         EditorGUILayout.Space(20);
 
         agentReference.mediumIEChallenge = DrawUIRow(interaction_event, 30, 25, "Medium Event Challenge", agentReference.mediumIEChallenge);
-        agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
+        //agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
         agentReference.penMedCost = DrawUIRow(interaction_event, 30, 25, "Medium Event Failure Time Cost", agentReference.penMedCost);
 
         EditorGUILayout.Space(20);
 
         agentReference.highIEChallenge = DrawUIRow(interaction_event, 30, 25, "High Event Challenge", agentReference.highIEChallenge);
-        agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
+        //agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
         agentReference.penHighCost = DrawUIRow(interaction_event, 30, 25, "High Event Failure Time Cost", agentReference.penHighCost);
 
 

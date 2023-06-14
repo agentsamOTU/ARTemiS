@@ -274,7 +274,92 @@ public class PathOSAgentBatchingWindow : EditorWindow
                 rangeHeuristics.Add(new PathOS.HeuristicRange(heuristic));
             }
         }
-
+        if (agentReference!=null)
+        {
+            accRange.min = agentReference.accuracy;
+            accRange.max = agentReference.accuracy;
+            evRange.min = agentReference.evasion;
+            evRange.max = agentReference.evasion;
+            lEnemyDamage.min = agentReference.lowEnemyDamage.min;
+            lEnemyDamage.max = agentReference.lowEnemyDamage.max;
+            mEnemyDamage.min = agentReference.medEnemyDamage.min;
+            mEnemyDamage.max = agentReference.medEnemyDamage.max;
+            hEnemyDamage.min = agentReference.highEnemyDamage.min;
+            hEnemyDamage.max = agentReference.highEnemyDamage.max;
+            bEnemyDamage.min = agentReference.bossEnemyDamage.max;
+            bEnemyDamage.max = agentReference.bossEnemyDamage.max;
+            lAccuracy.min = agentReference.lowEnemyAccuracy;
+            lAccuracy.max = agentReference.lowEnemyAccuracy;
+            mAccuracy.min = agentReference.medEnemyAccuracy;
+            mAccuracy.max = agentReference.medEnemyAccuracy;
+            hAccuracy.min = agentReference.highEnemyAccuracy;
+            hAccuracy.max = agentReference.highEnemyAccuracy;
+            bAccuracy.min = agentReference.bossEnemyAccuracy;
+            bAccuracy.min = agentReference.bossEnemyAccuracy;
+            lEvasion.min = agentReference.lowEnemyEvasion;
+            lEvasion.max = agentReference.lowEnemyEvasion;
+            mEvasion.min = agentReference.medEnemyEvasion;
+            mEvasion.max = agentReference.medEnemyEvasion;
+            hEvasion.min = agentReference.highEnemyEvasion;
+            hEvasion.max = agentReference.highEnemyEvasion;
+            bEvasion.min = agentReference.bossEnemyEvasion;
+            bEvasion.min = agentReference.bossEnemyEvasion;
+            lChallenge.min = agentReference.lowIEChallenge;
+            lChallenge.max = agentReference.lowIEChallenge;
+            mChallenge.min = agentReference.mediumIEChallenge;
+            mChallenge.max = agentReference.mediumIEChallenge;
+            hChallenge.min = agentReference.highIEChallenge;
+            hChallenge.max = agentReference.highIEChallenge;
+            lPenalty.min = agentReference.penLowCost;
+            lPenalty.max = agentReference.penLowCost;
+            mPenalty.min= agentReference.penMedCost;
+            mPenalty.max = agentReference.penMedCost;
+            hPenalty.min = agentReference.penHighCost;
+            hPenalty.max = agentReference.penHighCost;
+        }
+        else
+        {
+            accRange.min = 60;
+            accRange.max = 100;
+            evRange.min = 0;
+            evRange.max = 40;
+            lEnemyDamage.min = 5;
+            lEnemyDamage.max = 10;
+            mEnemyDamage.min = 10;
+            mEnemyDamage.max = 20;
+            hEnemyDamage.min = 20;
+            hEnemyDamage.max = 25;
+            bEnemyDamage.min = 5;
+            bEnemyDamage.max = 50;
+            lAccuracy.min = 50;
+            lAccuracy.max = 80;
+            mAccuracy.min = 60;
+            mAccuracy.max = 90;
+            hAccuracy.min = 50;
+            hAccuracy.max = 100;
+            bAccuracy.min = 90;
+            bAccuracy.min = 100;
+            lEvasion.min = 0;
+            lEvasion.max = 10;
+            mEvasion.min = 10;
+            mEvasion.max = 20;
+            hEvasion.min = 20;
+            hEvasion.max = 30;
+            bEvasion.min = 40;
+            bEvasion.min = 50;
+            lChallenge.min = 20;
+            lChallenge.max = 30;
+            mChallenge.min = 30;
+            mChallenge.max = 50;
+            hChallenge.min = 50;
+            hChallenge.max = 70;
+            lPenalty.min = 2;
+            lPenalty.max = 5;
+            mPenalty.min = 5;
+            mPenalty.max = 10;
+            hPenalty.min = 10;
+            hPenalty.max = 15;
+        }
         //Agent profiles.
         if (null == PathOSProfileWindow.profiles)
             PathOSProfileWindow.ReadPrefsData();
@@ -913,6 +998,28 @@ public class PathOSAgentBatchingWindow : EditorWindow
     //Apply heuristics to the given agent.
     private void SetHeuristics(PathOSAgent agent)
     {
+        if(usingRanges)
+        {
+            agent.lowEnemyDamage = new TimeRange(lEnemyDamage.min, lEnemyDamage.max);
+            agent.lowEnemyAccuracy = Random.Range(lAccuracy.min, lAccuracy.max);
+            agent.lowEnemyEvasion = Random.Range(lEvasion.min, lEvasion.max);
+            agent.medEnemyDamage = new TimeRange(mEnemyDamage.min, mEnemyDamage.max);
+            agent.medEnemyAccuracy = Random.Range(mAccuracy.min, mAccuracy.max);
+            agent.medEnemyEvasion = Random.Range(mEvasion.min, mEvasion.max);
+            agent.highEnemyDamage = new TimeRange(hEnemyDamage.min, hEnemyDamage.max);
+            agent.highEnemyAccuracy = Random.Range(hAccuracy.min, hAccuracy.max);
+            agent.highEnemyEvasion = Random.Range(hEvasion.min, hEvasion.max);
+            agent.bossEnemyDamage = new TimeRange(bEnemyDamage.min, bEnemyDamage.max);
+            agent.bossEnemyAccuracy = Random.Range(bAccuracy.min, bAccuracy.max);
+            agent.bossEnemyEvasion = Random.Range(bEvasion.min, bEvasion.max);
+            agent.lowIEChallenge = Random.Range(lChallenge.min, lChallenge.max);
+            agent.penLowCost = (int)Random.Range(lPenalty.min, lPenalty.max);
+            agent.mediumIEChallenge = Random.Range(mChallenge.min, mChallenge.max);
+            agent.penMedCost = (int)Random.Range(mPenalty.min, mPenalty.max);
+            agent.highIEChallenge = Random.Range(hChallenge.min, hChallenge.max);
+            agent.penHighCost = (int)Random.Range(hPenalty.min, hPenalty.max);
+
+        }
         switch (heuristicMode)
         {
             case HeuristicMode.FIXED:
