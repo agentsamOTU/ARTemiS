@@ -551,7 +551,7 @@ namespace PathOS
                 MakeUnforgettable();
 
                 if(logger != null)
-                    logger.FireInteractionEvent(caller, entity.entityRef.objectRef);
+                    logger.FireInteractionEvent(caller, entity.entityRef.objectRef, entity.entityType);
             }
 
             visited = true;

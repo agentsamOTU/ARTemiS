@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using PathOS;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -80,7 +81,7 @@ public class OGLogger : MonoBehaviour
     }
 
     //Called from manager for custom GameObject interactions.
-    public void LogInteraction(string objectName, Transform location)
+    public void LogInteraction(string objectName, Transform location, EntityType type)
     {
         objectName = Regex.Replace(objectName, ",", string.Empty);
 
@@ -90,7 +91,8 @@ public class OGLogger : MonoBehaviour
             location.position.x + "," +
             location.position.y + "," +
             location.position.z + "," +
-            agent.GetHealth();
+            agent.GetHealth() + "," +
+            type;
 
         WriteLogLine(line);
     }

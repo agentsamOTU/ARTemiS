@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Rendering;
+using PathOS;
 
 /*
 OGLogManager.cs
@@ -167,14 +168,15 @@ public class OGLogManager : OGSingleton<OGLogManager>
     }
 
     //Hook for interaction/visiting objects.
-    public void FireInteractionEvent(GameObject caller, GameObject interacted)
+    public void FireInteractionEvent(GameObject caller, GameObject interacted, EntityType type)
     {
         if(enableLogging)
         {
             int instanceID = caller.GetInstanceID();
 
+
             if (loggers.ContainsKey(instanceID))
-                loggers[instanceID].LogInteraction(interacted.name, interacted.transform);
+                loggers[instanceID].LogInteraction(interacted.name, interacted.transform, type);
         }
     }
 
