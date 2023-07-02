@@ -59,12 +59,16 @@ public class PathOSAgentMemory : MonoBehaviour
             if(entity.entityRef.alwaysKnown)
             {
                 EntityMemory newMemory = new EntityMemory(entity);
-                newMemory.MakeUnforgettable();
 
-                entities.Add(newMemory);
+                    newMemory.MakeUnforgettable();
+
+                    entities.Add(newMemory);
             }
 
-            if(entity.entityType == EntityType.ET_GOAL_MANDATORY)
+            if(entity.entityType == EntityType.ET_GOAL_MANDATORY||
+                entity.entityType == EntityType.ET_IE_LOW_MANDATORY ||
+                entity.entityType == EntityType.ET_IE_MEDIUM_MANDATORY ||
+                entity.entityType == EntityType.ET_IE_HIGH_MANDATORY)
             {
                 EntityMemory newMemory = new EntityMemory(entity);
                 finalGoalTracker.Add(newMemory);

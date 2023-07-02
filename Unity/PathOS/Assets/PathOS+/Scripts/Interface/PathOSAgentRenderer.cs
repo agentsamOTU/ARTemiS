@@ -477,7 +477,10 @@ public class PathOSAgentRenderer : MonoBehaviour
             {EntityType.ET_POI_NPC ,("N/A","N/A")},
             {EntityType.ET_IE_LOW ,("N/A","N/A")},
             {EntityType.ET_IE_MEDIUM,("N/A","N/A")},
-            {EntityType.ET_IE_HIGH,("N/A","N/A") }
+            {EntityType.ET_IE_HIGH,("N/A","N/A") },
+            {EntityType.ET_IE_LOW_MANDATORY ,("N/A","N/A")},
+            {EntityType.ET_IE_MEDIUM_MANDATORY,("N/A","N/A")},
+            {EntityType.ET_IE_HIGH_MANDATORY,("N/A","N/A") }
         };
     }
 }

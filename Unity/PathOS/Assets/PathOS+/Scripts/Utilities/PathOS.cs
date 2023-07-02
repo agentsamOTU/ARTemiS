@@ -30,7 +30,10 @@ namespace PathOS
         ET_POI_NPC = 350,
         ET_IE_LOW = 400,
         ET_IE_MEDIUM = 410,
-        ET_IE_HIGH = 420
+        ET_IE_HIGH = 420,
+        ET_IE_LOW_MANDATORY = 401,
+        ET_IE_MEDIUM_MANDATORY = 411,
+        ET_IE_HIGH_MANDATORY = 421
     };
 
     /* AGENT HEURISTICS */

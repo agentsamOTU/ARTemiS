@@ -47,6 +47,9 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_IE_LOW, "ie_low" },
         {EntityType.ET_IE_MEDIUM, "ie_medium" },
         {EntityType.ET_IE_HIGH, "ie_high" },
+        {EntityType.ET_IE_LOW_MANDATORY, "ie_low" },
+        {EntityType.ET_IE_MEDIUM_MANDATORY, "ie_medium" },
+        {EntityType.ET_IE_HIGH_MANDATORY, "ie_high" },
         {EntityType.ET_POI, "poi_environment" },
         {EntityType.ET_POI_NPC, "poi_npc" }
     };
@@ -70,6 +73,9 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_IE_LOW, "Low Challenge Event" },
         {EntityType.ET_IE_MEDIUM, "Medium Challenge Event" },
         {EntityType.ET_IE_HIGH, "High Challenge Event" },
+        {EntityType.ET_IE_LOW_MANDATORY, "Low Mandatory Challenge Event" },
+        {EntityType.ET_IE_MEDIUM_MANDATORY, "Medium Mandatory Challenge Event" },
+        {EntityType.ET_IE_HIGH_MANDATORY, "High Mandatory Challenge Event" },
         {EntityType.ET_POI, "Point-of-Interest (e.g., setpiece)" },
         {EntityType.ET_POI_NPC, "NPC (non-hostile)" }
     };

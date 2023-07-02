@@ -88,6 +88,9 @@ namespace PathOS
                 { EntityType.ET_IE_LOW,          "ie_low" },
                 { EntityType.ET_IE_MEDIUM,       "ie_medium" },
                 { EntityType.ET_IE_HIGH,         "ie_high" },
+                { EntityType.ET_IE_LOW_MANDATORY,          "ie_low_mandatory" },
+                { EntityType.ET_IE_MEDIUM_MANDATORY,       "ie_medium_mandatory" },
+                { EntityType.ET_IE_HIGH_MANDATORY,         "ie_high_mandatory" },
                 { EntityType.ET_POI,                    "POI" },
                 { EntityType.ET_POI_NPC,                "NPC" }
             };
@@ -110,6 +113,9 @@ namespace PathOS
             entityLabels[EntityType.ET_IE_LOW],
             entityLabels[EntityType.ET_IE_MEDIUM],
             entityLabels[EntityType.ET_IE_HIGH],
+            entityLabels[EntityType.ET_IE_LOW_MANDATORY],
+            entityLabels[EntityType.ET_IE_MEDIUM_MANDATORY],
+            entityLabels[EntityType.ET_IE_HIGH_MANDATORY],
             entityLabels[EntityType.ET_POI],
             entityLabels[EntityType.ET_POI_NPC]
         };
@@ -133,6 +139,9 @@ namespace PathOS
                 { "Low Challenge Event", EntityType.ET_IE_LOW },
                 { "Medium Challenge Event", EntityType.ET_IE_MEDIUM },
                 { "High Challenge Event", EntityType.ET_IE_HIGH },
+                { "Low Mandatory Challenge Event", EntityType.ET_IE_LOW_MANDATORY },
+                { "Medium Mandatory Challenge Event", EntityType.ET_IE_MEDIUM_MANDATORY },
+                { "High Mandatory Challenge Event", EntityType.ET_IE_HIGH_MANDATORY },
                 { "POI",                EntityType.ET_POI },
                 { "NPC",                EntityType.ET_POI_NPC }
             };

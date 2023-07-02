@@ -110,6 +110,12 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return EntityType.ET_POI;
             case 17:
                 return EntityType.ET_POI_NPC;
+            case 18:
+                return EntityType.ET_IE_LOW_MANDATORY;
+            case 19:
+                return EntityType.ET_IE_MEDIUM_MANDATORY;
+            case 20:
+                return EntityType.ET_IE_HIGH_MANDATORY;
             default:
                 return EntityType.ET_NONE;
         }
@@ -154,6 +160,12 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return 16;
             case EntityType.ET_POI_NPC:
                 return 17;
+            case EntityType.ET_IE_LOW_MANDATORY:
+                return 18;
+            case EntityType.ET_IE_MEDIUM_MANDATORY:
+                return 19;
+            case EntityType.ET_IE_HIGH_MANDATORY:
+                return 20;
             default:
                 return 0;
         }
@@ -214,6 +226,12 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return EntityType.ET_IE_MEDIUM;
             case "HIGH CHALLENGE EVENT":
                 return EntityType.ET_IE_HIGH;
+            case "LOW MANDATORY CHALLENGE EVENT":
+                return EntityType.ET_IE_LOW_MANDATORY;
+            case "MEDIUM MANDATORY CHALLENGE EVENT":
+                return EntityType.ET_IE_MEDIUM_MANDATORY;
+            case "HIGH MANDATORY CHALLENGE EVENT":
+                return EntityType.ET_IE_HIGH_MANDATORY;
             case "POI":
                 return EntityType.ET_POI;
             case "NPC POI":
@@ -260,6 +278,12 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return "MEDIUM CHALLENGE EVENT";
             case EntityType.ET_IE_HIGH:
                 return "HIGH CHALLENGE EVENT";
+            case EntityType.ET_IE_LOW_MANDATORY:
+                return "LOW MANDATORY CHALLENGE EVENT";
+            case EntityType.ET_IE_MEDIUM_MANDATORY:
+                return "MEDIUM MANDATORY CHALLENGE EVENT";
+            case EntityType.ET_IE_HIGH_MANDATORY:
+                return "HIGH MANDATORY CHALLENGE EVENT";
             case EntityType.ET_POI:
                 return "POI";
             case EntityType.ET_POI_NPC:
@@ -812,6 +836,12 @@ class ExpertEvaluation
             case EntityType.ET_IE_MEDIUM:
                 return event_medium;
             case EntityType.ET_IE_HIGH:
+                return event_high;
+            case EntityType.ET_IE_LOW_MANDATORY:
+                return event_low;
+            case EntityType.ET_IE_MEDIUM_MANDATORY:
+                return event_medium;
+            case EntityType.ET_IE_HIGH_MANDATORY:
                 return event_high;
             case EntityType.ET_POI:
                 return poi;
