@@ -1,0 +1,298 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.13f1 (9e7d58001ecf) revision 10386776'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32718 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker6
+-projectPath
+C:/Unity Projects/ARTemiS/Unity/PathOS
+-logFile
+Logs/AssetImportWorker6.log
+-srvPort
+63489
+Successfully changed project path to: C:/Unity Projects/ARTemiS/Unity/PathOS
+C:/Unity Projects/ARTemiS/Unity/PathOS
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 83.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Unity Projects/ARTemiS/Unity/PathOS/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8072 MB
+    Driver:   31.0.15.3179
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.019335 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 73.95 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.685 seconds
+Domain Reload Profiling:
+	ReloadAssembly (686ms)
+		BeginReloadAssembly (85ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (467ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (114ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (271ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (57ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (74ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (94ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007964 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  1.284 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1285ms)
+		BeginReloadAssembly (228ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (122ms)
+		EndReloadAssembly (914ms)
+			LoadAssemblies (104ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (217ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (471ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (213ms)
+				ProcessInitializeOnLoadMethodAttributes (138ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2450 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2921.
+Memory consumption went from 117.5 MB to 117.5 MB.
+Total: 5.662300 ms (FindLiveObjects: 0.237800 ms CreateObjectMapping: 0.239300 ms MarkObjects: 5.150500 ms  DeleteObjects: 0.033800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 500176.462965 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Textures/FK02_D.png
+  artifactKey: Guid(f803ce812bae0d14c9c77fc12bae06a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Textures/FK02_D.png using Guid(f803ce812bae0d14c9c77fc12bae06a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1705f3b13660b5bc45659c80d8fb5b4a') in 0.122538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Textures/Terrain01_D.tga
+  artifactKey: Guid(d4398d92045a77c4a9f0fdf39d6f211c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Textures/Terrain01_D.tga using Guid(d4398d92045a77c4a9f0fdf39d6f211c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '198cc6ade5816d6090afbff7df30545c') in 0.019119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Textures/Terrain07_D.tga
+  artifactKey: Guid(167779c20878bdc43a7399996a940344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Textures/Terrain07_D.tga using Guid(167779c20878bdc43a7399996a940344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a12294c344fc59b3553086a4df26fc4') in 0.014110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.965888 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Materials/Flower03.mat
+  artifactKey: Guid(d3930a9ce264110479ca76df7bb4dd95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Materials/Flower03.mat using Guid(d3930a9ce264110479ca76df7bb4dd95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b2945e4cd4128e1332452a5a7d41744') in 0.079161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.480611 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Door14.FBX
+  artifactKey: Guid(d11040a83f58e9a4ca620798e7b3e7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Door14.FBX using Guid(d11040a83f58e9a4ca620798e7b3e7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3b6317d93607d036197d2b08f2c0d01') in 0.060578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Window06_b04.FBX
+  artifactKey: Guid(afacbbb9a0092474f94b517598d63b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Window06_b04.FBX using Guid(afacbbb9a0092474f94b517598d63b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1099fa1f7e9553b0d9d919829894c6d4') in 0.025925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Flowerpot02_a01.FBX
+  artifactKey: Guid(da7bb537515e54b4f9636bd1604df716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Flowerpot02_a01.FBX using Guid(da7bb537515e54b4f9636bd1604df716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9caf4e07f1a1310e8a87abaefa63e91a') in 0.031307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Wine02_d01.FBX
+  artifactKey: Guid(6a86b90b3dd6640409858823fe1033c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Wine02_d01.FBX using Guid(6a86b90b3dd6640409858823fe1033c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '088016e10f51ab8527bce49063380ae6') in 0.019931 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Vine01_a02.FBX
+  artifactKey: Guid(47cbc1989066d3241b69d4a22e26f7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Vine01_a02.FBX using Guid(47cbc1989066d3241b69d4a22e26f7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '303a0ae2a036ca39d0558b6fc7dffd10') in 0.022511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Vane01_a01.FBX
+  artifactKey: Guid(8b95816d411381c4b98f255228e8f3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Vane01_a01.FBX using Guid(8b95816d411381c4b98f255228e8f3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b9582f729aacd75952d42ffe99bc583') in 0.021444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Pot05_g01.FBX
+  artifactKey: Guid(18ad7a8a668e58e4382731dda3f934ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Pot05_g01.FBX using Guid(18ad7a8a668e58e4382731dda3f934ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0db26cbdf99f6f0313b897da3d2e036c') in 0.020497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Flowerpot01_d01.FBX
+  artifactKey: Guid(b62f9047e18f6f749800cb32fe180a02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Meshes/Flowerpot01_d01.FBX using Guid(b62f9047e18f6f749800cb32fe180a02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a42e579171f91b41345e50228de4fa2') in 0.017148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.645676 seconds.
+  path: Assets/Imported Assets/MedievalCastlePackLite/TsunoaGames/MedievalCastlePack/Walls/straight-with-borders.obj
+  artifactKey: Guid(ba554c772410f934284d8ded98ae9329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/MedievalCastlePackLite/TsunoaGames/MedievalCastlePack/Walls/straight-with-borders.obj using Guid(ba554c772410f934284d8ded98ae9329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b86fcd29b06bccc47bcaae8e18697f1') in 0.037904 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 95.733158 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Canyon.prefab
+  artifactKey: Guid(8a93137e6cda79845a780287a073a186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Canyon.prefab using Guid(8a93137e6cda79845a780287a073a186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e869fcb8eea7f2e007c5dea8cfc98658') in 0.015876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000593 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Mountain 1.prefab
+  artifactKey: Guid(efddb74e82fe03e40a2517c897b0652f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Mountain 1.prefab using Guid(efddb74e82fe03e40a2517c897b0652f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '724514c6842fef355c51d8a1d84c4644') in 0.018258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Mountain 3.prefab
+  artifactKey: Guid(c4b312cc1794e9446a754737f9dc6e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Mountain 3.prefab using Guid(c4b312cc1794e9446a754737f9dc6e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03f236ab1fd820db647b333d6c1ece5f') in 0.015140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Forest.prefab
+  artifactKey: Guid(fd2c1ba1082a8e04a889f13c7ed0d4ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Forest.prefab using Guid(fd2c1ba1082a8e04a889f13c7ed0d4ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8375281f607dcef27f69ee1faeb32e0e') in 0.034362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Mountain 2.prefab
+  artifactKey: Guid(e22c4e3d6b5c63b408d516ca348a5e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/HDRP/Terrains/Mountain 2.prefab using Guid(e22c4e3d6b5c63b408d516ca348a5e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a677451acf3b411b186cce674ea528') in 0.015461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 48.426883 seconds.
+  path: Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs
+  artifactKey: Guid(ae3b34991e60ec54aa0222f6a6b87cac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs using Guid(ae3b34991e60ec54aa0222f6a6b87cac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3b2e7cdd1b56223b134164860e6302f') in 0.002369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.062886 seconds.
+  path: Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs/Collider_01.prefab
+  artifactKey: Guid(005484a946aa50d419625d425b978071) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs/Collider_01.prefab using Guid(005484a946aa50d419625d425b978071) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3be70d8c6df36aa6ba88eac6532d72') in 0.012502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.012377 seconds.
+  path: Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs/Platform_Skull_02.prefab
+  artifactKey: Guid(df0db0a4ecd9593439ec804220abfd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs/Platform_Skull_02.prefab using Guid(df0db0a4ecd9593439ec804220abfd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5917d3c4bc5164cdf9ad3daee2b1ad79') in 0.040012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs/Platform_Skull_04.prefab
+  artifactKey: Guid(56cf5416ea25c6042ac013ea267b75ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Kubiqual (Skull Platform)/Prefabs/Platform_Skull_04.prefab using Guid(56cf5416ea25c6042ac013ea267b75ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13c2af94aed27bcfc7e808db98612f1') in 0.032113 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
