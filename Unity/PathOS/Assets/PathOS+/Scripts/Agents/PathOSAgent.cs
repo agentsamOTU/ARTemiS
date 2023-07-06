@@ -1229,7 +1229,7 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (Mathf.Max(accuracy - lowEnemyEvasion, 1) > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - lowEnemyEvasion, 1) < Random.Range(0, 100));
                 memory.LogCombat("Low",penaltyTimeC-startPenC, health-startHealth,health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_MED:
@@ -1249,7 +1249,7 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (Mathf.Max(accuracy - medEnemyEvasion, 1) > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - medEnemyEvasion, 1) < Random.Range(0, 100));
                 memory.LogCombat("Med", penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_HIGH:
@@ -1269,7 +1269,7 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (Mathf.Max(accuracy - highEnemyEvasion, 1) > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - highEnemyEvasion, 1) < Random.Range(0, 100));
                 memory.LogCombat("High",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_BOSS:
@@ -1289,7 +1289,7 @@ public class PathOSAgent : MonoBehaviour
                     }
                     penaltyTimeC += 1;
 
-                } while (Mathf.Max(accuracy - bossEnemyEvasion, 1) > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - bossEnemyEvasion, 1) < Random.Range(0, 100));
                 memory.LogCombat("Boss",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_IE_LOW:

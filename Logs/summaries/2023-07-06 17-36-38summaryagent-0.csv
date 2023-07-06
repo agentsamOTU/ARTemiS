@@ -1,0 +1,14 @@
+Accuracy,89.83358
+Evasion,72.35847
+Combats,34
+CombatMisses,214
+True Accuracy,0.13709677419354838
+InteractionEvents,1
+IE Low Time,0.0
+IE Medium Time,0.0
+IE High Time,20.0
+IEPenalty,20.0
+TimeLoss,234.0004
+AgentTime,2955.3314
+PlayerDied,False
+FinalGoalAchieved,False

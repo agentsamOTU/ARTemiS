@@ -3,7 +3,7 @@ import os
 import shutil
 from matplotlib import pyplot as plt
 
-logDir="C:\\Users\\Sam\\source\\repos\\pathos-a11y\\Logs"
+logDir="C:\\UnityProjects\\ARTemiS\\Logs"
 
 if(not os.path.exists(logDir+os.sep+".logs"+os.sep+".pass0")):
     os.mkdir(logDir+os.sep+".logs"+os.sep+".pass0")
