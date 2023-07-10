@@ -1,0 +1,600 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.13f1 (9e7d58001ecf) revision 10386776'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32718 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker8
+-projectPath
+C:/UnityProjects/ARTemiS/Unity/PathOS
+-logFile
+Logs/AssetImportWorker8.log
+-srvPort
+55512
+Successfully changed project path to: C:/UnityProjects/ARTemiS/Unity/PathOS
+C:/UnityProjects/ARTemiS/Unity/PathOS
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 86.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProjects/ARTemiS/Unity/PathOS/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8072 MB
+    Driver:   31.0.15.3179
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56660
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.016206 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 78.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.690 seconds
+Domain Reload Profiling:
+	ReloadAssembly (690ms)
+		BeginReloadAssembly (83ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (474ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (120ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (270ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (56ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (79ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (91ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009146 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 83.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  1.335 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1336ms)
+		BeginReloadAssembly (217ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (119ms)
+		EndReloadAssembly (990ms)
+			LoadAssemblies (98ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (207ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (580ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (103ms)
+				ProcessInitializeOnLoadAttributes (220ms)
+				ProcessInitializeOnLoadMethodAttributes (139ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.91 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2486 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2964.
+Memory consumption went from 120.8 MB to 120.8 MB.
+Total: 5.817500 ms (FindLiveObjects: 0.206900 ms CreateObjectMapping: 0.092400 ms MarkObjects: 5.480600 ms  DeleteObjects: 0.036700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 856579.013559 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Cliff_001 2K.png
+  artifactKey: Guid(93c63f62e88a872409921df7acdb5a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Cliff_001 2K.png using Guid(93c63f62e88a872409921df7acdb5a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2740ede2f064f108515a91beb916042') in 0.118436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Dirt_001 4K.png
+  artifactKey: Guid(c730feabce298864dbf431e8283bfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Dirt_001 4K.png using Guid(c730feabce298864dbf431e8283bfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfaf1312888fb39b5a624d9d0b35331a') in 0.040636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Dirt_001 512.png
+  artifactKey: Guid(f7cf7400f7f25c14d8d788dcbc241735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Dirt_001 512.png using Guid(f7cf7400f7f25c14d8d788dcbc241735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d10d7feff57eebd704ff0a4c68794c6') in 0.011824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.128413 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Dirt_001_Mossy 2K.png
+  artifactKey: Guid(dd33316c57fc4bc448dfc298b113a4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Dirt_001_Mossy 2K.png using Guid(dd33316c57fc4bc448dfc298b113a4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19292634f0bc11a51e54d5ae9e7b1bbc') in 0.014070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.183685 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Dirt_001_Mossy 4K.png
+  artifactKey: Guid(139f4693cf99c9740b033bf235af8755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Dirt_001_Mossy 4K.png using Guid(139f4693cf99c9740b033bf235af8755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e49061c8ab553ac9d68250c70c12fe0') in 0.015084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.037367 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Dirt_002a 2K.png
+  artifactKey: Guid(0007e64d18d7db14c8e3543c4861e608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Dirt_002a 2K.png using Guid(0007e64d18d7db14c8e3543c4861e608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd62cee9239b3f609c2f466070fe3233e') in 0.012990 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.157345 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/1K Resolution/NewBrush.brush
+  artifactKey: Guid(01ef7dead7cf17f4ea91aa983801194c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/1K Resolution/NewBrush.brush using Guid(01ef7dead7cf17f4ea91aa983801194c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c945b0a755895eebad0d35bb11b9187') in 0.038425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.614979 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/1K Resolution/NewBrush 1.brush
+  artifactKey: Guid(61ac21e66f194f24cac5a408752daab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/1K Resolution/NewBrush 1.brush using Guid(61ac21e66f194f24cac5a408752daab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c1983543783d80763addd5c69fe248d') in 0.010324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 145.235218 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Dirt_002a 4K.png
+  artifactKey: Guid(ea4943297098ba5499942bfe4acf559e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Dirt_002a 4K.png using Guid(ea4943297098ba5499942bfe4acf559e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f18d6bfaaacd632f71a7f1e6d848946') in 0.016900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT ForestGround_001 2K.png
+  artifactKey: Guid(c001fc0c195f3974fb817b2f995d54c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT ForestGround_001 2K.png using Guid(c001fc0c195f3974fb817b2f995d54c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4126a2634fcdff876efdf920fe3b18fb') in 0.012961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.026985 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT ForestGround_001 4K.png
+  artifactKey: Guid(a23d315478491644ba8022dc1e057525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT ForestGround_001 4K.png using Guid(a23d315478491644ba8022dc1e057525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89db8598ba2e02a37cd9b40e0305e7a1') in 0.021143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT ForestGround_001 Grass_002 2K.png
+  artifactKey: Guid(55a38b21135b1944eb3cd4020b8a3b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT ForestGround_001 Grass_002 2K.png using Guid(55a38b21135b1944eb3cd4020b8a3b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e16c5d9c2a3f85285b0af2f0b3246889') in 0.014527 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Dirt_001 2K.png
+  artifactKey: Guid(179e0c2aaf5171543a52e98d8e15360f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Dirt_001 2K.png using Guid(179e0c2aaf5171543a52e98d8e15360f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '901aeec80dc4a756670664ab820b37f1') in 0.012633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.192914 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Dirt_001 4K.png
+  artifactKey: Guid(d5db3257846bd8e48afd689cc9b42495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Dirt_001 4K.png using Guid(d5db3257846bd8e48afd689cc9b42495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c65691274052e98baf9259a5eefc0851') in 0.016586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.036556 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Grass_001a 4K.png
+  artifactKey: Guid(6550d8b42215ccf4bbf4ace3fa1ff58c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Grass_001a 4K.png using Guid(6550d8b42215ccf4bbf4ace3fa1ff58c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4665cc9f9330645f373be318d58d7c2') in 0.016537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Grass_001b 2K.png
+  artifactKey: Guid(6b8935af058f8974c8ce153894c01472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Grass_001b 2K.png using Guid(6b8935af058f8974c8ce153894c01472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fddec92fb56f68b34c15e058db5ecdc') in 0.013373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.200164 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Rocks_001 2K.png
+  artifactKey: Guid(8db2f4c31f3614741afc75520919d060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Rocks_001 2K.png using Guid(8db2f4c31f3614741afc75520919d060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a94150973e7cb2aa857f76f4943adfbf') in 0.011612 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Rocks_001 512.png
+  artifactKey: Guid(d26813dc343c7464ba32a4902c04f189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Rocks_001 512.png using Guid(d26813dc343c7464ba32a4902c04f189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89b4d1a25f808c15640ccf95e524e5cd') in 0.013418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.024876 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 2K.png
+  artifactKey: Guid(48bc4a92dccd51241a882a9f682bfb76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 2K.png using Guid(48bc4a92dccd51241a882a9f682bfb76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc6aa1b4849706c8bbb13220b65af024') in 0.014575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 512.png
+  artifactKey: Guid(ff56fd7450d500c44889ab75e4bce2d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 512.png using Guid(ff56fd7450d500c44889ab75e4bce2d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02321691d3c17a7609fd0faac1715771') in 0.012550 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.179828 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 Abandoned_002 4K.png
+  artifactKey: Guid(dea22ef87b88bef46884594de3caa86f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 Abandoned_002 4K.png using Guid(dea22ef87b88bef46884594de3caa86f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f98ddc5478b9d0c96e1e1206e8cafc2') in 0.019147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.030685 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 Abandoned_004 2K.png
+  artifactKey: Guid(29bb65d122b2c794bb3cdcc3c9da019e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 Abandoned_004 2K.png using Guid(29bb65d122b2c794bb3cdcc3c9da019e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6337b9fdd6a4e7fda1d42fed2fc65c86') in 0.015431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 Abandoned_004 512.png
+  artifactKey: Guid(eb9a518448715064b9d4a5a0188572a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 Abandoned_004 512.png using Guid(eb9a518448715064b9d4a5a0188572a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a76314181cd5e34d0588554fac2e4c84') in 0.012859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 ForestGround_001 2K.png
+  artifactKey: Guid(5fc895f5044dd9f46a5ec9e4725cf3a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 ForestGround_001 2K.png using Guid(5fc895f5044dd9f46a5ec9e4725cf3a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43bd8fb5ef02c1262bc8e3dc839d1f13') in 0.013452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.168209 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 Sand_001 2K.png
+  artifactKey: Guid(54bf3e6ccedae7240b18a94f97d4b2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 Sand_001 2K.png using Guid(54bf3e6ccedae7240b18a94f97d4b2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71ce6f8aec6c01812132ec18eb1d8aa0') in 0.014150 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.017925 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 Sand_001 4K.png
+  artifactKey: Guid(b1962410be199aa42a6d9b3e59353d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 Sand_001 4K.png using Guid(b1962410be199aa42a6d9b3e59353d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f560eaa828a70eb9bbcf6f8f8aa1f2d3') in 0.017859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Rocks_001 4K.png
+  artifactKey: Guid(85937c66045c1b440adcc47be41c48b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Rocks_001 4K.png using Guid(85937c66045c1b440adcc47be41c48b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2209dfe5fd9838e427622a41edd74da') in 0.016971 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Rocks_001_Mossy 2K.png
+  artifactKey: Guid(076fa9785d5e5374990495e8fa7f052e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Rocks_001_Mossy 2K.png using Guid(076fa9785d5e5374990495e8fa7f052e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eda8a561a18761c0c77690cfcc29980e') in 0.012096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.175513 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Rocks_001_Mossy 4K.png
+  artifactKey: Guid(dfee535dc2aefbc4da8c07cd8f8a7c47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Rocks_001_Mossy 4K.png using Guid(dfee535dc2aefbc4da8c07cd8f8a7c47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e41e7d6e2a478f53a2ae85ed60832c49') in 0.016090 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.016183 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Sand_001 2K.png
+  artifactKey: Guid(1294c03d8a368554486b73ee57230068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Sand_001 2K.png using Guid(1294c03d8a368554486b73ee57230068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba26bfd55ab70b93a09ccac315107624') in 0.015045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001451 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Sand_001 4K.png
+  artifactKey: Guid(768ad8bfcbc1e8442a9ee18e7353fbc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Sand_001 4K.png using Guid(768ad8bfcbc1e8442a9ee18e7353fbc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd93b3ceabdb7a79730adec2d921b33') in 0.016572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 149.172420 seconds.
+  path: Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Trees/birch tree.prefab
+  artifactKey: Guid(378f11e9a1701b044b0ec82ba9740347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Trees/birch tree.prefab using Guid(378f11e9a1701b044b0ec82ba9740347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '788baf3cfa3e9c825426bad6489aab58') in 0.058701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.402477 seconds.
+  path: Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Trees/deciduous tree.prefab
+  artifactKey: Guid(9129eef4470bd584d8675065420e67fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Trees/deciduous tree.prefab using Guid(9129eef4470bd584d8675065420e67fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b5f88ec00e01f2b2cb6c8dcfcb2490e') in 0.013135 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 154.890692 seconds.
+  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/1K Resolution/NewLayer 1.terrainlayer
+  artifactKey: Guid(9bf00c68cf1ecf94a9040416e2129af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/1K Resolution/NewLayer 1.terrainlayer using Guid(9bf00c68cf1ecf94a9040416e2129af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ab6fb7adae315e45e0c0b0e04cbbec8') in 0.028430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.040228 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bunk_bed.prefab
+  artifactKey: Guid(9efb87eb649319c4c8c3a954a74df462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bunk_bed.prefab using Guid(9efb87eb649319c4c8c3a954a74df462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af1ac61615b2c4476e7e42f21fbfb3a0') in 0.034353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.162592 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bulletin_board_big.prefab
+  artifactKey: Guid(9050f6c8a29d61f49ac1b3052875c968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bulletin_board_big.prefab using Guid(9050f6c8a29d61f49ac1b3052875c968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33dfe094abe72a9f69c4de1112ae1e48') in 0.018910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.067492 seconds.
+  path: Assets/Imported Assets/amusedART (Mushroom)/Mushroom_Monster/Materials/MushroomBlue.png
+  artifactKey: Guid(1feacbf9043af914d916a9f43b42bbe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/amusedART (Mushroom)/Mushroom_Monster/Materials/MushroomBlue.png using Guid(1feacbf9043af914d916a9f43b42bbe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6d4acc1e62f3d8a59ec4f01062bed01') in 0.011956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Imported Assets/amusedART (Mushroom)/Mushroom_Monster/Prefab/MushroomMonster.prefab
+  artifactKey: Guid(8edb2fa3dc2112246b53357be701f37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/amusedART (Mushroom)/Mushroom_Monster/Prefab/MushroomMonster.prefab using Guid(8edb2fa3dc2112246b53357be701f37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a1e229c081202b0b13139de8b77a5e4') in 0.042495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 100.147472 seconds.
+  path: Assets/Imported Assets/Stylized Mushroom/Prefab/mushroom_All3.prefab
+  artifactKey: Guid(a1d761911149f7845aac6ec33c36f40e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Stylized Mushroom/Prefab/mushroom_All3.prefab using Guid(a1d761911149f7845aac6ec33c36f40e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41a0b46716159b599723a9679131627c') in 0.028674 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007081 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.283 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1284ms)
+		BeginReloadAssembly (161ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (231ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (520ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (31ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (211ms)
+				ProcessInitializeOnLoadMethodAttributes (179ms)
+				AfterProcessingInitializeOnLoad (18ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 7.91 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2493 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 51 unused Assets / (77.6 KB). Loaded Objects now: 3003.
+Memory consumption went from 137.4 MB to 137.3 MB.
+Total: 5.141000 ms (FindLiveObjects: 0.183900 ms CreateObjectMapping: 0.071100 ms MarkObjects: 4.775700 ms  DeleteObjects: 0.109400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 290.350797 seconds.
+  path: Assets/Imported Assets/Stylized Mushroom/Shader/mushroom.shader
+  artifactKey: Guid(ebe90bdbfc153dd449fbd514428435e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Stylized Mushroom/Shader/mushroom.shader using Guid(ebe90bdbfc153dd449fbd514428435e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8d648aba10e1cd1c66483a1b36d9ec1') in 0.021464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 327.766996 seconds.
+  path: Assets/Imported Assets/3d_model
+  artifactKey: Guid(cc9cbfb339ba64a4db89bdf73cebb806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3d_model using Guid(cc9cbfb339ba64a4db89bdf73cebb806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5058956399b0af7ef0b1e57389e74996') in 0.004806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.451273 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(ee56290c34890304a83d42c7bd24659d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(ee56290c34890304a83d42c7bd24659d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62dae39e881f8bb35e7558d92a701d1c') in 0.226788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.623966 seconds.
+  path: Assets/Krearthur/GOPainter
+  artifactKey: Guid(997a1c3b32109c1429c11a801f51a674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter using Guid(997a1c3b32109c1429c11a801f51a674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854d15d39667c5ab47e7bfb5fb13c451') in 0.003622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.040217 seconds.
+  path: Assets/Krearthur/GOPainter/[GOPainter].prefab
+  artifactKey: Guid(9d2af0a0539325947a0d424e1e4af2b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/[GOPainter].prefab using Guid(9d2af0a0539325947a0d424e1e4af2b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ff306fec1f6551fd0406b86dd471c6') in 0.020170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.141724 seconds.
+  path: Assets/Krearthur/GOPainter/Scripts
+  artifactKey: Guid(a8ad6cb254a8f0c4fae7fd3bb2a66622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/Scripts using Guid(a8ad6cb254a8f0c4fae7fd3bb2a66622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c39e9e11a05cb9710fc3bc4eeaf46efc') in 0.003263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.672041 seconds.
+  path: Assets/Krearthur/GOPainter/Resources
+  artifactKey: Guid(579b4757e2d376b4b8cfc9f2fd9766d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/Resources using Guid(579b4757e2d376b4b8cfc9f2fd9766d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdf98fb8d17df8496667811130c7c1c6') in 0.003897 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.264883 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets
+  artifactKey: Guid(19df27ed0efd93e4da3d0d3b1989dbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets using Guid(19df27ed0efd93e4da3d0d3b1989dbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bac5e9c369084deff0b9b00f880e5dde') in 0.003662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.038095 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/ExampleTerrain.asset
+  artifactKey: Guid(ce496392a06425f42a3d536561e89385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/ExampleTerrain.asset using Guid(ce496392a06425f42a3d536561e89385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '668ef3f77f350cf2029472adc826cca5') in 0.019140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 132.557135 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Models/Crate.fbx
+  artifactKey: Guid(1ad888f60875e1148a26e14b6f75d857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Models/Crate.fbx using Guid(1ad888f60875e1148a26e14b6f75d857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ca4f970f268c47db26a0612a21fa6a') in 0.094153 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv01.prefab
+  artifactKey: Guid(cc0fd657b60ef8c499b057056b948f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv01.prefab using Guid(cc0fd657b60ef8c499b057056b948f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc07a708f316a227b60cac57367bcf4') in 0.070728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.676960 seconds.
+  path: Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv02.prefab
+  artifactKey: Guid(1435c36dca02dc841a30bfac19f79aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv02.prefab using Guid(1435c36dca02dc841a30bfac19f79aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b76b4ae994971f86100834b19dc1eb8a') in 0.021677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.040966 seconds.
+  path: Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv03.prefab
+  artifactKey: Guid(df80741be051bc54c85258e839162dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv03.prefab using Guid(df80741be051bc54c85258e839162dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '535e6820ad8ab0b6c2514e719c22580f') in 0.021172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.498808 seconds.
+  path: Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv04.prefab
+  artifactKey: Guid(83c0a85ae9c29184883b2866a6224b0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv04.prefab using Guid(83c0a85ae9c29184883b2866a6224b0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b74277b085969c4636783de055ab598') in 0.019466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.017096 seconds.
+  path: Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv05.prefab
+  artifactKey: Guid(092df013ff76bd7428d419529e5e81cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv05.prefab using Guid(092df013ff76bd7428d419529e5e81cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35852bdb23d1ab3442df7f8f26f1f35f') in 0.018719 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.032658 seconds.
+  path: Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv06.prefab
+  artifactKey: Guid(6045f6974b7e51f49981f0307cfc82bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/SineVFX (Crystals)/TranslucentCrystals/Prefabs/Gamma/Crystalsv06.prefab using Guid(6045f6974b7e51f49981f0307cfc82bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '391c82d8ce73c4eb3b88896e02bb78e6') in 0.018681 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.876661 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/BeachHouse.prefab
+  artifactKey: Guid(510e03d3969c6ca4a8d139ea3d02bd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/BeachHouse.prefab using Guid(510e03d3969c6ca4a8d139ea3d02bd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f673da69a8f144c7a37a53bd98f55d7') in 0.013035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002331 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/BeachUmbrella.prefab
+  artifactKey: Guid(bd8af8f73f6acde4590ecab958f6e6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/BeachUmbrella.prefab using Guid(bd8af8f73f6acde4590ecab958f6e6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faf30f4df19734f5681e1076925f2270') in 0.016789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/Fungi.prefab
+  artifactKey: Guid(9982fc6fe21571b4fbbf3e7fcbb4892b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/Fungi.prefab using Guid(9982fc6fe21571b4fbbf3e7fcbb4892b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f6390c3ddb141b7ea885fc178b16c1d') in 0.019370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/TreeEmpty.prefab
+  artifactKey: Guid(efcccb791f116de44bbadcd2d719ffd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/TreeEmpty.prefab using Guid(efcccb791f116de44bbadcd2d719ffd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcacb388dbb075c55261f0f3894dc50b') in 0.018460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/LowPolyRock.prefab
+  artifactKey: Guid(a4e4eb3df5384e945a8eb8922dca0cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/LowPolyRock.prefab using Guid(a4e4eb3df5384e945a8eb8922dca0cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b1d3bd2de3f007c4c5572fa189aa92a') in 0.014624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/WoodenFence.prefab
+  artifactKey: Guid(435767a7aff82c3448447ddef95c306b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/WoodenFence.prefab using Guid(435767a7aff82c3448447ddef95c306b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af36cd67d1b18d02d36a5659ca90761b') in 0.015882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/Tree.prefab
+  artifactKey: Guid(1dfb0d24a6590034cac64fa2f18dcfd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/Tree.prefab using Guid(1dfb0d24a6590034cac64fa2f18dcfd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b452c227528acdeb2431f3521e7a0f1') in 0.012578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/Bomb-Plant.prefab
+  artifactKey: Guid(b452b7bf7d5dce541b0ba96023894835) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Krearthur/GOPainter/ExampleAssets/Prefabs/Bomb-Plant.prefab using Guid(b452b7bf7d5dce541b0ba96023894835) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11bff96ccb48ec9eb009634eef22efa1') in 0.015211 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

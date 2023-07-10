@@ -1470,7 +1470,7 @@ MonoBehaviour:
   highHealthGain:
     min: 70
     max: 100
-  lowEnemyAccuracy: 60
+  lowEnemyAccuracy: 10
   lowEnemyEvasion: 5
   medEnemyAccuracy: 70
   medEnemyEvasion: 10
