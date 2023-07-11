@@ -210,11 +210,11 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return EntityType.ET_RESOURCE_PRESERVATION_MED;
             case "PRESERVATION HIGH":
                 return EntityType.ET_RESOURCE_PRESERVATION_HIGH;
-            case "LOW ENEMY":
+            case "Enemy Type 1":
                 return EntityType.ET_HAZARD_ENEMY_LOW;
             case "MED ENEMY":
                 return EntityType.ET_HAZARD_ENEMY_MED;
-            case "HIGH ENEMY":
+            case "Enemy Type 3":
                 return EntityType.ET_HAZARD_ENEMY_HIGH;
             case "BOSS":
                 return EntityType.ET_HAZARD_ENEMY_BOSS;
@@ -263,11 +263,11 @@ public class EvaluationHelperFunctions : MonoBehaviour
             case EntityType.ET_RESOURCE_PRESERVATION_HIGH:
                 return "PRESERVATION HIGH";
             case EntityType.ET_HAZARD_ENEMY_LOW:
-                return "LOW ENEMY";
+                return "Enemy Type 1";
             case EntityType.ET_HAZARD_ENEMY_MED:
                 return "MED ENEMY";
             case EntityType.ET_HAZARD_ENEMY_HIGH:
-                return "HIGH ENEMY";
+                return "Enemy Type 3";
             case EntityType.ET_HAZARD_ENEMY_BOSS:
                 return "BOSS";
             case EntityType.ET_HAZARD_ENVIRONMENT:
@@ -347,7 +347,7 @@ class ExpertEvaluation
 
     private readonly string[] severityNames = new string[] { "NA", "LOW", "MED", "HIGH" };
     private readonly string[] entityNames = new string[] { "NONE", "OPTIONAL GOAL", "MANDATORY GOAL", "COMPLETION GOAL", "ACHIEVEMENT", "PRESERVATION LOW",
-    "PRESERVATION MED", "PRESERVATION HIGH", "LOW ENEMY", "MED ENEMY", "HIGH ENEMY", "BOSS", "ENVIRONMENT HAZARD", "LOW CHALLENGE EVENT", "MEDIUM CHALLENGE EVENT",
+    "PRESERVATION MED", "PRESERVATION HIGH", "Enemy Type 1", "MED ENEMY", "Enemy Type 3", "BOSS", "ENVIRONMENT HAZARD", "LOW CHALLENGE EVENT", "MEDIUM CHALLENGE EVENT",
     "HIGH CHALLENGE EVENT", "POI", "NPC POI"};
     private readonly string[] categoryNames = new string[] { "NA", "POS", "NEG" };
     private Color[] severityColorsPos = new Color[] { Color.white, new Color32(175, 239, 169, 255), new Color32(86, 222, 74,255), new Color32(43, 172, 32,255) };
@@ -1159,7 +1159,7 @@ public class Popup : EditorWindow
     private readonly string[] severityNames = new string[] { "NA", "LOW", "MED", "HIGH" };
     private readonly string[] categoryNames = new string[] { "NA", "POS", "NEG" };
     private readonly string[] entityNames = new string[] { "NONE", "OPTIONAL GOAL", "MANDATORY GOAL", "COMPLETION GOAL", "ACHIEVEMENT", "PRESERVATION LOW",
-    "PRESERVATION MED", "PRESERVATION HIGH", "LOW ENEMY", "MED ENEMY", "HIGH ENEMY", "BOSS", "ENVIRONMENT HAZARD", "LOW EVENT", "MEDIUM EVENT", "HIGH EVENT",
+    "PRESERVATION MED", "PRESERVATION HIGH", "Enemy Type 1", "MED ENEMY", "Enemy Type 3", "BOSS", "ENVIRONMENT HAZARD", "LOW EVENT", "MEDIUM EVENT", "HIGH EVENT",
     "POI", "NPC POI"};
 
     private Color[] severityColorsPos = new Color[] { Color.white, new Color32(175, 239, 169, 255), new Color32(86, 222, 74, 255), new Color32(43, 172, 32, 255) };

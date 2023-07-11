@@ -65,9 +65,35 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_RESOURCE_PRESERVATION_LOW, "Self-Preservation Item (e.g., low health)" },
         {EntityType.ET_RESOURCE_PRESERVATION_MED, "Self-Preservation Item (e.g., medium health)" },
         {EntityType.ET_RESOURCE_PRESERVATION_HIGH, "Self-Preservation Item (e.g., high health)" },
-        {EntityType.ET_HAZARD_ENEMY_LOW, "Enemy Hazard Low" },
-        {EntityType.ET_HAZARD_ENEMY_MED, "Enemy Hazard Medium" },
-        {EntityType.ET_HAZARD_ENEMY_HIGH, "Enemy Hazard High" },
+        {EntityType.ET_HAZARD_ENEMY_LOW, "Enemy Hazard Type 1" },
+        {EntityType.ET_HAZARD_ENEMY_MED, "Enemy Hazard Type 2" },
+        {EntityType.ET_HAZARD_ENEMY_HIGH, "Enemy Hazard Type 3" },
+        {EntityType.ET_HAZARD_ENEMY_BOSS, "Enemy Hazard Boss" },
+        {EntityType.ET_HAZARD_ENVIRONMENT, "Environmental Hazard" },
+        {EntityType.ET_IE_LOW, "Low Challenge Event" },
+        {EntityType.ET_IE_MEDIUM, "Medium Challenge Event" },
+        {EntityType.ET_IE_HIGH, "High Challenge Event" },
+        {EntityType.ET_IE_LOW_MANDATORY, "Low Mandatory Challenge Event" },
+        {EntityType.ET_IE_MEDIUM_MANDATORY, "Medium Mandatory Challenge Event" },
+        {EntityType.ET_IE_HIGH_MANDATORY, "High Mandatory Challenge Event" },
+        {EntityType.ET_POI, "Point-of-Interest (e.g., setpiece)" },
+        {EntityType.ET_POI_NPC, "NPC (non-hostile)" }
+    };
+
+    //TODO add tooltips here
+    public Dictionary<EntityType, string> entityTooltipLookup = new Dictionary<EntityType, string>
+    {
+        {EntityType.ET_NONE, "Undefined Type (unaffected by agent motives)" },
+        {EntityType.ET_GOAL_OPTIONAL, "Optional Goal" },
+        {EntityType.ET_GOAL_MANDATORY, "Mandatory Goal" },
+        {EntityType.ET_GOAL_COMPLETION, "Final Goal" },
+        {EntityType.ET_RESOURCE_ACHIEVEMENT, "Collectible" },
+        {EntityType.ET_RESOURCE_PRESERVATION_LOW, "Self-Preservation Item (e.g., low health)" },
+        {EntityType.ET_RESOURCE_PRESERVATION_MED, "Self-Preservation Item (e.g., medium health)" },
+        {EntityType.ET_RESOURCE_PRESERVATION_HIGH, "Self-Preservation Item (e.g., high health)" },
+        {EntityType.ET_HAZARD_ENEMY_LOW, "Enemy Hazard Type 1" },
+        {EntityType.ET_HAZARD_ENEMY_MED, "Enemy Hazard Type 2" },
+        {EntityType.ET_HAZARD_ENEMY_HIGH, "Enemy Hazard Type 3" },
         {EntityType.ET_HAZARD_ENEMY_BOSS, "Enemy Hazard Boss" },
         {EntityType.ET_HAZARD_ENVIRONMENT, "Environmental Hazard" },
         {EntityType.ET_IE_LOW, "Low Challenge Event" },

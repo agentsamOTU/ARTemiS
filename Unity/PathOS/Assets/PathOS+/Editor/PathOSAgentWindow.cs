@@ -53,7 +53,7 @@ public class PathOSAgentWindow : EditorWindow
     private SerializedProperty exploreTargetMargin;
 
     //Properties for health
-    private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, interaction_event, health_low, health_med, health_high;
+    private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, interaction_eventL,interaction_eventM,interaction_eventH, health_low, health_med, health_high;
 
     private Dictionary<Heuristic, string> heuristicLabels;
 
@@ -78,7 +78,10 @@ public class PathOSAgentWindow : EditorWindow
         enemy_med = Resources.Load<Texture2D>("hazard_enemy_medium");
         enemy_high = Resources.Load<Texture2D>("hazard_enemy_high");
         enemy_boss = Resources.Load<Texture2D>("hazard_enemy_boss");
-        interaction_event = Resources.Load<Texture2D>("hazard_environment");
+        interaction_eventL = Resources.Load<Texture2D>("ie_low");
+        interaction_eventM = Resources.Load<Texture2D>("ie_medium");
+        interaction_eventH = Resources.Load<Texture2D>("ie_high");
+
         enemy_hazard = Resources.Load<Texture2D>("hazard_environment");
         health_low = Resources.Load<Texture2D>("resource_preservation_low");
         health_med = Resources.Load<Texture2D>("resource_preservation_med");
@@ -386,25 +389,25 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.LabelField("Enemy Damage Values", EditorStyles.boldLabel);
         EditorGUILayout.Space(15);
 
-        DrawUIRow(enemy_low, 30, 25, "Low Enemy Damage", ref agentReference.lowEnemyDamage);
-        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Low Enemy Accuracy", agentReference.lowEnemyAccuracy,0,10); //example of setting min and max
-        agentReference.lowEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Low Enemy Evasion", agentReference.lowEnemyEvasion);
+        DrawUIRow(enemy_low, 30, 25, "Enemy Type 1 Damage", ref agentReference.lowEnemyDamage);
+        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Enemy Type 1 Accuracy", agentReference.lowEnemyAccuracy); //example of setting min and max
+        agentReference.lowEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Enemy Type 1 Evasion", agentReference.lowEnemyEvasion);
 
 
         EditorGUILayout.Space(20);
-        DrawUIRow(enemy_med, 30, 25, "Medium Enemy Damage", ref agentReference.medEnemyDamage);
-        agentReference.medEnemyAccuracy = DrawUIRow(enemy_med, 30, 25, "Medium Enemy Accuracy", agentReference.medEnemyAccuracy);
-        agentReference.medEnemyEvasion = DrawUIRow(enemy_med, 30, 25, "Medium Enemy Evasion", agentReference.medEnemyEvasion);
+        DrawUIRow(enemy_med, 30, 25, "Enemy Type 2 Damage", ref agentReference.medEnemyDamage);
+        agentReference.medEnemyAccuracy = DrawUIRow(enemy_med, 30, 25, "Enemy Type 2 Accuracy", agentReference.medEnemyAccuracy);
+        agentReference.medEnemyEvasion = DrawUIRow(enemy_med, 30, 25, "Enemy Type 2 Evasion", agentReference.medEnemyEvasion);
 
         EditorGUILayout.Space(20);
-        DrawUIRow(enemy_high, 30, 25, "High Enemy Damage", ref agentReference.highEnemyDamage);
-        agentReference.highEnemyAccuracy = DrawUIRow(enemy_high, 30, 25, "High Enemy Accuracy", agentReference.highEnemyAccuracy);
-        agentReference.highEnemyEvasion = DrawUIRow(enemy_high, 30, 25, "High Enemy Evasion", agentReference.highEnemyEvasion);
+        DrawUIRow(enemy_high, 30, 25, "Enemy Type 3 Damage", ref agentReference.highEnemyDamage);
+        agentReference.highEnemyAccuracy = DrawUIRow(enemy_high, 30, 25, "Enemy Type 3 Accuracy", agentReference.highEnemyAccuracy);
+        agentReference.highEnemyEvasion = DrawUIRow(enemy_high, 30, 25, "Enemy Type 3 Evasion", agentReference.highEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Damage", ref agentReference.bossEnemyDamage);
-        agentReference.bossEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Boss Enemy Accuracy", agentReference.bossEnemyAccuracy);
-        agentReference.bossEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Boss Enemy Evasion", agentReference.bossEnemyEvasion);
+        agentReference.bossEnemyAccuracy = DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Accuracy", agentReference.bossEnemyAccuracy);
+        agentReference.bossEnemyEvasion = DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Evasion", agentReference.bossEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_hazard, 30, 25, "Hazard Damage", ref agentReference.hazardDamage);
@@ -420,20 +423,20 @@ public class PathOSAgentWindow : EditorWindow
 
         EditorGUILayout.Space(15);
 
-        agentReference.lowIEChallenge = DrawUIRow(interaction_event, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
+        agentReference.lowIEChallenge = DrawUIRow(interaction_eventL, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
         //agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
-        agentReference.penLowCost = DrawUIRow(interaction_event, 30, 25, "Low Event Failure Time Cost", agentReference.penLowCost);
+        agentReference.penLowCost = DrawUIRow(interaction_eventL, 30, 25, "Low Event Failure Time Cost", agentReference.penLowCost);
         EditorGUILayout.Space(20);
 
-        agentReference.mediumIEChallenge = DrawUIRow(interaction_event, 30, 25, "Medium Event Challenge", agentReference.mediumIEChallenge);
+        agentReference.mediumIEChallenge = DrawUIRow(interaction_eventM, 30, 25, "Medium Event Challenge", agentReference.mediumIEChallenge);
         //agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
-        agentReference.penMedCost = DrawUIRow(interaction_event, 30, 25, "Medium Event Failure Time Cost", agentReference.penMedCost);
+        agentReference.penMedCost = DrawUIRow(interaction_eventM, 30, 25, "Medium Event Failure Time Cost", agentReference.penMedCost);
 
         EditorGUILayout.Space(20);
 
-        agentReference.highIEChallenge = DrawUIRow(interaction_event, 30, 25, "High Event Challenge", agentReference.highIEChallenge);
+        agentReference.highIEChallenge = DrawUIRow(interaction_eventH, 30, 25, "High Event Challenge", agentReference.highIEChallenge);
         //agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
-        agentReference.penHighCost = DrawUIRow(interaction_event, 30, 25, "High Event Failure Time Cost", agentReference.penHighCost);
+        agentReference.penHighCost = DrawUIRow(interaction_eventH, 30, 25, "High Event Failure Time Cost", agentReference.penHighCost);
 
 
         EditorGUILayout.Space(15);

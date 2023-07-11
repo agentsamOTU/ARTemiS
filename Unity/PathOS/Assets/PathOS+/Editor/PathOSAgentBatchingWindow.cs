@@ -565,17 +565,17 @@ public class PathOSAgentBatchingWindow : EditorWindow
 
         usingRanges=EditorGUILayout.Toggle("Use Ranges",usingRanges);
 
-        PathOS.EditorUI.FullMinMaxSlider("Low Enemy Damage",ref lEnemyDamage.min, ref lEnemyDamage.max,0,100);
-        PathOS.EditorUI.FullMinMaxSlider("Low Enemy Accuracy", ref lAccuracy.min, ref lAccuracy.max, 0, 100);
-        PathOS.EditorUI.FullMinMaxSlider("Low Enemy Evasion", ref lEvasion.min, ref lEvasion.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 1 Damage",ref lEnemyDamage.min, ref lEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 1 Accuracy", ref lAccuracy.min, ref lAccuracy.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 1 Evasion", ref lEvasion.min, ref lEvasion.max, 0, 100);
 
-        PathOS.EditorUI.FullMinMaxSlider("Medium Enemy Damage", ref mEnemyDamage.min, ref mEnemyDamage.max, 0, 100);
-        PathOS.EditorUI.FullMinMaxSlider("Medium Enemy Accuracy", ref mAccuracy.min, ref mAccuracy.max, 0, 100);
-        PathOS.EditorUI.FullMinMaxSlider("Medium Enemy Evasion", ref mEvasion.min, ref mEvasion.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 2 Damage", ref mEnemyDamage.min, ref mEnemyDamage.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 2 Accuracy", ref mAccuracy.min, ref mAccuracy.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 2 Evasion", ref mEvasion.min, ref mEvasion.max, 0, 100);
 
-        PathOS.EditorUI.FullMinMaxSlider("High Enemy Damage", ref hEnemyDamage.min, ref hEnemyDamage.max,0,100);
-        PathOS.EditorUI.FullMinMaxSlider("High Enemy Accuracy", ref hAccuracy.min, ref hAccuracy.max,0,100);
-        PathOS.EditorUI.FullMinMaxSlider("High Enemy Evasion", ref hEvasion.min, ref hEvasion.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 3 Damage", ref hEnemyDamage.min, ref hEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 3 Accuracy", ref hAccuracy.min, ref hAccuracy.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 3 Evasion", ref hEvasion.min, ref hEvasion.max,0,100);
                                                                                         
         PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Damage", ref bEnemyDamage.min, ref bEnemyDamage.max,0,100);
         PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Accuracy", ref bAccuracy.min, ref bAccuracy.max,0,100);
