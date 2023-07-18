@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using PathOS;
+using System.IO;
 
 /*
 PathOSAgent.cs 
@@ -160,24 +161,15 @@ public class PathOSAgent : MonoBehaviour
     public float penMedCost = 2.0f;
     public float penHighCost = 4.0f;
 
-    private float penELowCost = 0.5f;
-    private float penEMedCost = 1.0f;
-    private float penEHighCost = 2.0f;
-
-    private float penMLowCost = 1.0f;
-    private float penMMedCost = 2.0f;
-    private float penMHighCost = 4.0f;
-
-    private float penHLowCost = 2.0f;
-    private float penHMedCost = 4.0f;
-    private float penHHighCost = 8.0f;
+    public List<ResourceValueData> difficulties;
+    public List<string> difficultiesName;
 
     public float lowTime;
     public float medTime;
     public float highTime;
     public float totalTime;
 
-    public int difficulty = 1;
+    public int difficulty = 0;
 
     private GameObject cameraObject;
     private static bool cameraFollow = false;
@@ -188,6 +180,9 @@ public class PathOSAgent : MonoBehaviour
 
         navAgent = GetComponent<NavMeshAgent>();
         completed = false;
+
+        difficulties = new List<ResourceValueData>();
+        difficultiesName = new List<string>();
 
         cameraObject = GameObject.FindWithTag("PathOSCamera");
 
@@ -1404,25 +1399,122 @@ public class PathOSAgent : MonoBehaviour
 
     public void diffSet()
     {
-        switch (difficulty)
-        {
-            case 0:
-                penLowCost = penELowCost;
-                penMedCost = penEMedCost;
-                penHighCost = penEHighCost;
-                break;
-            case 1:
-                penLowCost = penMLowCost;
-                penMedCost = penMMedCost;
-                penHighCost = penMHighCost;
-                break;
-            case 2:
-                penLowCost = penHLowCost;
-                penMedCost = penHMedCost;
-                penHighCost = penHHighCost;
-                break;
-        }
 
+        lowEnemyAccuracy = difficulties[difficulty].lowEnemyAccuracy;
+        lowEnemyEvasion = difficulties[difficulty].lowEnemyEvasion;
+        medEnemyAccuracy = difficulties[difficulty].medEnemyAccuracy;
+        medEnemyEvasion = difficulties[difficulty].medEnemyEvasion;
+        highEnemyAccuracy = difficulties[difficulty].highEnemyAccuracy;
+        highEnemyEvasion = difficulties[difficulty].highEnemyEvasion;
+        bossEnemyAccuracy = difficulties[difficulty].bossEnemyAccuracy;
+        bossEnemyEvasion = difficulties[difficulty].bossEnemyEvasion;
+        lowIEChallenge = difficulties[difficulty].lowIEChallenge;
+        mediumIEChallenge = difficulties[difficulty].mediumIEChallenge;
+        highIEChallenge = difficulties[difficulty].highIEChallenge;
+        penLowCost = difficulties[difficulty].penLowCost;
+        penMedCost = difficulties[difficulty].penMedCost;
+        penHighCost = difficulties[difficulty].penHighCost;
+
+        lowEnemyDamage = difficulties[difficulty].lowEnemyDamage;
+        medEnemyDamage = difficulties[difficulty].medEnemyDamage;
+        highEnemyDamage = difficulties[difficulty].highEnemyDamage;
+        bossEnemyDamage = difficulties[difficulty].bossEnemyDamage;
+        hazardDamage = difficulties[difficulty].hazardDamage;
+        lowHealthGain = difficulties[difficulty].lowHealthGain;
+        medHealthGain = difficulties[difficulty].medHealthGain;
+        highHealthGain = difficulties[difficulty].highHealthGain;
 
     }
+
+    public void diffLoad()
+    {
+        if(difficulties==null)
+        {
+            difficulties = new List<ResourceValueData>();
+            difficultiesName = new List<string>();
+        }
+        difficulties.Clear();
+        difficultiesName.Clear();
+        var files = Directory.EnumerateFiles(Application.dataPath + Path.DirectorySeparatorChar + "PathOS+" + Path.DirectorySeparatorChar + "Difficulties", "*.csv");
+
+        foreach(string s in files )
+        {
+            using(var csvReader = new StreamReader(s))
+            {
+                List<string> strings = new List<string>();
+                while (!csvReader.EndOfStream)
+                {
+                    var line = csvReader.ReadLine();
+                    var lineItems = line.Split(',');
+                    foreach (var item in lineItems)
+                    {
+                        if (item == "")
+                            break;
+                        strings.Add(item.Trim());
+                    }
+                }
+                difficulties.Add(new ResourceValueData(strings));
+                difficultiesName.Add(strings[1]);
+            }
+        }
+    }
+}
+
+public class ResourceValueData
+{
+    ResourceValueData() { }
+    public ResourceValueData(List<string> data)
+    {
+        lowEnemyAccuracy = System.Single.Parse(data[3]);
+        lowEnemyEvasion = System.Single.Parse(data[5]);
+        lowEnemyDamage = new TimeRange(System.Single.Parse(data[7]),System.Single.Parse(data[8]));
+        medEnemyAccuracy = System.Single.Parse(data[10]);
+        medEnemyEvasion = System.Single.Parse(data[12]);
+        medEnemyDamage = new TimeRange(System.Single.Parse(data[14]),System.Single.Parse(data[15]));
+        highEnemyAccuracy= System.Single.Parse(data[17]);
+        highEnemyEvasion = System.Single.Parse(data[19]);
+        highEnemyDamage = new TimeRange(System.Single.Parse(data[21]),System.Single.Parse(data[22]));
+        bossEnemyAccuracy = System.Single.Parse(data[24]);
+        bossEnemyEvasion = System.Single.Parse(data[26]);
+        bossEnemyDamage = new TimeRange(System.Single.Parse(data[28]), System.Single.Parse(data[29]));
+        hazardDamage = new TimeRange(System.Single.Parse(data[31]), System.Single.Parse(data[32]));
+
+        lowIEChallenge = System.Single.Parse(data[34]);
+        penLowCost = System.Single.Parse(data[36]);
+        mediumIEChallenge = System.Single.Parse(data[38]);
+        penMedCost = System.Single.Parse(data[40]);
+        highIEChallenge = System.Single.Parse(data[42]);
+        penHighCost = System.Single.Parse(data[44]);
+
+        lowHealthGain = new TimeRange(System.Single.Parse(data[46]),System.Single.Parse(data[47]));
+        medHealthGain = new TimeRange(System.Single.Parse(data[49]), System.Single.Parse(data[50]));
+        highHealthGain = new TimeRange(System.Single.Parse(data[52]), System.Single.Parse(data[53]));
+    }
+
+    public string label = "Default";
+
+    public float lowEnemyAccuracy = 60.0f;
+    public float lowEnemyEvasion = 5.0f;
+
+    public float medEnemyAccuracy = 70.0f;
+    public float medEnemyEvasion = 10.0f;
+
+    public float highEnemyAccuracy = 80.0f;
+    public float highEnemyEvasion = 15.0f;
+
+    public float bossEnemyAccuracy = 90.0f;
+    public float bossEnemyEvasion = 20.0f;
+
+    public float lowIEChallenge = 0.0f;
+    public float mediumIEChallenge = 0.0f;
+    public float highIEChallenge = 0.0f;
+
+    public float penLowCost = 1.0f;
+    public float penMedCost = 2.0f;
+    public float penHighCost = 4.0f;
+
+    public TimeRange lowEnemyDamage = new TimeRange(10, 30), medEnemyDamage = new TimeRange(30, 50),
+        highEnemyDamage = new TimeRange(50, 70), bossEnemyDamage = new TimeRange(70, 100),
+        hazardDamage = new TimeRange(10, 20), lowHealthGain = new TimeRange(10, 30),
+        medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70, 100);
 }

@@ -383,8 +383,20 @@ public class PathOSAgentWindow : EditorWindow
 
 
         //EditorGUIUtility.labelWidth = 150.0f;
+
         
-        
+        agentReference.difficulty = EditorGUILayout.Popup("Difficulty", agentReference.difficulty, agentReference.difficultiesName.ToArray());
+        if (GUILayout.Button("Reload Difficulties"))
+        {
+            agentReference.diffLoad();
+        }
+        if (GUILayout.Button("Confirm Difficulty"))
+        {
+            agentReference.diffSet();
+        }
+
+        EditorGUILayout.Space(15);
+
 
         EditorGUILayout.LabelField("Enemy Damage Values", EditorStyles.boldLabel);
         EditorGUILayout.Space(15);
@@ -415,13 +427,7 @@ public class PathOSAgentWindow : EditorWindow
         EditorGUILayout.Space(15);
         EditorGUILayout.LabelField("Interaction Events", EditorStyles.boldLabel);
 
-        agentReference.difficulty = EditorGUILayout.Popup("Difficulty", agentReference.difficulty, new string[] { "Easy", "Medium", "Hard" });
-        if (GUILayout.Button("Confirm Difficulty"))
-        {
-            agentReference.diffSet();
-        }
-
-        EditorGUILayout.Space(15);
+       
 
         agentReference.lowIEChallenge = DrawUIRow(interaction_eventL, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
         //agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
