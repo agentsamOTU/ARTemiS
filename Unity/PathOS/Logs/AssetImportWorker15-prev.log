@@ -1,0 +1,436 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.13f1 (9e7d58001ecf) revision 10386776'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32718 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker15
+-projectPath
+C:/UnityProjects/ARTemiS/Unity/PathOS
+-logFile
+Logs/AssetImportWorker15.log
+-srvPort
+59199
+Successfully changed project path to: C:/UnityProjects/ARTemiS/Unity/PathOS
+C:/UnityProjects/ARTemiS/Unity/PathOS
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 99.04 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProjects/ARTemiS/Unity/PathOS/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8072 MB
+    Driver:   31.0.15.3179
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56372
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.014728 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 84.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.669 seconds
+Domain Reload Profiling:
+	ReloadAssembly (670ms)
+		BeginReloadAssembly (86ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (458ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (109ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (270ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (57ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (85ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (86ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007006 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 84.87 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  1.228 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1229ms)
+		BeginReloadAssembly (220ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (121ms)
+		EndReloadAssembly (882ms)
+			LoadAssemblies (100ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (190ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (511ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (85ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (187ms)
+				ProcessInitializeOnLoadMethodAttributes (128ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2998.
+Memory consumption went from 124.6 MB to 124.6 MB.
+Total: 6.226700 ms (FindLiveObjects: 0.217000 ms CreateObjectMapping: 0.184900 ms MarkObjects: 5.785800 ms  DeleteObjects: 0.038200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 338101.692613 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column/column_end.prefab
+  artifactKey: Guid(d10d3ce46f3a5d84cbcccd4f14bf3958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column/column_end.prefab using Guid(d10d3ce46f3a5d84cbcccd4f14bf3958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a724398f837c1361068b93d588ff351') in 0.155637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.987369 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column
+  artifactKey: Guid(260b3aefe7560de46982de7f83ddf8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column using Guid(260b3aefe7560de46982de7f83ddf8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f483f740cefb6b9d98b3f2d9222b8a') in 0.004974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.404874 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bed.prefab
+  artifactKey: Guid(43d083e8215b4544594282d6c144d7ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bed.prefab using Guid(43d083e8215b4544594282d6c144d7ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e595b567cae62b18e201c8d50ccb483') in 0.033335 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console.prefab
+  artifactKey: Guid(d78f2ba16003e6e4681b4702d6dcb72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console.prefab using Guid(d78f2ba16003e6e4681b4702d6dcb72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c61598c640016eb0d14820559ae3887') in 0.017830 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console_screen.prefab
+  artifactKey: Guid(814f2f52d8dd87948a0fba9364aa412b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console_screen.prefab using Guid(814f2f52d8dd87948a0fba9364aa412b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f501810f4e8ad0640ebbb2523f7d14f') in 0.021217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/sign.prefab
+  artifactKey: Guid(48f0889733d556d4a927a13a99a7f434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/sign.prefab using Guid(48f0889733d556d4a927a13a99a7f434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de2b831df6f582e86ae68269429a1a7') in 0.021094 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/shelf_small.prefab
+  artifactKey: Guid(27b528ce18adf6f48bd23431f0fd8f26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/shelf_small.prefab using Guid(27b528ce18adf6f48bd23431f0fd8f26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '549abba987a6fd74ec7f66528b7f7108') in 0.019731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003050 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament_pipes_corner.prefab
+  artifactKey: Guid(fe8bb31403053dd44ae7ac2396ff8fa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament_pipes_corner.prefab using Guid(fe8bb31403053dd44ae7ac2396ff8fa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3803ae3f7b863382de4c8446e2f5ea54') in 0.022801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/sing_small.prefab
+  artifactKey: Guid(fc67be85f7a8a16448d922881910dcf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/sing_small.prefab using Guid(fc67be85f7a8a16448d922881910dcf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a0e68630f9203873126582615d4982f') in 0.019758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament.prefab
+  artifactKey: Guid(0759e5b8616fa854dbb807a3ac19ec2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament.prefab using Guid(0759e5b8616fa854dbb807a3ac19ec2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1391677bfb489aadf41d7a7e07f76dbe') in 0.027600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_plant.prefab
+  artifactKey: Guid(83a919b0e630c394780833b59a51ab4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_plant.prefab using Guid(83a919b0e630c394780833b59a51ab4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26ad15181ed7d40eb45e42881515a475') in 0.026925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.496087 seconds.
+  path: Assets/Meshes/Pillars/Column/Meshes/Pillar column.obj
+  artifactKey: Guid(9cd106f45244a494cb2f629e868cc9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Column/Meshes/Pillar column.obj using Guid(9cd106f45244a494cb2f629e868cc9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1467e38d7276c48e9643e87556ad54af') in 0.092042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Meshes/Pillars/Greek/Materials/Pillar greek Mat.mat
+  artifactKey: Guid(db4717d2de8e2c140bf13938bdd7378d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Greek/Materials/Pillar greek Mat.mat using Guid(db4717d2de8e2c140bf13938bdd7378d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '558172a441e05458d9c1b4d7352d5ef9') in 0.056514 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Meshes/Pillars/Greek/Meshes/Pillar greek.obj
+  artifactKey: Guid(a025cf4bd920b96419febb3a6ca19ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Greek/Meshes/Pillar greek.obj using Guid(a025cf4bd920b96419febb3a6ca19ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6465c66c7a736eb717c07d941f3a5ba') in 0.031596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Meshes/Pillars/Column/Pillar column prefab.prefab
+  artifactKey: Guid(7543253cbf672ba47af1722f2dc0406f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Column/Pillar column prefab.prefab using Guid(7543253cbf672ba47af1722f2dc0406f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c83ff226be5fb81b7530b4503961dc0') in 0.024146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Meshes/Pillars/Greek/Textures/Pillar greek diffuse.tga
+  artifactKey: Guid(c291b19670393524bb0ccf7adfd3cf4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Greek/Textures/Pillar greek diffuse.tga using Guid(c291b19670393524bb0ccf7adfd3cf4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '004361fc68a5e5e4b68644880534b04a') in 0.032436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Meshes/Pillars/Concrete/Meshes/Pillar concrete.obj
+  artifactKey: Guid(0676605c1576684438b6e1a490264100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Concrete/Meshes/Pillar concrete.obj using Guid(0676605c1576684438b6e1a490264100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd173b9643765a8d2790cf6b25d67125e') in 0.036108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Meshes/Pillars/Greek/Textures/Pillar greek normal.tga
+  artifactKey: Guid(da4f4cf787848d34d910f0ab890ef84a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Greek/Textures/Pillar greek normal.tga using Guid(da4f4cf787848d34d910f0ab890ef84a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03f6e5e46aba70204078dc5821ff9177') in 0.018584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Meshes/Pillars/Column/Textures/Pillar concrete diffuse.tga
+  artifactKey: Guid(5f2139805d4f98e42852847ad412f153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Column/Textures/Pillar concrete diffuse.tga using Guid(5f2139805d4f98e42852847ad412f153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '466a0f76f6b17f7d5f081116cc3f0d19') in 0.016351 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Meshes/Pillars/Concrete/Materials/Pillar concrete Mat.mat
+  artifactKey: Guid(ad5c6afe38ea87a4fac7988131997842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Concrete/Materials/Pillar concrete Mat.mat using Guid(ad5c6afe38ea87a4fac7988131997842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03106a8a12890a01f3463445d36a9403') in 0.018764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Meshes/Pillars/Marble/Materials/Pillar marble Mat.mat
+  artifactKey: Guid(a717eed84c1416e42b4fe88e01f68277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Marble/Materials/Pillar marble Mat.mat using Guid(a717eed84c1416e42b4fe88e01f68277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9da7b639109db33bfe7bb85e555d1623') in 0.020686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Meshes/Pillars/Obelisk/Meshes/Pillar obelisk.obj
+  artifactKey: Guid(d4bfdc3a02542134bb81b466767c1e36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Obelisk/Meshes/Pillar obelisk.obj using Guid(d4bfdc3a02542134bb81b466767c1e36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e371f8aa111990684b99bc420c7a6719') in 0.037061 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Meshes/Pillars/Marble/Pillar marble prefab.prefab
+  artifactKey: Guid(9115e1933724c964b816c92ff9977f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Marble/Pillar marble prefab.prefab using Guid(9115e1933724c964b816c92ff9977f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c5e5719c212329b272c5cfae025561b') in 0.023897 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Meshes/Pillars/Concrete/Textures/Pillar concrete diffuse.tga
+  artifactKey: Guid(3096f10025d1e0b46b14bc412ea32687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Concrete/Textures/Pillar concrete diffuse.tga using Guid(3096f10025d1e0b46b14bc412ea32687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf72dccc8f37e140503f7f45a24fd95') in 0.012058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.787090 seconds.
+  path: Assets/Meshes/Pillars/Obelisk/Textures/Pillar obelisk diffuse.tga
+  artifactKey: Guid(94b4d22cfde878049a8f52096d234c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Obelisk/Textures/Pillar obelisk diffuse.tga using Guid(94b4d22cfde878049a8f52096d234c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c909f9e6c3cfef596a3930f54e1b4d7') in 0.017907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Meshes/Pillars/Old-school/Materials/Pillar old-school metal Mat.mat
+  artifactKey: Guid(35b0d27b8c528fd4a9f22d3a65d65bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Old-school/Materials/Pillar old-school metal Mat.mat using Guid(35b0d27b8c528fd4a9f22d3a65d65bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13124c1475e911ce3f57c1c14b3cdde1') in 0.022054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Meshes/Pillars/Old-school/Meshes/Pillar old-school.obj
+  artifactKey: Guid(804b65edbb9f7ea46977860311384679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Old-school/Meshes/Pillar old-school.obj using Guid(804b65edbb9f7ea46977860311384679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c004b7c95f3c16368310beecaa4b7a3') in 0.044552 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Meshes/Pillars/Old-school/Materials/Pillar old-school concrete Mat.mat
+  artifactKey: Guid(8ec3017aa4c37bd43aeba06ddcd2f5b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Old-school/Materials/Pillar old-school concrete Mat.mat using Guid(8ec3017aa4c37bd43aeba06ddcd2f5b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e189e02d5a596e9f1ab541775e31f5d') in 0.020437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Meshes/Pillars/Old-school/Materials/Pillar old-school wood Mat.mat
+  artifactKey: Guid(69fe56b0546aa314e8ebe701d08e26db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Old-school/Materials/Pillar old-school wood Mat.mat using Guid(69fe56b0546aa314e8ebe701d08e26db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90eabe783710882666f831ce94473383') in 0.021203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Meshes/Pillars/Old-school/Textures/Pillar old-school metal diffuse.tga
+  artifactKey: Guid(68ef99bbf66d70b46bafd12bfbafb28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Old-school/Textures/Pillar old-school metal diffuse.tga using Guid(68ef99bbf66d70b46bafd12bfbafb28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2928846c621ada3d1be37df238755d') in 0.019225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.146905 seconds.
+  path: Assets/Meshes/Pillars/Reinforced/Pillar reinforced.prefab
+  artifactKey: Guid(9a00636a161d29749aca8a94e49b404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Reinforced/Pillar reinforced.prefab using Guid(9a00636a161d29749aca8a94e49b404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14b01750811c6a3f48e5c911b0fcaed9') in 0.028714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Meshes/Pillars/Twisted/Textures/Pillar twisted diffuse.tga
+  artifactKey: Guid(364c3fcbc645cd34b95e860adbad1c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Twisted/Textures/Pillar twisted diffuse.tga using Guid(364c3fcbc645cd34b95e860adbad1c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fadd292281b18972c0da1674b033e64') in 0.241813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.943730 seconds.
+  path: Assets/Meshes/Pillars
+  artifactKey: Guid(f3ff0fc20c0391d47944bf7531cb33d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars using Guid(f3ff0fc20c0391d47944bf7531cb33d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '398b3cfa5944ee8d80fc9809dd5d6e02') in 0.004683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.366771 seconds.
+  path: Assets/Meshes/Pillars/Column
+  artifactKey: Guid(69ff2bd899e3d174888d38f3e06f024b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Column using Guid(69ff2bd899e3d174888d38f3e06f024b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '538d585de002e81b26e23ca09b6b166e') in 0.002948 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.150481 seconds.
+  path: Assets/Meshes/Pillars/Column/Textures
+  artifactKey: Guid(23ee6c08a54d0e8479837aa2ef1d4160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Column/Textures using Guid(23ee6c08a54d0e8479837aa2ef1d4160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f05d0472e44a495f97bff8eb8f68695b') in 0.002639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.449509 seconds.
+  path: Assets/Meshes/Pillars/Column/Meshes
+  artifactKey: Guid(61252f5a6f13ba44f946774fcac9a07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Column/Meshes using Guid(61252f5a6f13ba44f946774fcac9a07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '555e0efa37adf5610fbdaf19f29fe92f') in 0.002668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.951501 seconds.
+  path: Assets/Meshes/Pillars/Greek
+  artifactKey: Guid(eb55f79fc09176d48acdb1676d7fa500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshes/Pillars/Greek using Guid(eb55f79fc09176d48acdb1676d7fa500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55aae692c02b19edb144efeade62f766') in 0.003729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.257230 seconds.
+  path: Assets/Imported Assets/PillarPack/Pillars/Marble
+  artifactKey: Guid(dab79ffc813c6ba428c2cf55c6f81e02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/PillarPack/Pillars/Marble using Guid(dab79ffc813c6ba428c2cf55c6f81e02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02831e1cf7a0fb2f4684497657edda53') in 0.003680 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.589607 seconds.
+  path: Assets/Imported Assets/PillarPack/Pillars/Obelisk
+  artifactKey: Guid(58cedf7246e66274e952b03d7dbe307a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/PillarPack/Pillars/Obelisk using Guid(58cedf7246e66274e952b03d7dbe307a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f8a3168357f46a2299dff5798abeb0f') in 0.004032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.848797 seconds.
+  path: Assets/Imported Assets/PillarPack/Pillars/Reinforced
+  artifactKey: Guid(eb730c10286f7804cb36613679567bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/PillarPack/Pillars/Reinforced using Guid(eb730c10286f7804cb36613679567bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93198c715389bd7df83f1e3cb58f280a') in 0.003745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 762.305895 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Resources/LOD3/EA03_Fence_VegetablePatch_02a.fbx
+  artifactKey: Guid(83b544ac0c7ef3b4188cdd929856314b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Resources/LOD3/EA03_Fence_VegetablePatch_02a.fbx using Guid(83b544ac0c7ef3b4188cdd929856314b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34450156db087c5157b26d2a415e195d') in 0.064478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Prop/Container/EA03_Prop_Vegetable_Bag_02_PRE.prefab
+  artifactKey: Guid(f66a133dc2ffd9f4a94fa3cdcd8367c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Prop/Container/EA03_Prop_Vegetable_Bag_02_PRE.prefab using Guid(f66a133dc2ffd9f4a94fa3cdcd8367c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '095a5d687b2b5fd49b795fe7cca00f55') in 0.023414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.196015 seconds.
+  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables
+  artifactKey: Guid(df3bcd11e32c71f479289ea52e404ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables using Guid(df3bcd11e32c71f479289ea52e404ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a692670524e9a93a603b57ef95cc8bec') in 0.003451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.079398 seconds.
+  path: Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Models/DesertBannerHolder.fbx
+  artifactKey: Guid(98302ede6a6e2ae4081eb04a2073598f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Models/DesertBannerHolder.fbx using Guid(98302ede6a6e2ae4081eb04a2073598f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '184bd4cf5eff12e08588f9bbadaa2afe') in 0.023058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Prefabs/Prefabs BLUE/DesertBrazzier_Blue.prefab
+  artifactKey: Guid(594879f1ae3fc4343a634a47b4cb96ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Prefabs/Prefabs BLUE/DesertBrazzier_Blue.prefab using Guid(594879f1ae3fc4343a634a47b4cb96ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f537558eb78dd13df5bd13c18f54d88') in 0.032703 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

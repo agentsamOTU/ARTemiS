@@ -15,7 +15,7 @@ C:/UnityProjects/ARTemiS/Unity/PathOS
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-55512
+59199
 Successfully changed project path to: C:/UnityProjects/ARTemiS/Unity/PathOS
 C:/UnityProjects/ARTemiS/Unity/PathOS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/UnityProjects/ARTemiS/Unity/PathOS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 87.27 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 113.73 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -63,78 +63,78 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56756
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.018130 seconds.
+Registered in 0.015226 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 91.24 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 98.79 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.791 seconds
+- Completed reload, in  0.715 seconds
 Domain Reload Profiling:
-	ReloadAssembly (791ms)
-		BeginReloadAssembly (91ms)
+	ReloadAssembly (715ms)
+		BeginReloadAssembly (84ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (544ms)
-			LoadAssemblies (86ms)
+		EndReloadAssembly (505ms)
+			LoadAssemblies (81ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (147ms)
+			SetupTypeCache (113ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (308ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (311ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (57ms)
+				InitializePlatformSupportModulesInManaged (61ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (91ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (110ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
+				RefreshPlugins (99ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (104ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008577 seconds.
+Registered in 0.009423 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 71.67 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 87.45 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  1.306 seconds
+- Completed reload, in  1.236 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1307ms)
-		BeginReloadAssembly (235ms)
+	ReloadAssembly (1237ms)
+		BeginReloadAssembly (227ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (125ms)
-		EndReloadAssembly (934ms)
-			LoadAssemblies (100ms)
+			CreateAndSetChildDomain (129ms)
+		EndReloadAssembly (887ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (203ms)
+			SetupTypeCache (189ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (536ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (517ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (72ms)
-				BeforeProcessingInitializeOnLoad (93ms)
-				ProcessInitializeOnLoadAttributes (200ms)
-				ProcessInitializeOnLoadMethodAttributes (138ms)
-				AfterProcessingInitializeOnLoad (17ms)
+				RefreshPlugins (88ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (189ms)
+				ProcessInitializeOnLoadMethodAttributes (123ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
@@ -142,12 +142,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.58 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.10 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2486 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2961.
-Memory consumption went from 120.2 MB to 120.2 MB.
-Total: 6.185100 ms (FindLiveObjects: 0.194800 ms CreateObjectMapping: 0.089400 ms MarkObjects: 5.860000 ms  DeleteObjects: 0.040200 ms)
+Unloading 2515 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2996.
+Memory consumption went from 123.5 MB to 123.5 MB.
+Total: 5.673200 ms (FindLiveObjects: 0.210500 ms CreateObjectMapping: 0.092700 ms MarkObjects: 5.331400 ms  DeleteObjects: 0.037900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,28 +162,196 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 854391.300901 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Canyon.fbx
-  artifactKey: Guid(5cfa4ab62f100eb4c877fd56aaa35a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Canyon.fbx using Guid(5cfa4ab62f100eb4c877fd56aaa35a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47e088a6f0627e590a9a0f8c3eadb881') in 0.165732 seconds 
+  Time since last request: 329198.442983 seconds.
+  path: Assets/Imported Assets/Laterns and candles/textures/Lattice [Albedo].png
+  artifactKey: Guid(2c13fcfe313a99441a58728ebac3d0e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Laterns and candles/textures/Lattice [Albedo].png using Guid(2c13fcfe313a99441a58728ebac3d0e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd73ed11ca107e4d372c8d969fb6e1c4') in 0.081751 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Mountain_2.fbx
-  artifactKey: Guid(423e9b53e51f7534986979c4c372d422) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Mountain_2.fbx using Guid(423e9b53e51f7534986979c4c372d422) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e4e5f76fc3a2ccba5c7e8bd478c1597') in 0.020428 seconds 
+  Time since last request: 99.374320 seconds.
+  path: Assets/User Study Project 2022/Eternity/NewLayer.terrainlayer
+  artifactKey: Guid(a12ac8ae21bf6044e83d94145721027d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/User Study Project 2022/Eternity/NewLayer.terrainlayer using Guid(a12ac8ae21bf6044e83d94145721027d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bee00991d081fc7dfece3fd15b52ce3') in 0.055613 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Mountain_1.fbx
-  artifactKey: Guid(ad2614403f699974eb530c9c4a060ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Mountain_1.fbx using Guid(ad2614403f699974eb530c9c4a060ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44d15509e5c274e9c6119391e9d1dade') in 0.018606 seconds 
+  Time since last request: 91.206159 seconds.
+  path: Assets/Imported Assets/Stylize Snow Texture/Textures/Vol_22_4_Ambient_Occlusion.png
+  artifactKey: Guid(6c2e0a6a1421a3e48823d0e3b2c7f2b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Stylize Snow Texture/Textures/Vol_22_4_Ambient_Occlusion.png using Guid(6c2e0a6a1421a3e48823d0e3b2c7f2b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c8decdf40f4bfdf92172bcc767f0f4f') in 0.014577 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Mountain_3.fbx
-  artifactKey: Guid(b547fabffb612b54cbcd362679c24771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Source/Meshes/Terrains/Mountain_3.fbx using Guid(b547fabffb612b54cbcd362679c24771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '423cb479b8831d805bb608caebcac7c4') in 0.018021 seconds 
+  Time since last request: 0.004389 seconds.
+  path: Assets/Imported Assets/Stylize Snow Texture/Textures/Vol_22_4_Normal.png
+  artifactKey: Guid(3a5de69d8ecd71b439f9fb6e2057372d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Stylize Snow Texture/Textures/Vol_22_4_Normal.png using Guid(3a5de69d8ecd71b439f9fb6e2057372d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f93f2bf9844ca8eea5b5a0d5e82706') in 0.030801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.048305 seconds.
+  path: Assets/Imported Assets/cemetery halloween set/Demo/sample_scene/SkyboxProbe-0.exr
+  artifactKey: Guid(703f68258d59e724e868603b01179c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/cemetery halloween set/Demo/sample_scene/SkyboxProbe-0.exr using Guid(703f68258d59e724e868603b01179c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd7ad161036ecc3be14ceda1fb71f133') in 0.041484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.074413 seconds.
+  path: Assets/Imported Assets/Boxophobic (Skybox)/Skybox Cubemap Extended
+  artifactKey: Guid(cdf3d1146619668449198626f33a4bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Boxophobic (Skybox)/Skybox Cubemap Extended using Guid(cdf3d1146619668449198626f33a4bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e93d14758d533f1da023bf87efd809c') in 0.003971 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.473582 seconds.
+  path: Assets/Imported Assets/Fantasy Skybox FREE
+  artifactKey: Guid(0bfcdd633fb3b984ea7d7f49b1093581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Fantasy Skybox FREE using Guid(0bfcdd633fb3b984ea7d7f49b1093581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e7970b1f201829c3eeb6466fdb5c541') in 0.003895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.657218 seconds.
+  path: Assets/Imported Assets/Boxophobic (Skybox)
+  artifactKey: Guid(14bc1d6372b18e84493a503a33a71028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Boxophobic (Skybox) using Guid(14bc1d6372b18e84493a503a33a71028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d891d232c27654b6dcb3dd8722f10f7') in 0.003582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.145270 seconds.
+  path: Assets/Imported Assets/Fantasy Skybox FREE/Materials
+  artifactKey: Guid(e0454b514da2ecd429e000f40050d4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Fantasy Skybox FREE/Materials using Guid(e0454b514da2ecd429e000f40050d4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc512464021b62538414a254e28f10a') in 0.002580 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.992646 seconds.
+  path: Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS002
+  artifactKey: Guid(c862ef60191075042a6f4ac7dd6f19b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS002 using Guid(c862ef60191075042a6f4ac7dd6f19b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acd20e9bce818fbffe9ccf1dcc7a78ba') in 0.003539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.126438 seconds.
+  path: Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS003
+  artifactKey: Guid(19ee5fc36da208d45b86eb47e0f34cbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS003 using Guid(19ee5fc36da208d45b86eb47e0f34cbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b5f73ee51d517e6945ee8c85c1f65e7') in 0.005148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.461331 seconds.
+  path: Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS013
+  artifactKey: Guid(f11fc5ca5a0603d4f96f98c92e7cb7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS013 using Guid(f11fc5ca5a0603d4f96f98c92e7cb7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22e272b74f1156ca529044a3e6b716de') in 0.004335 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.087696 seconds.
+  path: Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS017
+  artifactKey: Guid(9ae9a043594a6d741a2956119b230b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Fantasy Skybox FREE/Materials/FS017 using Guid(9ae9a043594a6d741a2956119b230b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3c3e896f8d0c956d9a32e99bf9238f') in 0.005237 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.396590 seconds.
+  path: Assets/Imported Assets/Cartoon Textures/Materials/NewLayer.terrainlayer
+  artifactKey: Guid(131266f748e755e408742e56aabd44ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Cartoon Textures/Materials/NewLayer.terrainlayer using Guid(131266f748e755e408742e56aabd44ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40e5855822eaec6adaa5032ad7744ebb') in 0.012181 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.231614 seconds.
+  path: Assets/User Study Project 2022/Eternity/NewBrush.brush
+  artifactKey: Guid(fbee3c07563c4384fb5272d505fc60b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/User Study Project 2022/Eternity/NewBrush.brush using Guid(fbee3c07563c4384fb5272d505fc60b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3cb4689e35a9c6f9ae7c83b609bc366') in 0.018849 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 233.727258 seconds.
+  path: Assets/Imported Assets/Hut
+  artifactKey: Guid(bceb2e1ff6721c3438691b638fefd346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Hut using Guid(bceb2e1ff6721c3438691b638fefd346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc2557f7bba47eee279d134bbee9d2a3') in 0.003658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.217172 seconds.
+  path: Assets/Imported Assets/Supercyan (Characters)/Prefabs
+  artifactKey: Guid(e7818b1c2f94d4e418e38c6f67b8b0f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Supercyan (Characters)/Prefabs using Guid(e7818b1c2f94d4e418e38c6f67b8b0f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47c1b9a3f401df8ace60bbd599f2445e') in 0.002882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.970550 seconds.
+  path: Assets/Imported Assets/Vladimir Trofimov (Mushroom House)/prefab
+  artifactKey: Guid(43ab6eeeeae3197448b382bf396fc160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Vladimir Trofimov (Mushroom House)/prefab using Guid(43ab6eeeeae3197448b382bf396fc160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b9d00d21a4fc4701a6f9e5f5b916c3') in 0.003840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.802214 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures
+  artifactKey: Guid(970c9ac4abf7af943a454d61870bb92b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures using Guid(970c9ac4abf7af943a454d61870bb92b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a14b2ccb9e85b6f2b0b8defaa30aec0') in 0.005055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.994245 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building01
+  artifactKey: Guid(de8354ef66d8202469f831f9b0edb3ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building01 using Guid(de8354ef66d8202469f831f9b0edb3ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '473bda5712507e0225b61c2872d9e2a3') in 0.004279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.047851 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building01/Building01.prefab
+  artifactKey: Guid(9033a4a0d292c4645a4c6e941da7664a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building01/Building01.prefab using Guid(9033a4a0d292c4645a4c6e941da7664a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4898e5e7b516edb49bab6c011320bbcb') in 0.049173 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.417660 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Chimney/Chimney01.prefab
+  artifactKey: Guid(8ddcb62f6c2df7e478384fd8781918eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Chimney/Chimney01.prefab using Guid(8ddcb62f6c2df7e478384fd8781918eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b1ca85f7ae8af4b1065058f7a6d1604') in 0.016456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.026669 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Decoration/Hanger01_a01.prefab
+  artifactKey: Guid(bd99fd9ce0a4d7146a8ea6912f781027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Decoration/Hanger01_a01.prefab using Guid(bd99fd9ce0a4d7146a8ea6912f781027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a79bdc2edaf705218d7532410529c43') in 0.014595 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.475894 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Door/Door14.prefab
+  artifactKey: Guid(a76d6dc72bc81434e93a247dcc2fe116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Door/Door14.prefab using Guid(a76d6dc72bc81434e93a247dcc2fe116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '421d6a488d0b1aeeb2a3f7c31c3ae54c') in 0.014174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.429024 seconds.
+  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building16
+  artifactKey: Guid(3b29b2b4e7dc2754a9fbafaefe965d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building16 using Guid(3b29b2b4e7dc2754a9fbafaefe965d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f76c38605054c9259ac9310dfc602c2b') in 0.003669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 65.139069 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains
+  artifactKey: Guid(5783f295dd0cff84bb3557501e75e147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains using Guid(5783f295dd0cff84bb3557501e75e147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc04a6c3ad984242e88f67d1f75c435') in 0.003857 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.074343 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 0-1-0.asset
+  artifactKey: Guid(43b36f3e59109914f99173ea94b34b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 0-1-0.asset using Guid(43b36f3e59109914f99173ea94b34b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddb8081055b590545ad34ac23edaca6b') in 0.059944 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 1-2-0.asset
+  artifactKey: Guid(128cb37433d6e954aa5afc7f25cdfedd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 1-2-0.asset using Guid(128cb37433d6e954aa5afc7f25cdfedd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '423c888fab070b5bcdbda02d9b4bc320') in 0.050163 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 2-2-0.asset
+  artifactKey: Guid(7e038da9be4283c428ff52333a38fac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 2-2-0.asset using Guid(7e038da9be4283c428ff52333a38fac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffdf0cf406736b273e5634411786e8fb') in 0.038128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 2-3-0.asset
+  artifactKey: Guid(f3909ca1032de34458f7272245f55e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 2-3-0.asset using Guid(f3909ca1032de34458f7272245f55e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad73a3d4ba353d1d75b40ffd5d7b0fe0') in 0.037597 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 0-3-0.asset
+  artifactKey: Guid(6857886253ab0384c855b62da79b22af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain 0-3-0.asset using Guid(6857886253ab0384c855b62da79b22af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784d1885ed9d4904d44803e183fbd901') in 0.044070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.772606 seconds.
+  path: Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers
+  artifactKey: Guid(b6906dfbdfcc7984bbaf304cb246f4cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers using Guid(b6906dfbdfcc7984bbaf304cb246f4cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2e6a5b1fe0dffbb7c95c9e38e75bd0d') in 0.004520 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

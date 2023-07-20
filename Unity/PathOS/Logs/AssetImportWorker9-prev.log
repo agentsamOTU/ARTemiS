@@ -15,7 +15,7 @@ C:/UnityProjects/ARTemiS/Unity/PathOS
 -logFile
 Logs/AssetImportWorker9.log
 -srvPort
-55512
+59199
 Successfully changed project path to: C:/UnityProjects/ARTemiS/Unity/PathOS
 C:/UnityProjects/ARTemiS/Unity/PathOS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/UnityProjects/ARTemiS/Unity/PathOS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 97.24 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 98.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -63,91 +63,91 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56568
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.016852 seconds.
+Registered in 0.014749 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 73.72 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 85.07 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.683 seconds
+- Completed reload, in  0.674 seconds
 Domain Reload Profiling:
-	ReloadAssembly (683ms)
-		BeginReloadAssembly (85ms)
+	ReloadAssembly (674ms)
+		BeginReloadAssembly (84ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		EndReloadAssembly (463ms)
-			LoadAssemblies (82ms)
+			LoadAssemblies (80ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (110ms)
+			SetupTypeCache (106ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (270ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (277ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (58ms)
+				InitializePlatformSupportModulesInManaged (57ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (74ms)
-				BeforeProcessingInitializeOnLoad (1ms)
+				RefreshPlugins (85ms)
+				BeforeProcessingInitializeOnLoad (2ms)
 				ProcessInitializeOnLoadAttributes (89ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008210 seconds.
+Registered in 0.006917 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 74.10 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 86.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  1.267 seconds
+- Completed reload, in  1.248 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1268ms)
-		BeginReloadAssembly (232ms)
+	ReloadAssembly (1249ms)
+		BeginReloadAssembly (221ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (126ms)
-		EndReloadAssembly (906ms)
-			LoadAssemblies (99ms)
+			CreateAndSetChildDomain (122ms)
+		EndReloadAssembly (899ms)
+			LoadAssemblies (98ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (197ms)
+			SetupTypeCache (198ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (527ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (518ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (74ms)
-				BeforeProcessingInitializeOnLoad (87ms)
-				ProcessInitializeOnLoadAttributes (201ms)
-				ProcessInitializeOnLoadMethodAttributes (132ms)
-				AfterProcessingInitializeOnLoad (16ms)
+				RefreshPlugins (87ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (188ms)
+				ProcessInitializeOnLoadMethodAttributes (130ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.99 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.70 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2486 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2964.
-Memory consumption went from 120.8 MB to 120.8 MB.
-Total: 5.317900 ms (FindLiveObjects: 0.191900 ms CreateObjectMapping: 0.094300 ms MarkObjects: 4.992800 ms  DeleteObjects: 0.038100 ms)
+Unloading 2517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2998.
+Memory consumption went from 124.6 MB to 124.6 MB.
+Total: 6.635700 ms (FindLiveObjects: 0.206800 ms CreateObjectMapping: 0.090700 ms MarkObjects: 6.293900 ms  DeleteObjects: 0.043100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,130 +162,76 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 856738.671641 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Dirt_002a 512.png
-  artifactKey: Guid(cb6e70e5c1b90c341a0ce2d82c13cde1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Dirt_002a 512.png using Guid(cb6e70e5c1b90c341a0ce2d82c13cde1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f1ab90ebbd98dbee16bf7dad63132b') in 0.080223 seconds 
+  Time since last request: 331621.113771 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Material/Art_03.mat
+  artifactKey: Guid(1cc56ebaea019ba4abad9bb970f27d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Material/Art_03.mat using Guid(1cc56ebaea019ba4abad9bb970f27d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dfa787f12f43b03c39c93e0bcd48a00') in 0.180697 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.005306 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT ForestGround_001 512.png
-  artifactKey: Guid(528c5f3232cf1264e81ef200d8b1b1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT ForestGround_001 512.png using Guid(528c5f3232cf1264e81ef200d8b1b1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2557421eeca501f5ae35be723a914fb6') in 0.015228 seconds 
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Material/Mud.mat
+  artifactKey: Guid(472527642e708b7428e4fd81d706d082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Material/Mud.mat using Guid(472527642e708b7428e4fd81d706d082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6178afffbcbc9a0952a0b5cc1224d214') in 0.018267 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT ForestGround_001 Grass_002 512.png
-  artifactKey: Guid(02a2ec7fba35adb4da2e37bc47fcb836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT ForestGround_001 Grass_002 512.png using Guid(02a2ec7fba35adb4da2e37bc47fcb836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac39f94612019a05c31ecb5a805b09eb') in 0.013095 seconds 
+  Time since last request: 8.883880 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Texture/Flower_Grass_NM.png
+  artifactKey: Guid(440be66d71848fe4fa7bbdb16f1f056e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Texture/Flower_Grass_NM.png using Guid(440be66d71848fe4fa7bbdb16f1f056e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddd7a22c5fbdf6b91a75866d03e89034') in 0.032503 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.252490 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Editor/Resources/EA_Top.png
+  artifactKey: Guid(6a163a96f197dda4fa7e1b57c447e021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Editor/Resources/EA_Top.png using Guid(6a163a96f197dda4fa7e1b57c447e021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f7680d0b01aa74f09183e7c0ef5b4c7') in 0.015016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.284294 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/OutBuilding/EA03_Village_OutBuilding_WoodRoof_01b_PRE.prefab
+  artifactKey: Guid(a5137eb5b70ccf847baddb5765b278a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/OutBuilding/EA03_Village_OutBuilding_WoodRoof_01b_PRE.prefab using Guid(a5137eb5b70ccf847baddb5765b278a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee4c37d43cb806c685969383d619141') in 0.028436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 231.446471 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Other/EA03_Village_OutBuilding_Convenience_01a_PRE.prefab
+  artifactKey: Guid(ea1570d0256864e4c8563689a8122aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Other/EA03_Village_OutBuilding_Convenience_01a_PRE.prefab using Guid(ea1570d0256864e4c8563689a8122aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56c6e5167f5a303006951c2526bb47d5') in 0.016707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Other/EA03_Village_OutBuilding_Cubby_01d_PRE.prefab
+  artifactKey: Guid(a5e616d7f60efe24f86a5244065c89d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Other/EA03_Village_OutBuilding_Cubby_01d_PRE.prefab using Guid(a5e616d7f60efe24f86a5244065c89d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '948e320904a8bc8b465d90958c46f2ee') in 0.020398 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT ForestGround_001 Grass_002 4K.png
-  artifactKey: Guid(a63a3fd22cdf3fb428d912d30e118723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT ForestGround_001 Grass_002 4K.png using Guid(a63a3fd22cdf3fb428d912d30e118723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '507fdb25365db81f2d93f76a99e5a9c2') in 0.038423 seconds 
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Other/EA_Roof_01a_PRE.prefab
+  artifactKey: Guid(746ffc8b5947a5f438a93068a7fcc424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Other/EA_Roof_01a_PRE.prefab using Guid(746ffc8b5947a5f438a93068a7fcc424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea06c46e3bf9d3f123528b44ff24951c') in 0.018154 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.152045 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Dirt_001 512.png
-  artifactKey: Guid(b51199bf4e33f7046bb9ffa5225c5b5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Dirt_001 512.png using Guid(b51199bf4e33f7046bb9ffa5225c5b5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c139b259471ede4b40032706e8e164e') in 0.012685 seconds 
+  Time since last request: 22.309044 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Ceiling_01e_PRE.prefab
+  artifactKey: Guid(6cc9013353b72b74ea03e7c9166454a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Ceiling_01e_PRE.prefab using Guid(6cc9013353b72b74ea03e7c9166454a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e714f68423dc19a9a5e935573497c5fd') in 0.016581 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Grass_001a 2K.png
-  artifactKey: Guid(59e11b4d76877334080d7b2dfec3f51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Grass_002 Grass_001a 2K.png using Guid(59e11b4d76877334080d7b2dfec3f51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a00901439c761c66cf8f2e0ccac1ce7c') in 0.013085 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.022780 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Grass_001a 512.png
-  artifactKey: Guid(d9470477fefdd8242ab17cb54b821558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Grass_001a 512.png using Guid(d9470477fefdd8242ab17cb54b821558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40b2b742edf6c297c3bc791e59938d27') in 0.011516 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Grass_001b 512.png
-  artifactKey: Guid(652ca7e2829f0624f971542250a2361f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Grass_002 Grass_001b 512.png using Guid(652ca7e2829f0624f971542250a2361f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72281a245ff11e004bbc812ffc1a5f05') in 0.010109 seconds 
+  Time since last request: 0.003096 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Roof_Cut_01a_PRE.prefab
+  artifactKey: Guid(d3fc18ac09f3a724c85acef1602515dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Roof_Cut_01a_PRE.prefab using Guid(d3fc18ac09f3a724c85acef1602515dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'befc42ba4b294c23c6cd904568ecbcea') in 0.019608 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Grass_001b 4K.png
-  artifactKey: Guid(6bc1bcfe332c1424cbdb867fabedd489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Grass_001b 4K.png using Guid(6bc1bcfe332c1424cbdb867fabedd489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f77146d726ba21ad3d046041166493b') in 0.016667 seconds 
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Roof_01c_PRE.prefab
+  artifactKey: Guid(db260369185c7b54b9e9494478604f56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Roof_01c_PRE.prefab using Guid(db260369185c7b54b9e9494478604f56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1154a6615f6b6ab80997069c28b53570') in 0.017339 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.198546 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Rocks_001 4K.png
-  artifactKey: Guid(700a1880d05690c4281ef747216a1595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Grass_002 Rocks_001 4K.png using Guid(700a1880d05690c4281ef747216a1595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cdb82df8dec497c1f4c4fb0009272d5') in 0.023593 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.020737 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 4K.png
-  artifactKey: Guid(1387e804fde31b44e819fa2eed29afc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 4K.png using Guid(1387e804fde31b44e819fa2eed29afc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeda4ac58b202256d412f6a711f69d4c') in 0.014878 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 Abandoned_002 2K.png
-  artifactKey: Guid(84f91327d1aea424896931c311a638bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Path_001 Abandoned_002 2K.png using Guid(84f91327d1aea424896931c311a638bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20768b68c71220914b57c90f9e1eaf4d') in 0.014018 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.177997 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 Abandoned_002 512.png
-  artifactKey: Guid(b0f8705578bbd65409b32eb6dc682c62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 Abandoned_002 512.png using Guid(b0f8705578bbd65409b32eb6dc682c62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74c42f54e7cc74b9fbad121bc4eded8c') in 0.012929 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.035049 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 Abandoned_004 4K.png
-  artifactKey: Guid(b6d3349576efe66428d49d6351b45cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 Abandoned_004 4K.png using Guid(b6d3349576efe66428d49d6351b45cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaf78a3799eb83d975adac2f07c42709') in 0.014807 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 ForestGround_001 4K.png
-  artifactKey: Guid(efb783bc65054ca418428b0b850bba4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/4K Resolution/3DH FTT Path_001 ForestGround_001 4K.png using Guid(efb783bc65054ca418428b0b850bba4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aba4701175f2255a4a558f5a7aec8585') in 0.016611 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 ForestGround_001 512.png
-  artifactKey: Guid(637d4935d0bf3034eb6a52de873c60cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 ForestGround_001 512.png using Guid(637d4935d0bf3034eb6a52de873c60cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7ecbfebd9576d64e130157bb0f65a56') in 0.010726 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.203383 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 Sand_001 512.png
-  artifactKey: Guid(b65b9fa900443db40840aec88c7873fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Path_001 Sand_001 512.png using Guid(b65b9fa900443db40840aec88c7873fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cae64f23fcbfc78eef98156ca27d419') in 0.011920 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Rocks_001 512.png
-  artifactKey: Guid(7198870afb04d514d9c69bf52fe69607) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Rocks_001 512.png using Guid(7198870afb04d514d9c69bf52fe69607) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4605bec1c34fd684d06ef7e5859fe4e') in 0.009815 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Rocks_001 2K.png
-  artifactKey: Guid(90fc01534d944d74f9d77554559ce7d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/2K Resolution/3DH FTT Rocks_001 2K.png using Guid(90fc01534d944d74f9d77554559ce7d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '113225cae6ba0d6e177fad61d96accdc') in 0.012762 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.187429 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Rocks_001_Mossy 512.png
-  artifactKey: Guid(de43761ab1ee3844db1d820dd91ea7d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Rocks_001_Mossy 512.png using Guid(de43761ab1ee3844db1d820dd91ea7d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72036111263fefda2fc8aabe77937e89') in 0.012167 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.040554 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Sand_001 512.png
-  artifactKey: Guid(1b3558d9b96ee5c49a97c609630d03d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Textures/512 Resolution/3DH FTT Sand_001 512.png using Guid(1b3558d9b96ee5c49a97c609630d03d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b71ced0b2e1105a9d6e6fd4ce0f0332') in 0.012236 seconds 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Roof_Cut_02a_PRE.prefab
+  artifactKey: Guid(59676b0b4dd0ee24fa7248d750bdc5ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Roofs/EA03_Village_Hut_Roof_Cut_02a_PRE.prefab using Guid(59676b0b4dd0ee24fa7248d750bdc5ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02605ba424b4838720978f5cebff3e47') in 0.018038 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

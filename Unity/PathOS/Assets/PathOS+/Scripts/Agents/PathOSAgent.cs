@@ -1302,7 +1302,7 @@ public class PathOSAgent : MonoBehaviour
                     Debug.Log("Low Event Failed");
 
                 }
-                while (ieChallenge > Random.Range(0, 100));
+                while (ieChallenge < Random.Range(0, 100));
                 RecalculatePenalty();
                 memory.LogInteractionEvent("Low",penaltyTimeI-startPenI);
                 break;
@@ -1316,7 +1316,7 @@ public class PathOSAgent : MonoBehaviour
                     Debug.Log("Medium Event Failed");
 
                 }
-                while (ieChallenge > Random.Range(0, 100));
+                while (ieChallenge < Random.Range(0, 100));
                 RecalculatePenalty();
                 memory.LogInteractionEvent("Med",penaltyTimeI-startPenI);
                 break;
@@ -1330,7 +1330,7 @@ public class PathOSAgent : MonoBehaviour
                     Debug.Log("High Event Failed");
 
                 }
-                while (ieChallenge > Random.Range(0, 100));
+                while (ieChallenge < Random.Range(0, 100));
                 RecalculatePenalty();
                 memory.LogInteractionEvent("High",penaltyTimeI-startPenI);
                 break;

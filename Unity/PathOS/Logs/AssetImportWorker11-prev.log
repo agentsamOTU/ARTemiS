@@ -15,7 +15,7 @@ C:/UnityProjects/ARTemiS/Unity/PathOS
 -logFile
 Logs/AssetImportWorker11.log
 -srvPort
-55512
+59199
 Successfully changed project path to: C:/UnityProjects/ARTemiS/Unity/PathOS
 C:/UnityProjects/ARTemiS/Unity/PathOS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/UnityProjects/ARTemiS/Unity/PathOS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 109.91 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 98.35 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -63,91 +63,91 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.020103 seconds.
+Registered in 0.014584 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 99.02 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 84.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.832 seconds
+- Completed reload, in  0.672 seconds
 Domain Reload Profiling:
-	ReloadAssembly (832ms)
-		BeginReloadAssembly (101ms)
+	ReloadAssembly (673ms)
+		BeginReloadAssembly (83ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (569ms)
-			LoadAssemblies (97ms)
+		EndReloadAssembly (466ms)
+			LoadAssemblies (79ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (141ms)
+			SetupTypeCache (106ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (336ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (280ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (70ms)
+				InitializePlatformSupportModulesInManaged (64ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (99ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (115ms)
-				ProcessInitializeOnLoadMethodAttributes (50ms)
+				RefreshPlugins (85ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009039 seconds.
+Registered in 0.008306 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 94.27 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 85.64 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  1.525 seconds
+- Completed reload, in  1.287 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1526ms)
-		BeginReloadAssembly (264ms)
+	ReloadAssembly (1288ms)
+		BeginReloadAssembly (225ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (136ms)
-		EndReloadAssembly (1098ms)
-			LoadAssemblies (115ms)
+			CreateAndSetChildDomain (120ms)
+		EndReloadAssembly (925ms)
+			LoadAssemblies (101ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (236ms)
+			SetupTypeCache (204ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (650ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (544ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (22ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (94ms)
-				BeforeProcessingInitializeOnLoad (101ms)
-				ProcessInitializeOnLoadAttributes (235ms)
-				ProcessInitializeOnLoadMethodAttributes (178ms)
-				AfterProcessingInitializeOnLoad (18ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (145ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.47 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2507 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2986.
-Memory consumption went from 122.1 MB to 122.1 MB.
-Total: 6.386700 ms (FindLiveObjects: 0.219900 ms CreateObjectMapping: 0.093800 ms MarkObjects: 6.027400 ms  DeleteObjects: 0.044800 ms)
+Unloading 2517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (31.2 KB). Loaded Objects now: 2998.
+Memory consumption went from 124.6 MB to 124.6 MB.
+Total: 5.675100 ms (FindLiveObjects: 0.216200 ms CreateObjectMapping: 0.183800 ms MarkObjects: 5.235400 ms  DeleteObjects: 0.039000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,175 +162,137 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 858191.175350 seconds.
-  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building22/Building22_e02.prefab
-  artifactKey: Guid(1847918c7f52b0f4cb5fe7fbb59b2c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building22/Building22_e02.prefab using Guid(1847918c7f52b0f4cb5fe7fbb59b2c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abfb865fe4af274b753e7f48d197a3e5') in 0.150678 seconds 
+  Time since last request: 331985.070648 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Porch/EA03_Village_HouseModule_Porch_R_03b_PRE.prefab
+  artifactKey: Guid(c2b9a4f9fc4f69f45b0f32b0a6615c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Porch/EA03_Village_HouseModule_Porch_R_03b_PRE.prefab using Guid(c2b9a4f9fc4f69f45b0f32b0a6615c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc32ce04a65627266ae5140ecbff0928') in 0.128220 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.183238 seconds.
-  path: Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building16/Building16_d01.prefab
-  artifactKey: Guid(5b39dcfa9c39f934fa2ff0902f36b514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Xiaolian Hua Studio (Fantasy Kingdom)/Prefabs/Main Structures/Building16/Building16_d01.prefab using Guid(5b39dcfa9c39f934fa2ff0902f36b514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5263b6ff504f8d54d73dec9a8d9e7cf3') in 0.018889 seconds 
+  Time since last request: 3.955895 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Walls_Painted/EA03_Town_Hut_Wall_Painted_Front_02a_PRE.prefab
+  artifactKey: Guid(100539ae3b0bce945a2f6004a921042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Compound/Walls_Painted/EA03_Town_Hut_Wall_Painted_Front_02a_PRE.prefab using Guid(100539ae3b0bce945a2f6004a921042d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01bfa9d364bb553f0c7de813f52d401a') in 0.012652 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 44.817203 seconds.
-  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet.prefab
-  artifactKey: Guid(b3f6e169466f65a4aa48e83805d9e440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet.prefab using Guid(b3f6e169466f65a4aa48e83805d9e440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10206e406a6c7ad8988eb5923481a76a') in 0.033474 seconds 
+  Time since last request: 16.377840 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Elements/EA03_Prop_House_Bolt_01a_PRE.prefab
+  artifactKey: Guid(4b0d2e42947866c42b193739d42e3fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Elements/EA03_Prop_House_Bolt_01a_PRE.prefab using Guid(4b0d2e42947866c42b193739d42e3fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f591777285783a84707943043d0dc789') in 0.014275 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.157868 seconds.
-  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet_L.prefab
-  artifactKey: Guid(04ced07fc5a1dbb45906c40768747c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet_L.prefab using Guid(04ced07fc5a1dbb45906c40768747c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1e75ae63dd641e0b35d8de06624b121') in 0.018019 seconds 
+  Time since last request: 0.001305 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Elements/EA03_Prop_House_Shutter_01d_PRE.prefab
+  artifactKey: Guid(06a8d51f3d3b2824a924b5fd11f46453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Elements/EA03_Prop_House_Shutter_01d_PRE.prefab using Guid(06a8d51f3d3b2824a924b5fd11f46453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '342a29444300ee0c99c88dddfb7c6923') in 0.083830 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.039208 seconds.
-  path: Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet_L_cutted.prefab
-  artifactKey: Guid(8c10b28a5dc86904db537e28568805a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet_L_cutted.prefab using Guid(8c10b28a5dc86904db537e28568805a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a9af0d0cdf3864a6d4bf8c17536b09f') in 0.015012 seconds 
+  Time since last request: 0.000020 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Elements/EA03_Prop_House_Shutter_01c_PRE.prefab
+  artifactKey: Guid(957332e63e4a23d4a87eb37fba342585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Elements/EA03_Prop_House_Shutter_01c_PRE.prefab using Guid(957332e63e4a23d4a87eb37fba342585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a344ad2ebd671d3e6530753e0aa271') in 0.013257 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 28.877024 seconds.
-  path: Assets/Krearthur/GOPainter/ExampleAssets/Models/LowPolyRock.fbx
-  artifactKey: Guid(5007c3be1d94eba48bc85788e0b19e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Krearthur/GOPainter/ExampleAssets/Models/LowPolyRock.fbx using Guid(5007c3be1d94eba48bc85788e0b19e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2277291aacdb6901d0c14b2d5f0b76d8') in 0.034470 seconds 
+  Time since last request: 32.328414 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Porch/EA03_Village_HouseModule_Porch_01d_PRE.prefab
+  artifactKey: Guid(377d225ecc6d4674ebd0a7deb503b5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Village/Building/Porch/EA03_Village_HouseModule_Porch_01d_PRE.prefab using Guid(377d225ecc6d4674ebd0a7deb503b5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7b8e671ff9198fbcf367f165abac5a0') in 0.012494 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 474.443607 seconds.
-  path: Assets/Krearthur/GOPainter/ExampleAssets/Models/FlowerA.fbx
-  artifactKey: Guid(0b29c3dce179d3e4a963aab700576c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Krearthur/GOPainter/ExampleAssets/Models/FlowerA.fbx using Guid(0b29c3dce179d3e4a963aab700576c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8bc20af86de67f1c9772754e6f0ac43') in 0.016981 seconds 
+  Time since last request: 60.714458 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_SweetFlag_01a_PRE.prefab
+  artifactKey: Guid(9aa1ebd2266f0fa489786f9dc7e73ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_SweetFlag_01a_PRE.prefab using Guid(9aa1ebd2266f0fa489786f9dc7e73ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aab7b7e1f162f1b6eb28932adb7bf166') in 0.016444 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.985309 seconds.
-  path: Packages/com.unity.xr.legacyinputhelpers/Prefabs/XRRig.prefab
-  artifactKey: Guid(c116b7497ab8ca34c9188965d4295e27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.xr.legacyinputhelpers/Prefabs/XRRig.prefab using Guid(c116b7497ab8ca34c9188965d4295e27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bd8b0f8b96e19841b97bd32b36257d9') in 0.011055 seconds 
+  Time since last request: 0.001666 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_SweetFlag_01c_PRE.prefab
+  artifactKey: Guid(cd4f3d4d483a45a449a673764c29df88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_SweetFlag_01c_PRE.prefab using Guid(cd4f3d4d483a45a449a673764c29df88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43dc468673b28921332ffbaace4e7235') in 0.018637 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.530549 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/URP/Other/Grass 4.prefab
-  artifactKey: Guid(150cf7551d9b9ce40aaa3d5b7c355fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/URP/Other/Grass 4.prefab using Guid(150cf7551d9b9ce40aaa3d5b7c355fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a31c50bcd595c10b367f8962e04f2c') in 0.018529 seconds 
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_TrunkPlant_01b_PRE.prefab
+  artifactKey: Guid(e138fd9b2148a964fa52f2600c88dcb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_TrunkPlant_01b_PRE.prefab using Guid(e138fd9b2148a964fa52f2600c88dcb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15a4eeff846eb4bc706be4257419a2ee') in 0.021979 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.025728 seconds.
-  path: Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 4.prefab
-  artifactKey: Guid(f0e640d23a5c7c24e8c0100f0a558da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 4.prefab using Guid(f0e640d23a5c7c24e8c0100f0a558da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890f1a293fe2110e1d79356cfa6602b6') in 0.011220 seconds 
+  Time since last request: 0.000057 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_TrunkPlant_01a_PRE.prefab
+  artifactKey: Guid(72a8c53098f2bc94380086efa611037d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Plant/EA03_Nature_TrunkPlant_01a_PRE.prefab using Guid(72a8c53098f2bc94380086efa611037d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '143b636b3ce6c0358b3064666f6a569d') in 0.018829 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.482044 seconds.
-  path: Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 3.prefab
-  artifactKey: Guid(967e41698de928e4c80fc36cc7741738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 3.prefab using Guid(967e41698de928e4c80fc36cc7741738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426b2b9c4687e9570343cd0c8d401257') in 0.011236 seconds 
+  Time since last request: 1.125708 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Grass/EA03_Plant_Grass_01c_PRE.prefab
+  artifactKey: Guid(a23d9e79c6094334cb0eb4548036483f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Grass/EA03_Plant_Grass_01c_PRE.prefab using Guid(a23d9e79c6094334cb0eb4548036483f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a8fbda73618b9b30159fd0161791c8') in 0.013410 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.028219 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/URP/Other/Grass 2.prefab
-  artifactKey: Guid(6a90fc4f23741bf47b02318b3a4a7aa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/URP/Other/Grass 2.prefab using Guid(6a90fc4f23741bf47b02318b3a4a7aa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd88c20ddfecc1b3da0c4e637c1e10806') in 0.011549 seconds 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Grass/EA03_Plant_Grass_02a_PRE.prefab
+  artifactKey: Guid(5827b8449e8b29948afa3e65092aff6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Grass/EA03_Plant_Grass_02a_PRE.prefab using Guid(5827b8449e8b29948afa3e65092aff6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7247d8ad9dd9cebd0f59980e8a05be20') in 0.019237 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 2.prefab
-  artifactKey: Guid(d08851aeacbadfa42a2b661f2170de25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 2.prefab using Guid(d08851aeacbadfa42a2b661f2170de25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a210af3dd4309a71b5e661895a69ee78') in 0.011488 seconds 
+  Time since last request: 0.570497 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_01a_PRE.prefab
+  artifactKey: Guid(eed938129e31212468dfecd2e4246b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_01a_PRE.prefab using Guid(eed938129e31212468dfecd2e4246b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '439eabd18899aea19f542387edca4826') in 0.015993 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.278361 seconds.
-  path: Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/URP/Other/Grass 1.prefab
-  artifactKey: Guid(c87c42a049fe9264587bca3da74325ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Environment Starter Kit/Prefabs/URP/Other/Grass 1.prefab using Guid(c87c42a049fe9264587bca3da74325ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd106e3f2ad960b5a48179f71c725543') in 0.010621 seconds 
+  Time since last request: 0.003853 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_01d_PRE.prefab
+  artifactKey: Guid(9f4b08501754f224c808ecef80684866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_01d_PRE.prefab using Guid(9f4b08501754f224c808ecef80684866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7c70885f4a9e94201c56f2068cd5e92') in 0.018944 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.025336 seconds.
-  path: Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 1.prefab
-  artifactKey: Guid(d9c6727f3721c5a4086ad394d37bb744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Palmov Island/Low Poly Environment Park/Prefabs/Grass/grass 1.prefab using Guid(d9c6727f3721c5a4086ad394d37bb744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b36f0dfb1123ac61e283b886d50de79f') in 0.011743 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 870.475865 seconds.
-  path: Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Prefabs/DesertChestBottom.prefab
-  artifactKey: Guid(2e4f501a261d7624d87354bf997a0d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Prefabs/DesertChestBottom.prefab using Guid(2e4f501a261d7624d87354bf997a0d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed9d1caa56ae7966d0280722e2e81539') in 0.023406 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_Flat_03d_PRE.prefab
+  artifactKey: Guid(ad903848e96267a4899e12e333014f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_Flat_03d_PRE.prefab using Guid(ad903848e96267a4899e12e333014f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b41d7cc41d0e2043674c5fe1a4c4525') in 0.019090 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Prefabs/DesertChestTop.prefab
-  artifactKey: Guid(8d820dc7f30da7149ad51b7ca1b4ab3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported Assets/Low Poly Desert Pack/Desert Pack/Prefabs/DesertChestTop.prefab using Guid(8d820dc7f30da7149ad51b7ca1b4ab3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001bd24af49f64eae2348ed2a435b3ac') in 0.013037 seconds 
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_05b_PRE.prefab
+  artifactKey: Guid(47ac1a31f245fb9458ba4f543b4127c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_05b_PRE.prefab using Guid(47ac1a31f245fb9458ba4f543b4127c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57bb2317387cb799046f9a3f27c6c452') in 0.019946 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 150.049971 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Cliff_001 4K.terrainlayer
-  artifactKey: Guid(af62f0aef08bceb4298446c1387ac4aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Cliff_001 4K.terrainlayer using Guid(af62f0aef08bceb4298446c1387ac4aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '269e28e889cd4a2dcdb4d60e895c0144') in 0.042798 seconds 
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_01c_PRE.prefab
+  artifactKey: Guid(db180e7f4404e6540ba880512d2c196b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_01c_PRE.prefab using Guid(db180e7f4404e6540ba880512d2c196b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af12b67244b633a20ec572181a1a8f38') in 0.017512 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Dirt_002a 1K.terrainlayer
-  artifactKey: Guid(646970c5a66ab4445951c50291d1eb6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Dirt_002a 1K.terrainlayer using Guid(646970c5a66ab4445951c50291d1eb6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f7b69832823f92e9701abc200d6695a') in 0.015057 seconds 
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_03d_PRE.prefab
+  artifactKey: Guid(94d2beb49de72264f9fc5cc1af32f5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_03d_PRE.prefab using Guid(94d2beb49de72264f9fc5cc1af32f5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a9232f7becc93feb194b9f5d9b9744d') in 0.019541 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Grass_002 Grass_001a 2K.terrainlayer
-  artifactKey: Guid(07c9ca18486f898439edaefaba690060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Grass_002 Grass_001a 2K.terrainlayer using Guid(07c9ca18486f898439edaefaba690060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '362e34ddac295b1c7ffb09e41f128585') in 0.017502 seconds 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_02b_PRE.prefab
+  artifactKey: Guid(868e0aee227f98d4a9898e5be91652cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Bushes/EA03_Nature_Bush_02b_PRE.prefab using Guid(868e0aee227f98d4a9898e5be91652cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e3b90c78264dcd3416a4ebe67529ab8') in 0.018793 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT ForestGround_001 2K.terrainlayer
-  artifactKey: Guid(87aeb296afb606d46a244159ee39df6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT ForestGround_001 2K.terrainlayer using Guid(87aeb296afb606d46a244159ee39df6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23109851f7ad77355f6a9737044c16a2') in 0.018787 seconds 
+  Time since last request: 1.840544 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Tree/EA03_Nature_Tree_01b_PRE.prefab
+  artifactKey: Guid(e03898b14a86f234a97b28e18ce3a154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Tree/EA03_Nature_Tree_01b_PRE.prefab using Guid(e03898b14a86f234a97b28e18ce3a154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57dddc3998d90a0a627c9c0011170fe7') in 0.039023 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.059637 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Grass_002 Grass_001b 2K.terrainlayer
-  artifactKey: Guid(26c231cf419fe2549b447a6b9e3cdcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Grass_002 Grass_001b 2K.terrainlayer using Guid(26c231cf419fe2549b447a6b9e3cdcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6dbb1ab4eac17b6f73df36bdc9a1cd2') in 0.013574 seconds 
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Tree/EA03_Nature_Tree_03c_PRE.prefab
+  artifactKey: Guid(f1b66556485f0e542b87652d7fbe5423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Tree/EA03_Nature_Tree_03c_PRE.prefab using Guid(f1b66556485f0e542b87652d7fbe5423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de6064695459fa2dd49fb48739b849c0') in 0.027064 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.009661 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Path_001 2K.terrainlayer
-  artifactKey: Guid(ad1cbe4bd92c072488c9e7386331050c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Path_001 2K.terrainlayer using Guid(ad1cbe4bd92c072488c9e7386331050c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '205a3bcf37a7dfadf12b72ea1fc6f5b6') in 0.010885 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.024899 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Path_001 Abandoned_004 2K.terrainlayer
-  artifactKey: Guid(8cf7d7763ae0a5a45beec7ce335f4e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Path_001 Abandoned_004 2K.terrainlayer using Guid(8cf7d7763ae0a5a45beec7ce335f4e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21ab7be972610962133b9ef52586ae69') in 0.010782 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.042097 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Path_001 Sand_001 2K.terrainlayer
-  artifactKey: Guid(29c898037775222499beb16cf5396959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Path_001 Sand_001 2K.terrainlayer using Guid(29c898037775222499beb16cf5396959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '527e510eb08747568cee69fc7738bf80') in 0.009885 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.307184 seconds.
-  path: Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Rocks_001_Mossy 2K.terrainlayer
-  artifactKey: Guid(c759e8d92b830eb468aaa44210082b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Haven/Free Fantasy Terrain Textures/Demo/Terrains/Terrain Layers/3DH FTT Rocks_001_Mossy 2K.terrainlayer using Guid(c759e8d92b830eb468aaa44210082b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42e13961901b7b28aab8d10f0211a6a5') in 0.009828 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.421677 seconds.
-  path: Assets/Krearthur/GOPainter/ExampleAssets/Textures/Grass.png
-  artifactKey: Guid(a4a961e41faaddd45a46183c4d69d80e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Krearthur/GOPainter/ExampleAssets/Textures/Grass.png using Guid(a4a961e41faaddd45a46183c4d69d80e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8629665eebb464100c57d550391fec7') in 0.016238 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 43.082260 seconds.
-  path: Assets/NewLayer.terrainlayer
-  artifactKey: Guid(085582dedc6a0d74faa1385c53ea65b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NewLayer.terrainlayer using Guid(085582dedc6a0d74faa1385c53ea65b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '334d576af8a9294ecfa7bb116bfea0a3') in 0.057477 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 267.635865 seconds.
-  path: Assets/PathOS+/Prefabs/PathOS Agent.prefab
-  artifactKey: Guid(607318e5beb058643a9226e07f881723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PathOS+/Prefabs/PathOS Agent.prefab using Guid(607318e5beb058643a9226e07f881723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5463eb2d0392946f7f93175b28bbfff') in 0.032284 seconds 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Tree/EA03_Nature_Tree_06b_PRE.prefab
+  artifactKey: Guid(2ed5b1506cf0a264683623f6ebafa66d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported Assets/EmaceArt/Slavic World Free/Prefabs/Nature/Tree/EA03_Nature_Tree_06b_PRE.prefab using Guid(2ed5b1506cf0a264683623f6ebafa66d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bf8809f5d3e6671f48d82f102478789') in 0.017474 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
