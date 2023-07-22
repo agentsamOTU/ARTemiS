@@ -66,6 +66,7 @@ public class PathOSAgentMemory : MonoBehaviour
             }
 
             if(entity.entityType == EntityType.ET_GOAL_MANDATORY||
+                entity.entityType == EntityType.ET_HAZARD_ENEMY_BOSS||
                 entity.entityType == EntityType.ET_IE_LOW_MANDATORY ||
                 entity.entityType == EntityType.ET_IE_MEDIUM_MANDATORY ||
                 entity.entityType == EntityType.ET_IE_HIGH_MANDATORY)
