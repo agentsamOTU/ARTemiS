@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using PathOS;
+using System.IO;
 
 /*
 PathOSAgentWindow.cs 
@@ -51,6 +52,8 @@ public class PathOSAgentWindow : EditorWindow
     private SerializedProperty visitThreshold;
     private SerializedProperty exploreThreshold;
     private SerializedProperty exploreTargetMargin;
+
+    private string difficultyNewName="New Difficulty Name";
 
     //Properties for health
     private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, interaction_eventL,interaction_eventM,interaction_eventH, health_low, health_med, health_high;
@@ -386,14 +389,25 @@ public class PathOSAgentWindow : EditorWindow
 
         
         agentReference.difficulty = EditorGUILayout.Popup("Difficulty", agentReference.difficulty, agentReference.difficultiesName.ToArray());
-        if (GUILayout.Button("Reload Difficulties"))
-        {
-            agentReference.diffLoad();
-        }
         if (GUILayout.Button("Confirm Difficulty"))
         {
             agentReference.diffSet();
         }
+        if (GUILayout.Button("Reload Difficulties"))
+        {
+            agentReference.diffLoad();
+        }
+        if (GUILayout.Button("Open Difficulties Folder"))
+        {
+            Application.OpenURL(Application.dataPath + Path.DirectorySeparatorChar + "PathOS+" + Path.DirectorySeparatorChar + "Difficulties" + Path.DirectorySeparatorChar);
+        }
+        GUILayout.Label("Difficulty Name");
+        difficultyNewName =GUILayout.TextField(difficultyNewName);
+        if (GUILayout.Button("Save New Difficulty"))
+        {
+            agentReference.diffSave(difficultyNewName);
+        }
+       
 
         EditorGUILayout.Space(15);
 
@@ -431,18 +445,18 @@ public class PathOSAgentWindow : EditorWindow
 
         agentReference.lowIEChallenge = DrawUIRow(interaction_eventL, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
         //agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
-        agentReference.penLowCost = DrawUIRow(interaction_eventL, 30, 25, "Low Event Failure Time Cost", agentReference.penLowCost);
+        agentReference.penLowCost = DrawUIRow(interaction_eventL, 30, 25, "Low Failure Cost", agentReference.penLowCost);
         EditorGUILayout.Space(20);
 
         agentReference.mediumIEChallenge = DrawUIRow(interaction_eventM, 30, 25, "Medium Event Challenge", agentReference.mediumIEChallenge);
         //agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
-        agentReference.penMedCost = DrawUIRow(interaction_eventM, 30, 25, "Medium Event Failure Time Cost", agentReference.penMedCost);
+        agentReference.penMedCost = DrawUIRow(interaction_eventM, 30, 25, "Medium Failure Cost", agentReference.penMedCost);
 
         EditorGUILayout.Space(20);
 
         agentReference.highIEChallenge = DrawUIRow(interaction_eventH, 30, 25, "High Event Challenge", agentReference.highIEChallenge);
         //agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
-        agentReference.penHighCost = DrawUIRow(interaction_eventH, 30, 25, "High Event Failure Time Cost", agentReference.penHighCost);
+        agentReference.penHighCost = DrawUIRow(interaction_eventH, 30, 25, "High Failure Cost", agentReference.penHighCost);
 
 
         EditorGUILayout.Space(15);

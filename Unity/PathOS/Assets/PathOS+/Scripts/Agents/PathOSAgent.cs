@@ -1458,6 +1458,48 @@ public class PathOSAgent : MonoBehaviour
             }
         }
     }
+
+    public void diffSave(string name)
+    {
+        string filename = Application.dataPath + Path.DirectorySeparatorChar + "PathOS+" + Path.DirectorySeparatorChar + "Difficulties" + Path.DirectorySeparatorChar+name+".csv";
+        if (File.Exists(filename))
+        {
+            Debug.Log("File already exists, please pick a new name");
+        }
+        else
+        {
+            string content = "label," + name+"\r\n";
+            content += "lowEnemyAccuracy," + lowEnemyAccuracy + "\r\n";
+            content += "lowEnemyEvasion," + lowEnemyEvasion + "\r\n";
+            content += "lowEnemyDamage," + lowEnemyDamage.min+","+lowEnemyDamage.max + "\r\n";
+            content += "medEnemyAccuracy," + medEnemyAccuracy + "\r\n";
+            content += "medEnemyEvasion," + medEnemyEvasion + "\r\n";
+            content += "medEnemyDamage," + medEnemyDamage.min + "," + medEnemyDamage.max + "\r\n";
+            content += "highEnemyAccuracy," + highEnemyAccuracy + "\r\n";
+            content += "highEnemyEvasion," + highEnemyEvasion + "\r\n";
+            content += "highEnemyDamage," + highEnemyDamage.min + "," + highEnemyDamage.max + "\r\n";
+            content += "bossEnemyAccuracy," + bossEnemyAccuracy + "\r\n";
+            content += "bossEnemyEvasion," + bossEnemyEvasion + "\r\n";
+            content += "bossEnemyDamage," + bossEnemyDamage.min + "," + bossEnemyDamage.max + "\r\n";
+            content += "hazardDamage," + hazardDamage.min + "," + hazardDamage.max + "\r\n";
+            content += "lowIEChallenge," + lowIEChallenge + "\r\n";
+            content += "penLowCost," + penLowCost + "\r\n";
+            content += "medIEChallenge," + mediumIEChallenge + "\r\n";
+            content += "penMedCost," + penMedCost + "\r\n";
+            content += "highIEChallenge," + highIEChallenge + "\r\n";
+            content += "penHighCost," + penHighCost + "\r\n";
+            content += "lowHealthGain," + lowHealthGain.min + "," + lowHealthGain.max + "\r\n";
+            content += "medHealthGain," + medHealthGain.min + "," + medHealthGain.max + "\r\n";
+            content += "highHealthGain," + highHealthGain.min + "," + highHealthGain.max + "\r\n";
+
+
+            using (var csvWriter = new StreamWriter(filename))
+            {
+                csvWriter.Write(content);
+            }
+        }
+
+    }
 }
 
 public class ResourceValueData
