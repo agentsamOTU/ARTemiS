@@ -47,9 +47,9 @@ public class PathOSManager : NPSingleton<PathOSManager>
         {EntityType.ET_IE_LOW, "ie_low" },
         {EntityType.ET_IE_MEDIUM, "ie_medium" },
         {EntityType.ET_IE_HIGH, "ie_high" },
-        {EntityType.ET_IE_LOW_MANDATORY, "ie_low" },
-        {EntityType.ET_IE_MEDIUM_MANDATORY, "ie_medium" },
-        {EntityType.ET_IE_HIGH_MANDATORY, "ie_high" },
+        {EntityType.ET_IE_LOW_MANDATORY, "ie_low_mandatory" },
+        {EntityType.ET_IE_MEDIUM_MANDATORY, "ie_medium_mandatory" },
+        {EntityType.ET_IE_HIGH_MANDATORY, "ie_high_mandatory" },
         {EntityType.ET_POI, "poi_environment" },
         {EntityType.ET_POI_NPC, "poi_npc" }
     };
