@@ -443,33 +443,33 @@ public class PathOSAgentWindow : EditorWindow
 
        
 
-        agentReference.lowIEChallenge = DrawUIRow(interaction_eventL, 30, 25, "Low Event Challenge", agentReference.lowIEChallenge);
+        agentReference.lowIEChallenge = DrawUIRow(interaction_eventL, 30, 25, "Type 1 Event Challenge", agentReference.lowIEChallenge);
         //agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
-        agentReference.penLowCost = DrawUIRow(interaction_eventL, 30, 25, "Low Failure Cost", agentReference.penLowCost);
+        agentReference.penLowCost = DrawUIRow(interaction_eventL, 30, 25, "Type 1 Failure Cost", agentReference.penLowCost);
         EditorGUILayout.Space(20);
 
-        agentReference.mediumIEChallenge = DrawUIRow(interaction_eventM, 30, 25, "Medium Event Challenge", agentReference.mediumIEChallenge);
+        agentReference.mediumIEChallenge = DrawUIRow(interaction_eventM, 30, 25, "Type 2 Event Challenge", agentReference.mediumIEChallenge);
         //agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
-        agentReference.penMedCost = DrawUIRow(interaction_eventM, 30, 25, "Medium Failure Cost", agentReference.penMedCost);
+        agentReference.penMedCost = DrawUIRow(interaction_eventM, 30, 25, "Type  2 Failure Cost", agentReference.penMedCost);
 
         EditorGUILayout.Space(20);
 
-        agentReference.highIEChallenge = DrawUIRow(interaction_eventH, 30, 25, "High Event Challenge", agentReference.highIEChallenge);
+        agentReference.highIEChallenge = DrawUIRow(interaction_eventH, 30, 25, "Type 3 Event Challenge", agentReference.highIEChallenge);
         //agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
-        agentReference.penHighCost = DrawUIRow(interaction_eventH, 30, 25, "High Failure Cost", agentReference.penHighCost);
+        agentReference.penHighCost = DrawUIRow(interaction_eventH, 30, 25, "Type 3 Failure Cost", agentReference.penHighCost);
 
 
         EditorGUILayout.Space(15);
         EditorGUILayout.LabelField("Resource Values", EditorStyles.boldLabel);
         EditorGUILayout.Space(15);
 
-        DrawUIRow(health_low, 30, 25, "Low Health Gain", ref agentReference.lowHealthGain);
+        DrawUIRow(health_low, 30, 25, "Type 1 Health Gain", ref agentReference.lowHealthGain);
 
         EditorGUILayout.Space(20);
-        DrawUIRow(health_med, 30, 25, "Medium Health Gain", ref agentReference.medHealthGain);
+        DrawUIRow(health_med, 30, 25, "Type 2 Health Gain", ref agentReference.medHealthGain);
 
         EditorGUILayout.Space(20);
-        DrawUIRow(health_high, 30, 25, "High Health Gain", ref agentReference.highHealthGain);
+        DrawUIRow(health_high, 30, 25, "Type 3 Health Gain", ref agentReference.highHealthGain);
 
         serial.ApplyModifiedProperties();
 

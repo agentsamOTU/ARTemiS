@@ -220,17 +220,17 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return EntityType.ET_HAZARD_ENEMY_BOSS;
             case "ENVIRONMENT HAZARD":
                 return EntityType.ET_HAZARD_ENVIRONMENT;
-            case "LOW CHALLENGE EVENT":
+            case "TYPE 1 CHALLENGE EVENT":
                 return EntityType.ET_IE_LOW;
-            case "MEDIUM CHALLENGE EVENT":
+            case "TYPE 2 CHALLENGE EVENT":
                 return EntityType.ET_IE_MEDIUM;
-            case "HIGH CHALLENGE EVENT":
+            case "TYPE 3 CHALLENGE EVENT":
                 return EntityType.ET_IE_HIGH;
-            case "LOW MANDATORY CHALLENGE EVENT":
+            case "TYPE 1 MANDATORY CHALLENGE EVENT":
                 return EntityType.ET_IE_LOW_MANDATORY;
-            case "MEDIUM MANDATORY CHALLENGE EVENT":
+            case "TYPE 2 MANDATORY CHALLENGE EVENT":
                 return EntityType.ET_IE_MEDIUM_MANDATORY;
-            case "HIGH MANDATORY CHALLENGE EVENT":
+            case "TYPE 3 MANDATORY CHALLENGE EVENT":
                 return EntityType.ET_IE_HIGH_MANDATORY;
             case "POI":
                 return EntityType.ET_POI;
@@ -273,17 +273,17 @@ public class EvaluationHelperFunctions : MonoBehaviour
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 return "ENVIRONMENT HAZARD";
             case EntityType.ET_IE_LOW:
-                return "LOW CHALLENGE EVENT";
+                return "TYPE 1 CHALLENGE EVENT";
             case EntityType.ET_IE_MEDIUM:
-                return "MEDIUM CHALLENGE EVENT";
+                return "TYPE 2 CHALLENGE EVENT";
             case EntityType.ET_IE_HIGH:
-                return "HIGH CHALLENGE EVENT";
+                return "TYPE 3 CHALLENGE EVENT";
             case EntityType.ET_IE_LOW_MANDATORY:
-                return "LOW MANDATORY CHALLENGE EVENT";
+                return "TYPE 1 MANDATORY CHALLENGE EVENT";
             case EntityType.ET_IE_MEDIUM_MANDATORY:
-                return "MEDIUM MANDATORY CHALLENGE EVENT";
+                return "TYPE 2 MANDATORY CHALLENGE EVENT";
             case EntityType.ET_IE_HIGH_MANDATORY:
-                return "HIGH MANDATORY CHALLENGE EVENT";
+                return "TYPE 3 MANDATORY CHALLENGE EVENT";
             case EntityType.ET_POI:
                 return "POI";
             case EntityType.ET_POI_NPC:

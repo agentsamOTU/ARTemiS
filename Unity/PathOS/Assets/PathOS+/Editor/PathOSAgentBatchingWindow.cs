@@ -581,14 +581,14 @@ public class PathOSAgentBatchingWindow : EditorWindow
         PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Accuracy", ref bAccuracy.min, ref bAccuracy.max,0,100);
         PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Evasion", ref bEvasion.min, ref bEvasion.max,0,100);
                                                                                            
-        PathOS.EditorUI.FullMinMaxSlider("Low IE Challenge", ref lChallenge.min, ref lChallenge.max,0,100);
-        PathOS.EditorUI.FullMinMaxSlider("Low IE Penalty", ref lPenalty.min, ref lPenalty.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 1 IE Challenge", ref lChallenge.min, ref lChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 1 IE Penalty", ref lPenalty.min, ref lPenalty.max,0,100);
 
-        PathOS.EditorUI.FullMinMaxSlider("Medium IE Challenge", ref mChallenge.min, ref mChallenge.max,0,100);
-        PathOS.EditorUI.FullMinMaxSlider("Medium IE Penalty", ref mPenalty.min, ref mPenalty.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 2 IE Challenge", ref mChallenge.min, ref mChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 2 IE Penalty", ref mPenalty.min, ref mPenalty.max,0,100);
 
-        PathOS.EditorUI.FullMinMaxSlider("High IE Challenge", ref hChallenge.min, ref hChallenge.max,0,100);
-        PathOS.EditorUI.FullMinMaxSlider("High IE Penalty", ref hPenalty.min, ref hPenalty.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 3 IE Challenge", ref hChallenge.min, ref hChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 3 IE Penalty", ref hPenalty.min, ref hPenalty.max, 0, 100);
 
         EditorGUILayout.LabelField("Agent Motives", headerStyle);
 

@@ -136,12 +136,12 @@ namespace PathOS
                 { "Enemy High",              EntityType.ET_HAZARD_ENEMY_HIGH },
                 { "Boss",               EntityType.ET_HAZARD_ENEMY_BOSS },
                 { "Environment Hazard", EntityType.ET_HAZARD_ENVIRONMENT },
-                { "Low Challenge Event", EntityType.ET_IE_LOW },
-                { "Medium Challenge Event", EntityType.ET_IE_MEDIUM },
-                { "High Challenge Event", EntityType.ET_IE_HIGH },
-                { "Low Mandatory Challenge Event", EntityType.ET_IE_LOW_MANDATORY },
-                { "Medium Mandatory Challenge Event", EntityType.ET_IE_MEDIUM_MANDATORY },
-                { "High Mandatory Challenge Event", EntityType.ET_IE_HIGH_MANDATORY },
+                { "Type 1 Challenge Event", EntityType.ET_IE_LOW },
+                { "Type 2 Challenge Event", EntityType.ET_IE_MEDIUM },
+                { "Type 3 Challenge Event", EntityType.ET_IE_HIGH },
+                { "Type 1 Mandatory Challenge Event", EntityType.ET_IE_LOW_MANDATORY },
+                { "Type 2 Mandatory Challenge Event", EntityType.ET_IE_MEDIUM_MANDATORY },
+                { "Type 3 Mandatory Challenge Event", EntityType.ET_IE_HIGH_MANDATORY },
                 { "POI",                EntityType.ET_POI },
                 { "NPC",                EntityType.ET_POI_NPC }
             };
