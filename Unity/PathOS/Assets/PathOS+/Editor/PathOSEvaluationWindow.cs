@@ -101,9 +101,21 @@ public class EvaluationHelperFunctions : MonoBehaviour
             case 12:
                 return EntityType.ET_HAZARD_ENVIRONMENT;
             case 13:
-                return EntityType.ET_POI;
+                return EntityType.ET_IE_LOW;
             case 14:
+                return EntityType.ET_IE_MEDIUM;
+            case 15:
+                return EntityType.ET_IE_HIGH;
+            case 16:
+                return EntityType.ET_POI;
+            case 17:
                 return EntityType.ET_POI_NPC;
+            case 18:
+                return EntityType.ET_IE_LOW_MANDATORY;
+            case 19:
+                return EntityType.ET_IE_MEDIUM_MANDATORY;
+            case 20:
+                return EntityType.ET_IE_HIGH_MANDATORY;
             default:
                 return EntityType.ET_NONE;
         }
@@ -138,10 +150,22 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return 11;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 return 12;
-            case EntityType.ET_POI:
+            case EntityType.ET_IE_LOW:
                 return 13;
-            case EntityType.ET_POI_NPC:
+            case EntityType.ET_IE_MEDIUM:
                 return 14;
+            case EntityType.ET_IE_HIGH:
+                return 15;
+            case EntityType.ET_POI:
+                return 16;
+            case EntityType.ET_POI_NPC:
+                return 17;
+            case EntityType.ET_IE_LOW_MANDATORY:
+                return 18;
+            case EntityType.ET_IE_MEDIUM_MANDATORY:
+                return 19;
+            case EntityType.ET_IE_HIGH_MANDATORY:
+                return 20;
             default:
                 return 0;
         }
@@ -186,16 +210,28 @@ public class EvaluationHelperFunctions : MonoBehaviour
                 return EntityType.ET_RESOURCE_PRESERVATION_MED;
             case "PRESERVATION HIGH":
                 return EntityType.ET_RESOURCE_PRESERVATION_HIGH;
-            case "LOW ENEMY":
+            case "Enemy Type 1":
                 return EntityType.ET_HAZARD_ENEMY_LOW;
             case "MED ENEMY":
                 return EntityType.ET_HAZARD_ENEMY_MED;
-            case "HIGH ENEMY":
+            case "Enemy Type 3":
                 return EntityType.ET_HAZARD_ENEMY_HIGH;
             case "BOSS":
                 return EntityType.ET_HAZARD_ENEMY_BOSS;
             case "ENVIRONMENT HAZARD":
                 return EntityType.ET_HAZARD_ENVIRONMENT;
+            case "TYPE 1 CHALLENGE EVENT":
+                return EntityType.ET_IE_LOW;
+            case "TYPE 2 CHALLENGE EVENT":
+                return EntityType.ET_IE_MEDIUM;
+            case "TYPE 3 CHALLENGE EVENT":
+                return EntityType.ET_IE_HIGH;
+            case "TYPE 1 MANDATORY CHALLENGE EVENT":
+                return EntityType.ET_IE_LOW_MANDATORY;
+            case "TYPE 2 MANDATORY CHALLENGE EVENT":
+                return EntityType.ET_IE_MEDIUM_MANDATORY;
+            case "TYPE 3 MANDATORY CHALLENGE EVENT":
+                return EntityType.ET_IE_HIGH_MANDATORY;
             case "POI":
                 return EntityType.ET_POI;
             case "NPC POI":
@@ -227,15 +263,27 @@ public class EvaluationHelperFunctions : MonoBehaviour
             case EntityType.ET_RESOURCE_PRESERVATION_HIGH:
                 return "PRESERVATION HIGH";
             case EntityType.ET_HAZARD_ENEMY_LOW:
-                return "LOW ENEMY";
+                return "Enemy Type 1";
             case EntityType.ET_HAZARD_ENEMY_MED:
                 return "MED ENEMY";
             case EntityType.ET_HAZARD_ENEMY_HIGH:
-                return "HIGH ENEMY";
+                return "Enemy Type 3";
             case EntityType.ET_HAZARD_ENEMY_BOSS:
                 return "BOSS";
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 return "ENVIRONMENT HAZARD";
+            case EntityType.ET_IE_LOW:
+                return "TYPE 1 CHALLENGE EVENT";
+            case EntityType.ET_IE_MEDIUM:
+                return "TYPE 2 CHALLENGE EVENT";
+            case EntityType.ET_IE_HIGH:
+                return "TYPE 3 CHALLENGE EVENT";
+            case EntityType.ET_IE_LOW_MANDATORY:
+                return "TYPE 1 MANDATORY CHALLENGE EVENT";
+            case EntityType.ET_IE_MEDIUM_MANDATORY:
+                return "TYPE 2 MANDATORY CHALLENGE EVENT";
+            case EntityType.ET_IE_HIGH_MANDATORY:
+                return "TYPE 3 MANDATORY CHALLENGE EVENT";
             case EntityType.ET_POI:
                 return "POI";
             case EntityType.ET_POI_NPC:
@@ -299,14 +347,15 @@ class ExpertEvaluation
 
     private readonly string[] severityNames = new string[] { "NA", "LOW", "MED", "HIGH" };
     private readonly string[] entityNames = new string[] { "NONE", "OPTIONAL GOAL", "MANDATORY GOAL", "COMPLETION GOAL", "ACHIEVEMENT", "PRESERVATION LOW",
-    "PRESERVATION MED", "PRESERVATION HIGH", "LOW ENEMY", "MED ENEMY", "HIGH ENEMY", "BOSS", "ENVIRONMENT HAZARD", "POI", "NPC POI"};
+    "PRESERVATION MED", "PRESERVATION HIGH", "Enemy Type 1", "MED ENEMY", "Enemy Type 3", "BOSS", "ENVIRONMENT HAZARD", "LOW CHALLENGE EVENT", "MEDIUM CHALLENGE EVENT",
+    "HIGH CHALLENGE EVENT", "POI", "NPC POI"};
     private readonly string[] categoryNames = new string[] { "NA", "POS", "NEG" };
     private Color[] severityColorsPos = new Color[] { Color.white, new Color32(175, 239, 169, 255), new Color32(86, 222, 74,255), new Color32(43, 172, 32,255) };
     private Color[] severityColorsNeg = new Color[] { Color.white, new Color32(232, 201, 100, 255), new Color32(232, 142, 100,255), new Color32(248, 114, 126, 255) };
     private Color[] categoryColors = new Color[] { Color.white, Color.green, new Color32(248, 114, 126, 255) };
     private Color entityColor = new Color32(60, 145, 255, 120);
 
-    private Texture2D undefined, optional, mandatory, final, collectible, enemy_hazard, poi, npc, enemy_low, enemy_med, enemy_high, enemy_boss, health_low, health_med, health_high;
+    private Texture2D undefined, optional, mandatory, final, collectible, enemy_hazard, poi, npc, enemy_low, enemy_med, enemy_high, enemy_boss, health_low, health_med, health_high, event_low, event_medium, event_high;
 
     public void LoadIcons()
     {
@@ -323,6 +372,9 @@ class ExpertEvaluation
         health_low = Resources.Load<Texture2D>("resource_preservation_low");
         health_med = Resources.Load<Texture2D>("resource_preservation_med");
         health_high = Resources.Load<Texture2D>("resource_preservation_high");
+        event_low = Resources.Load<Texture2D>("ie_low");
+        event_medium = Resources.Load<Texture2D>("ie_medium");
+        event_high = Resources.Load<Texture2D>("ie_high");
         poi = Resources.Load<Texture2D>("poi_environment");
         npc = Resources.Load<Texture2D>("poi_npc");
 
@@ -779,6 +831,18 @@ class ExpertEvaluation
                 return enemy_boss;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 return enemy_hazard;
+            case EntityType.ET_IE_LOW:
+                return event_low;
+            case EntityType.ET_IE_MEDIUM:
+                return event_medium;
+            case EntityType.ET_IE_HIGH:
+                return event_high;
+            case EntityType.ET_IE_LOW_MANDATORY:
+                return event_low;
+            case EntityType.ET_IE_MEDIUM_MANDATORY:
+                return event_medium;
+            case EntityType.ET_IE_HIGH_MANDATORY:
+                return event_high;
             case EntityType.ET_POI:
                 return poi;
             case EntityType.ET_POI_NPC:
@@ -1095,7 +1159,8 @@ public class Popup : EditorWindow
     private readonly string[] severityNames = new string[] { "NA", "LOW", "MED", "HIGH" };
     private readonly string[] categoryNames = new string[] { "NA", "POS", "NEG" };
     private readonly string[] entityNames = new string[] { "NONE", "OPTIONAL GOAL", "MANDATORY GOAL", "COMPLETION GOAL", "ACHIEVEMENT", "PRESERVATION LOW",
-    "PRESERVATION MED", "PRESERVATION HIGH", "LOW ENEMY", "MED ENEMY", "HIGH ENEMY", "BOSS", "ENVIRONMENT HAZARD", "POI", "NPC POI"};
+    "PRESERVATION MED", "PRESERVATION HIGH", "Enemy Type 1", "MED ENEMY", "Enemy Type 3", "BOSS", "ENVIRONMENT HAZARD", "LOW EVENT", "MEDIUM EVENT", "HIGH EVENT",
+    "POI", "NPC POI"};
 
     private Color[] severityColorsPos = new Color[] { Color.white, new Color32(175, 239, 169, 255), new Color32(86, 222, 74, 255), new Color32(43, 172, 32, 255) };
     private Color[] severityColorsNeg = new Color[] { Color.white, new Color32(232, 201, 100, 255), new Color32(232, 142, 100, 255), new Color32(248, 114, 126, 255) };

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using PathOS;
 
 /*
 PathOSAgentRenderer.cs 
@@ -104,8 +105,17 @@ public class PathOSAgentRenderer : MonoBehaviour
     private float healthWidth, healthHeight, healthXPos, healthYPos;
     GUIStyle healthStyle;
 
+    Texture2D targetTexture, targetBgTexture;
+    private float targetWidth, targetHeight, targetXPos, targetYPos;
+    GUIStyle targetStyle;
+
+    Dictionary<EntityType, (string, string)> evAcLookup; 
+
     [Header("Health Interface")]
     [SerializeField] private bool showHealthBar = true;
+
+    [Header("Target Interface")]
+    [SerializeField] private bool showTargetData = true;
 
     private void Start()
     {
@@ -123,6 +133,16 @@ public class PathOSAgentRenderer : MonoBehaviour
 
         healthStyle = new GUIStyle();
         healthStyle.alignment = TextAnchor.MiddleCenter;
+
+        targetTexture = new Texture2D(1, 1);
+        targetTexture.SetPixel(0, 0, Color.white);
+        targetTexture.Apply();
+
+        targetStyle = new GUIStyle();
+        targetStyle.alignment = TextAnchor.MiddleLeft;
+        targetStyle.fontSize = Screen.width / 60;
+
+        InitEvAc();
 
         transformCam = Camera.main;
         sceneInit = true;
@@ -342,6 +362,30 @@ public class PathOSAgentRenderer : MonoBehaviour
             healthStyle.fontSize = Screen.width/45;
             GUI.Label(new Rect(healthXPos, healthYPos, Screen.width / 6, healthHeight), ("HEALTH ") + agent.GetHealth().ToString("F1"), healthStyle);
 
+            healthStyle.fontSize = Screen.width / 60;
+            GUI.skin.box.normal.background = targetTexture;
+            GUI.Box(new Rect(healthXPos, healthYPos+28, Screen.width/6, healthHeight * 1.5f), GUIContent.none);
+            GUI.Label(new Rect(healthXPos, healthYPos + 22, Screen.width / 6, healthHeight), ("EVASION ") + agent.evasion.ToString("F1"), healthStyle);
+            GUI.Label(new Rect(healthXPos, healthYPos + 40, Screen.width / 6, healthHeight), ("ACCURACY ") + agent.accuracy.ToString("F1"), healthStyle);
+        }
+        if(showTargetData&& agent.GetDestinationEntity()!=null)
+        {
+            targetWidth = Screen.width / 5;
+            targetHeight = Screen.height / 20;
+            targetXPos = Screen.width - (Screen.width / 5f);
+            targetYPos = (targetHeight * 3.5f);
+
+
+            targetStyle.fontSize = Screen.width / 60;
+            EntityType targetType = agent.GetDestinationEntity().entityType;
+            (string, string) tuple = evAcLookup[targetType];
+            GUI.skin.box.normal.background = targetTexture;
+            GUI.Box(new Rect(targetXPos, targetYPos, targetWidth, targetHeight*2.2f), GUIContent.none);
+            GUI.Label(new Rect(targetXPos, targetYPos, targetWidth, targetHeight), ("TARGET ") + PathOSManager.instance.entityGizmoLookup[targetType], targetStyle);
+            GUI.Label(new Rect(targetXPos, targetYPos + 20, targetWidth, targetHeight), ("EVASION ") + tuple.Item1, targetStyle);
+            GUI.Label(new Rect(targetXPos, targetYPos + 40, targetWidth, targetHeight), ("ACCURACY ") + tuple.Item2, targetStyle);
+
+
         }
     }
 
@@ -410,5 +454,33 @@ public class PathOSAgentRenderer : MonoBehaviour
         screenPos.z -= 2.0f;
 
         return transformCam.ScreenToWorldPoint(screenPos);
+    }
+
+    private void InitEvAc()
+    {
+        evAcLookup = new Dictionary<EntityType, (string, string)>()
+        {
+            {EntityType.ET_NONE,("N/A","N/A")},
+            {EntityType.ET_GOAL_OPTIONAL ,("N/A","N/A")},
+            {EntityType.ET_GOAL_MANDATORY ,("N/A","N/A")},
+            {EntityType.ET_GOAL_COMPLETION ,("N/A","N/A")},
+            {EntityType.ET_RESOURCE_ACHIEVEMENT ,("N/A","N/A")},
+            {EntityType.ET_RESOURCE_PRESERVATION_LOW ,("N/A","N/A")},
+            {EntityType.ET_RESOURCE_PRESERVATION_MED ,("N/A","N/A")},
+            {EntityType.ET_RESOURCE_PRESERVATION_HIGH ,("N/A","N/A")},
+            {EntityType.ET_HAZARD_ENEMY_LOW ,(agent.lowEnemyEvasion.ToString("F1"),agent.lowEnemyAccuracy.ToString("F1"))},
+            {EntityType.ET_HAZARD_ENEMY_MED ,(agent.medEnemyEvasion.ToString("F1"),agent.medEnemyAccuracy.ToString("F1"))},
+            {EntityType.ET_HAZARD_ENEMY_HIGH ,(agent.highEnemyEvasion.ToString("F1"),agent.highEnemyAccuracy.ToString("F1"))},
+            {EntityType.ET_HAZARD_ENEMY_BOSS ,(agent.bossEnemyEvasion.ToString("F1"),agent.bossEnemyAccuracy.ToString("F1"))},
+            {EntityType.ET_HAZARD_ENVIRONMENT ,("N/A","N/A")},
+            {EntityType.ET_POI ,("N/A","N/A")},
+            {EntityType.ET_POI_NPC ,("N/A","N/A")},
+            {EntityType.ET_IE_LOW ,("N/A","N/A")},
+            {EntityType.ET_IE_MEDIUM,("N/A","N/A")},
+            {EntityType.ET_IE_HIGH,("N/A","N/A") },
+            {EntityType.ET_IE_LOW_MANDATORY ,("N/A","N/A")},
+            {EntityType.ET_IE_MEDIUM_MANDATORY,("N/A","N/A")},
+            {EntityType.ET_IE_HIGH_MANDATORY,("N/A","N/A") }
+        };
     }
 }

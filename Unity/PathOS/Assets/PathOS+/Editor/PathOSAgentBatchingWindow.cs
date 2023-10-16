@@ -112,8 +112,11 @@ public class PathOSAgentBatchingWindow : EditorWindow
     private Dictionary<PathOS.Heuristic, float> fixedLookup =
         new Dictionary<PathOS.Heuristic, float>();
 
+    //Here is where we add non-heuristic agent traits for fixed trait batching
     [SerializeField]
     private float fixedExp;
+    private float fixedAccuracy;
+    private float fixedEvasion;
 
     [SerializeField]
     private List<PathOS.HeuristicRange> rangeHeuristics =
@@ -130,8 +133,37 @@ public class PathOSAgentBatchingWindow : EditorWindow
     private List<string> profileNames = new List<string>();
     private int profileIndex = 0;
 
+    //Here is where we add non-heuristic agent traits for range trait batching
     [SerializeField]
     private PathOS.FloatRange rangeExp;
+    private PathOS.FloatRange accRange;
+    private PathOS.FloatRange evRange;
+
+    private PathOS.FloatRange lEnemyDamage;
+    private PathOS.FloatRange mEnemyDamage;
+    private PathOS.FloatRange hEnemyDamage;
+    private PathOS.FloatRange bEnemyDamage;
+
+    private PathOS.FloatRange lAccuracy;
+    private PathOS.FloatRange mAccuracy;
+    private PathOS.FloatRange hAccuracy;
+    private PathOS.FloatRange bAccuracy;
+
+    private PathOS.FloatRange lEvasion;
+    private PathOS.FloatRange mEvasion;
+    private PathOS.FloatRange hEvasion;
+    private PathOS.FloatRange bEvasion;
+
+    private PathOS.FloatRange lChallenge;
+    private PathOS.FloatRange mChallenge;
+    private PathOS.FloatRange hChallenge;
+
+    private PathOS.FloatRange lPenalty;
+    private PathOS.FloatRange mPenalty;
+    private PathOS.FloatRange hPenalty;
+
+    private bool usingRanges;
+
 
     [SerializeField]
     private string loadHeuristicsFile = "--";
@@ -143,7 +175,10 @@ public class PathOSAgentBatchingWindow : EditorWindow
     [System.Serializable]
     private class HeuristicSet
     {
+
         public float exp;
+        public float accuracy;
+        public float evasion;
         public List<PathOS.HeuristicScale> scales = 
             new List<PathOS.HeuristicScale>();
 
@@ -239,7 +274,92 @@ public class PathOSAgentBatchingWindow : EditorWindow
                 rangeHeuristics.Add(new PathOS.HeuristicRange(heuristic));
             }
         }
-
+        if (agentReference!=null)
+        {
+            accRange.min = agentReference.accuracy;
+            accRange.max = agentReference.accuracy;
+            evRange.min = agentReference.evasion;
+            evRange.max = agentReference.evasion;
+            lEnemyDamage.min = agentReference.lowEnemyDamage.min;
+            lEnemyDamage.max = agentReference.lowEnemyDamage.max;
+            mEnemyDamage.min = agentReference.medEnemyDamage.min;
+            mEnemyDamage.max = agentReference.medEnemyDamage.max;
+            hEnemyDamage.min = agentReference.highEnemyDamage.min;
+            hEnemyDamage.max = agentReference.highEnemyDamage.max;
+            bEnemyDamage.min = agentReference.bossEnemyDamage.max;
+            bEnemyDamage.max = agentReference.bossEnemyDamage.max;
+            lAccuracy.min = agentReference.lowEnemyAccuracy;
+            lAccuracy.max = agentReference.lowEnemyAccuracy;
+            mAccuracy.min = agentReference.medEnemyAccuracy;
+            mAccuracy.max = agentReference.medEnemyAccuracy;
+            hAccuracy.min = agentReference.highEnemyAccuracy;
+            hAccuracy.max = agentReference.highEnemyAccuracy;
+            bAccuracy.min = agentReference.bossEnemyAccuracy;
+            bAccuracy.min = agentReference.bossEnemyAccuracy;
+            lEvasion.min = agentReference.lowEnemyEvasion;
+            lEvasion.max = agentReference.lowEnemyEvasion;
+            mEvasion.min = agentReference.medEnemyEvasion;
+            mEvasion.max = agentReference.medEnemyEvasion;
+            hEvasion.min = agentReference.highEnemyEvasion;
+            hEvasion.max = agentReference.highEnemyEvasion;
+            bEvasion.min = agentReference.bossEnemyEvasion;
+            bEvasion.min = agentReference.bossEnemyEvasion;
+            lChallenge.min = agentReference.lowIEChallenge;
+            lChallenge.max = agentReference.lowIEChallenge;
+            mChallenge.min = agentReference.mediumIEChallenge;
+            mChallenge.max = agentReference.mediumIEChallenge;
+            hChallenge.min = agentReference.highIEChallenge;
+            hChallenge.max = agentReference.highIEChallenge;
+            lPenalty.min = agentReference.penLowCost;
+            lPenalty.max = agentReference.penLowCost;
+            mPenalty.min= agentReference.penMedCost;
+            mPenalty.max = agentReference.penMedCost;
+            hPenalty.min = agentReference.penHighCost;
+            hPenalty.max = agentReference.penHighCost;
+        }
+        else
+        {
+            accRange.min = 60;
+            accRange.max = 100;
+            evRange.min = 0;
+            evRange.max = 40;
+            lEnemyDamage.min = 5;
+            lEnemyDamage.max = 10;
+            mEnemyDamage.min = 10;
+            mEnemyDamage.max = 20;
+            hEnemyDamage.min = 20;
+            hEnemyDamage.max = 25;
+            bEnemyDamage.min = 5;
+            bEnemyDamage.max = 50;
+            lAccuracy.min = 50;
+            lAccuracy.max = 80;
+            mAccuracy.min = 60;
+            mAccuracy.max = 90;
+            hAccuracy.min = 50;
+            hAccuracy.max = 100;
+            bAccuracy.min = 90;
+            bAccuracy.min = 100;
+            lEvasion.min = 0;
+            lEvasion.max = 10;
+            mEvasion.min = 10;
+            mEvasion.max = 20;
+            hEvasion.min = 20;
+            hEvasion.max = 30;
+            bEvasion.min = 40;
+            bEvasion.min = 50;
+            lChallenge.min = 20;
+            lChallenge.max = 30;
+            mChallenge.min = 30;
+            mChallenge.max = 50;
+            hChallenge.min = 50;
+            hChallenge.max = 70;
+            lPenalty.min = 2;
+            lPenalty.max = 5;
+            mPenalty.min = 5;
+            mPenalty.max = 10;
+            hPenalty.min = 10;
+            hPenalty.max = 15;
+        }
         //Agent profiles.
         if (null == PathOSProfileWindow.profiles)
             PathOSProfileWindow.ReadPrefsData();
@@ -441,7 +561,34 @@ public class PathOSAgentBatchingWindow : EditorWindow
         //                    agentID = agentReference.GetInstanceID();
         //            }
         //        }
+        EditorGUILayout.LabelField("Combat Values", headerStyle);
 
+        usingRanges=EditorGUILayout.Toggle("Use Ranges",usingRanges);
+
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 1 Damage",ref lEnemyDamage.min, ref lEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 1 Accuracy", ref lAccuracy.min, ref lAccuracy.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 1 Evasion", ref lEvasion.min, ref lEvasion.max, 0, 100);
+
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 2 Damage", ref mEnemyDamage.min, ref mEnemyDamage.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 2 Accuracy", ref mAccuracy.min, ref mAccuracy.max, 0, 100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 2 Evasion", ref mEvasion.min, ref mEvasion.max, 0, 100);
+
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 3 Damage", ref hEnemyDamage.min, ref hEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 3 Accuracy", ref hAccuracy.min, ref hAccuracy.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Enemy Type 3 Evasion", ref hEvasion.min, ref hEvasion.max,0,100);
+                                                                                        
+        PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Damage", ref bEnemyDamage.min, ref bEnemyDamage.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Accuracy", ref bAccuracy.min, ref bAccuracy.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Boss Enemy Evasion", ref bEvasion.min, ref bEvasion.max,0,100);
+                                                                                           
+        PathOS.EditorUI.FullMinMaxSlider("Type 1 IE Challenge", ref lChallenge.min, ref lChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 1 IE Penalty", ref lPenalty.min, ref lPenalty.max,0,100);
+
+        PathOS.EditorUI.FullMinMaxSlider("Type 2 IE Challenge", ref mChallenge.min, ref mChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 2 IE Penalty", ref mPenalty.min, ref mPenalty.max,0,100);
+
+        PathOS.EditorUI.FullMinMaxSlider("Type 3 IE Challenge", ref hChallenge.min, ref hChallenge.max,0,100);
+        PathOS.EditorUI.FullMinMaxSlider("Type 3 IE Penalty", ref hPenalty.min, ref hPenalty.max, 0, 100);
 
         EditorGUILayout.LabelField("Agent Motives", headerStyle);
 
@@ -462,6 +609,10 @@ public class PathOSAgentBatchingWindow : EditorWindow
 
                 fixedExp = EditorGUILayout.Slider("Experience Scale",
                     fixedExp, 0.0f, 1.0f);
+                fixedAccuracy = EditorGUILayout.Slider("Accuracy", fixedAccuracy, 0.0f, 100.0f);
+                fixedEvasion = EditorGUILayout.Slider("Evasion", fixedEvasion, 0.0f, 100.0f);
+                //accuracy = EditorGUILayout.Slider("Accuracy", agentReference.accuracy, 0.0f, 100.0f);
+                //evasion = EditorGUILayout.Slider("Evasion", agentReference.evasion, 0.0f, 100.0f);
 
                 for (int i = 0; i < fixedHeuristics.Count; ++i)
                 {
@@ -469,7 +620,6 @@ public class PathOSAgentBatchingWindow : EditorWindow
                         heuristicLabels[fixedHeuristics[i].heuristic],
                         fixedHeuristics[i].scale, 0.0f, 1.0f);
                 }
-
                 break;
             
             //Define an acceptable range of values for each motive.
@@ -501,7 +651,10 @@ public class PathOSAgentBatchingWindow : EditorWindow
                         ref rangeHeuristics[i].range.max);
                 }
 
-                if(EditorGUI.EndChangeCheck())
+                PathOS.EditorUI.FullMinMaxSlider("Accuracy", ref accRange.min, ref accRange.max, 0, 100);
+                PathOS.EditorUI.FullMinMaxSlider("Evasion", ref evRange.min, ref evRange.max, 0, 100);
+
+                if (EditorGUI.EndChangeCheck())
                 {
                     selectedProfile = customProfile;
                     profileIndex = profileNames.Count - 1;
@@ -701,6 +854,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
         }
 
         rangeExp = profile.expRange;
+        accRange = profile.accRange;
+        evRange = profile.evRange;
     }
 
     //Reconcile UI selection of custom profile with collection of profiles
@@ -801,6 +956,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
         }
 
         fixedExp = agentReference.experienceScale;
+        fixedAccuracy = agentReference.accuracy;
+        fixedEvasion = agentReference.evasion;
     }
 
     private void SyncFixedLookup()
@@ -841,6 +998,28 @@ public class PathOSAgentBatchingWindow : EditorWindow
     //Apply heuristics to the given agent.
     private void SetHeuristics(PathOSAgent agent)
     {
+        if(usingRanges)
+        {
+            agent.lowEnemyDamage = new TimeRange(lEnemyDamage.min, lEnemyDamage.max);
+            agent.lowEnemyAccuracy = Random.Range(lAccuracy.min, lAccuracy.max);
+            agent.lowEnemyEvasion = Random.Range(lEvasion.min, lEvasion.max);
+            agent.medEnemyDamage = new TimeRange(mEnemyDamage.min, mEnemyDamage.max);
+            agent.medEnemyAccuracy = Random.Range(mAccuracy.min, mAccuracy.max);
+            agent.medEnemyEvasion = Random.Range(mEvasion.min, mEvasion.max);
+            agent.highEnemyDamage = new TimeRange(hEnemyDamage.min, hEnemyDamage.max);
+            agent.highEnemyAccuracy = Random.Range(hAccuracy.min, hAccuracy.max);
+            agent.highEnemyEvasion = Random.Range(hEvasion.min, hEvasion.max);
+            agent.bossEnemyDamage = new TimeRange(bEnemyDamage.min, bEnemyDamage.max);
+            agent.bossEnemyAccuracy = Random.Range(bAccuracy.min, bAccuracy.max);
+            agent.bossEnemyEvasion = Random.Range(bEvasion.min, bEvasion.max);
+            agent.lowIEChallenge = Random.Range(lChallenge.min, lChallenge.max);
+            agent.penLowCost = (int)Random.Range(lPenalty.min, lPenalty.max);
+            agent.mediumIEChallenge = Random.Range(mChallenge.min, mChallenge.max);
+            agent.penMedCost = (int)Random.Range(mPenalty.min, mPenalty.max);
+            agent.highIEChallenge = Random.Range(hChallenge.min, hChallenge.max);
+            agent.penHighCost = (int)Random.Range(hPenalty.min, hPenalty.max);
+
+        }
         switch (heuristicMode)
         {
             case HeuristicMode.FIXED:
@@ -853,6 +1032,8 @@ public class PathOSAgentBatchingWindow : EditorWindow
                 }
 
                 agent.experienceScale = fixedExp;
+                agent.accuracy = fixedAccuracy;
+                agent.evasion = fixedEvasion;
                 break;
 
             case HeuristicMode.RANGE:
@@ -866,6 +1047,7 @@ public class PathOSAgentBatchingWindow : EditorWindow
                 }
 
                 agent.experienceScale = Random.Range(rangeExp.min, rangeExp.max);
+                agent.accuracy = Random.Range(accRange.min, accRange.max);
                 break;
 
             case HeuristicMode.LOAD:

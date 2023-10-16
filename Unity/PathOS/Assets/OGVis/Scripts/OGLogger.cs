@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using PathOS;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Rendering;
+using static OGVis.PlayerLog;
 
 /*
 OGLogger.cs
@@ -78,7 +81,7 @@ public class OGLogger : MonoBehaviour
     }
 
     //Called from manager for custom GameObject interactions.
-    public void LogInteraction(string objectName, Transform location)
+    public void LogInteraction(string objectName, Transform location, EntityType type)
     {
         objectName = Regex.Replace(objectName, ",", string.Empty);
 
@@ -88,7 +91,8 @@ public class OGLogger : MonoBehaviour
             location.position.x + "," +
             location.position.y + "," +
             location.position.z + "," +
-            agent.GetHealth();
+            agent.GetHealth() + "," +
+            type;
 
         WriteLogLine(line);
     }
@@ -107,6 +111,53 @@ public class OGLogger : MonoBehaviour
             agent.GetHealth();
 
         WriteLogLine(line);
+    }
+
+    public void LogTime(int pit, int pct)
+    {
+        //pit is penalty time from interaction events
+        //pct is penalty time from combat events
+        string line = OGLogManager.LogItemType.TIME + "," +
+           mgr.gameTimer + "," +
+           pit + "," +
+           pct + "," +
+           (mgr.gameTimer + pit + pct) + ",";
+
+        WriteLogLine(line);
+    }
+    public void LogCombat(string level, int missesT, int missesD, float healthD, float healthR,float ieTime)
+    {
+        //logs game time, diffculty of combat, total combat missses, misses from this event, delta health, remaining health, time loss from ie, and total time
+        string line = OGLogManager.LogItemType.COMBAT + "," +
+          mgr.gameTimer + "," +
+          level + "," +
+          missesT + "," +
+          missesD + "," +
+          healthD + "," +
+          healthR + "," +
+          ieTime + "," +
+          (mgr.gameTimer + missesT + ieTime) + ",";
+
+        WriteLogLine(line);
+
+    }
+
+    public void LogInteractionEvent(string level,int misses, float lowT, float medT, float highT, int combatT)
+    {
+        //logs game time, difficulty of combat, misses at this event, current cost of low misses, medium misses, high misses, total cost of misses, combat time loss, and total time
+        string line = OGLogManager.LogItemType.INTERACTIONEVENT + "," +
+          mgr.gameTimer + "," +
+          level + "," +
+          misses + "," +
+          lowT + "," +
+          medT + "," +
+          highT + "," +
+          (lowT + medT + highT) + "," +
+          combatT + "," +
+          (mgr.gameTimer + combatT + lowT+medT+highT) + ",";
+
+        WriteLogLine(line);
+
     }
 
     public void WriteLogLine(string line)

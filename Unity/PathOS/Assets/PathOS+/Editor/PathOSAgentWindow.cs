@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using PathOS;
+using System.IO;
 
 /*
 PathOSAgentWindow.cs 
@@ -52,8 +53,10 @@ public class PathOSAgentWindow : EditorWindow
     private SerializedProperty exploreThreshold;
     private SerializedProperty exploreTargetMargin;
 
+    private string difficultyNewName="New Difficulty Name";
+
     //Properties for health
-    private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, health_low, health_med, health_high;
+    private Texture2D enemy_hazard, enemy_low, enemy_med, enemy_high, enemy_boss, interaction_eventL,interaction_eventM,interaction_eventH, health_low, health_med, health_high;
 
     private Dictionary<Heuristic, string> heuristicLabels;
 
@@ -66,6 +69,7 @@ public class PathOSAgentWindow : EditorWindow
 
     private Color bgColor, bgDark1, bgDark2, bgDark3, redColor;
 
+
     private void OnEnable()
     {
         //Load saved settings.
@@ -77,6 +81,10 @@ public class PathOSAgentWindow : EditorWindow
         enemy_med = Resources.Load<Texture2D>("hazard_enemy_medium");
         enemy_high = Resources.Load<Texture2D>("hazard_enemy_high");
         enemy_boss = Resources.Load<Texture2D>("hazard_enemy_boss");
+        interaction_eventL = Resources.Load<Texture2D>("ie_low");
+        interaction_eventM = Resources.Load<Texture2D>("ie_medium");
+        interaction_eventH = Resources.Load<Texture2D>("ie_high");
+
         enemy_hazard = Resources.Load<Texture2D>("hazard_environment");
         health_low = Resources.Load<Texture2D>("resource_preservation_low");
         health_med = Resources.Load<Texture2D>("resource_preservation_med");
@@ -212,6 +220,8 @@ public class PathOSAgentWindow : EditorWindow
     {
         serial = new SerializedObject(agentReference);
         experienceScale = serial.FindProperty("experienceScale");
+        accuracy = serial.FindProperty("accuracy");
+        evasion = serial.FindProperty("evasion");
         timeScale = serial.FindProperty("timeScale");
         freezeAgent = serial.FindProperty("freezeAgent");
         exploreDegrees = serial.FindProperty("exploreDegrees");
@@ -257,6 +267,8 @@ public class PathOSAgentWindow : EditorWindow
 
         if (showCombatCharacteristics)
         {
+            //EditorGUILayout.PropertyField(accuracy);
+            //EditorGUILayout.PropertyField(evasion);
             agentReference.accuracy = EditorGUILayout.Slider("Accuracy",agentReference.accuracy, 0.0f, 100.0f);
             agentReference.evasion = EditorGUILayout.Slider("Evasion",agentReference.evasion, 0.0f, 100.0f);
 
@@ -320,6 +332,8 @@ public class PathOSAgentWindow : EditorWindow
                 }
 
                 agentReference.experienceScale = Random.Range(profile.expRange.min, profile.expRange.max);
+                agentReference.accuracy = Random.Range(profile.accRange.min, profile.accRange.max);
+                agentReference.evasion = Random.Range(profile.evRange.min, profile.evRange.max);
             }
 
             EditorGUILayout.EndHorizontal();
@@ -370,45 +384,92 @@ public class PathOSAgentWindow : EditorWindow
 
         serial.Update();
 
+
         //EditorGUIUtility.labelWidth = 150.0f;
+
+        
+        agentReference.difficulty = EditorGUILayout.Popup("Difficulty", agentReference.difficulty, agentReference.difficultiesName.ToArray());
+        if (GUILayout.Button("Confirm Difficulty"))
+        {
+            agentReference.diffSet();
+        }
+        if (GUILayout.Button("Reload Difficulties"))
+        {
+            agentReference.diffLoad();
+        }
+        if (GUILayout.Button("Open Difficulties Folder"))
+        {
+            Application.OpenURL(Application.dataPath + Path.DirectorySeparatorChar + "PathOS+" + Path.DirectorySeparatorChar + "Difficulties" + Path.DirectorySeparatorChar);
+        }
+        GUILayout.Label("Difficulty Name");
+        difficultyNewName =GUILayout.TextField(difficultyNewName);
+        if (GUILayout.Button("Save New Difficulty"))
+        {
+            agentReference.diffSave(difficultyNewName);
+        }
+       
+
+        EditorGUILayout.Space(15);
+
 
         EditorGUILayout.LabelField("Enemy Damage Values", EditorStyles.boldLabel);
         EditorGUILayout.Space(15);
 
-        DrawUIRow(enemy_low, 30, 25, "Low Enemy Damage", ref agentReference.lowEnemyDamage);
-        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Low Enemy Accuracy", agentReference.lowEnemyAccuracy);
-        agentReference.lowEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Low Enemy Evasion", agentReference.lowEnemyEvasion);
+        DrawUIRow(enemy_low, 30, 25, "Enemy Type 1 Damage", ref agentReference.lowEnemyDamage);
+        agentReference.lowEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Enemy Type 1 Accuracy", agentReference.lowEnemyAccuracy); //example of setting min and max
+        agentReference.lowEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Enemy Type 1 Evasion", agentReference.lowEnemyEvasion);
 
 
         EditorGUILayout.Space(20);
-        DrawUIRow(enemy_med, 30, 25, "Medium Enemy Damage", ref agentReference.medEnemyDamage);
-        agentReference.medEnemyAccuracy = DrawUIRow(enemy_med, 30, 25, "Medium Enemy Accuracy", agentReference.medEnemyAccuracy);
-        agentReference.medEnemyEvasion = DrawUIRow(enemy_med, 30, 25, "Medium Enemy Evasion", agentReference.medEnemyEvasion);
+        DrawUIRow(enemy_med, 30, 25, "Enemy Type 2 Damage", ref agentReference.medEnemyDamage);
+        agentReference.medEnemyAccuracy = DrawUIRow(enemy_med, 30, 25, "Enemy Type 2 Accuracy", agentReference.medEnemyAccuracy);
+        agentReference.medEnemyEvasion = DrawUIRow(enemy_med, 30, 25, "Enemy Type 2 Evasion", agentReference.medEnemyEvasion);
 
         EditorGUILayout.Space(20);
-        DrawUIRow(enemy_high, 30, 25, "High Enemy Damage", ref agentReference.highEnemyDamage);
-        agentReference.highEnemyAccuracy = DrawUIRow(enemy_high, 30, 25, "High Enemy Accuracy", agentReference.highEnemyAccuracy);
-        agentReference.highEnemyEvasion = DrawUIRow(enemy_high, 30, 25, "High Enemy Evasion", agentReference.highEnemyEvasion);
+        DrawUIRow(enemy_high, 30, 25, "Enemy Type 3 Damage", ref agentReference.highEnemyDamage);
+        agentReference.highEnemyAccuracy = DrawUIRow(enemy_high, 30, 25, "Enemy Type 3 Accuracy", agentReference.highEnemyAccuracy);
+        agentReference.highEnemyEvasion = DrawUIRow(enemy_high, 30, 25, "Enemy Type 3 Evasion", agentReference.highEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Damage", ref agentReference.bossEnemyDamage);
-        agentReference.bossEnemyAccuracy = DrawUIRow(enemy_low, 30, 25, "Boss Enemy Accuracy", agentReference.bossEnemyAccuracy);
-        agentReference.bossEnemyEvasion = DrawUIRow(enemy_low, 30, 25, "Boss Enemy Evasion", agentReference.bossEnemyEvasion);
+        agentReference.bossEnemyAccuracy = DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Accuracy", agentReference.bossEnemyAccuracy);
+        agentReference.bossEnemyEvasion = DrawUIRow(enemy_boss, 30, 25, "Boss Enemy Evasion", agentReference.bossEnemyEvasion);
 
         EditorGUILayout.Space(20);
         DrawUIRow(enemy_hazard, 30, 25, "Hazard Damage", ref agentReference.hazardDamage);
 
         EditorGUILayout.Space(15);
+        EditorGUILayout.LabelField("Interaction Events", EditorStyles.boldLabel);
+
+       
+
+        agentReference.lowIEChallenge = DrawUIRow(interaction_eventL, 30, 25, "Type 1 Event Challenge", agentReference.lowIEChallenge);
+        //agentReference.lowIEInterval = DrawUIRow(interaction_event, 30, 25, "Low Event Interval", agentReference.lowIEInterval);
+        agentReference.penLowCost = DrawUIRow(interaction_eventL, 30, 25, "Type 1 Failure Cost", agentReference.penLowCost);
+        EditorGUILayout.Space(20);
+
+        agentReference.mediumIEChallenge = DrawUIRow(interaction_eventM, 30, 25, "Type 2 Event Challenge", agentReference.mediumIEChallenge);
+        //agentReference.mediumIEInterval = DrawUIRow(interaction_event, 30, 25, "Medium Event Interval", agentReference.mediumIEInterval);
+        agentReference.penMedCost = DrawUIRow(interaction_eventM, 30, 25, "Type  2 Failure Cost", agentReference.penMedCost);
+
+        EditorGUILayout.Space(20);
+
+        agentReference.highIEChallenge = DrawUIRow(interaction_eventH, 30, 25, "Type 3 Event Challenge", agentReference.highIEChallenge);
+        //agentReference.highIEInterval = DrawUIRow(interaction_event, 30, 25, "High Event Interval", agentReference.highIEInterval);
+        agentReference.penHighCost = DrawUIRow(interaction_eventH, 30, 25, "Type 3 Failure Cost", agentReference.penHighCost);
+
+
+        EditorGUILayout.Space(15);
         EditorGUILayout.LabelField("Resource Values", EditorStyles.boldLabel);
         EditorGUILayout.Space(15);
 
-        DrawUIRow(health_low, 30, 25, "Low Health Gain", ref agentReference.lowHealthGain);
+        DrawUIRow(health_low, 30, 25, "Type 1 Health Gain", ref agentReference.lowHealthGain);
 
         EditorGUILayout.Space(20);
-        DrawUIRow(health_med, 30, 25, "Medium Health Gain", ref agentReference.medHealthGain);
+        DrawUIRow(health_med, 30, 25, "Type 2 Health Gain", ref agentReference.medHealthGain);
 
         EditorGUILayout.Space(20);
-        DrawUIRow(health_high, 30, 25, "High Health Gain", ref agentReference.highHealthGain);
+        DrawUIRow(health_high, 30, 25, "Type 3 Health Gain", ref agentReference.highHealthGain);
 
         serial.ApplyModifiedProperties();
 
@@ -442,8 +503,30 @@ public class PathOSAgentWindow : EditorWindow
         return temp;
     }
 
+    private float DrawUIRow(Texture2D icon, float width, float height, string label, float reference,float customMin, float customMax)
+    {
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Label(icon, GUILayout.Width(width), GUILayout.Height(height));
+        float temp = EditorGUILayout.Slider(label, reference, customMin, customMax);
+        EditorGUILayout.EndHorizontal();
+        return temp;
+    }
+
     public void SetAgentReference(PathOSAgent reference)
     {
         agentReference = reference;
+    }
+
+    public void SetEasy()
+    {
+
+    }
+    public void SetMedium()
+    {
+
+    }
+    public void SetHard()
+    {
+        
     }
 }

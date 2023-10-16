@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PathOS;
+using static UnityEngine.EventSystems.EventTrigger;
 
 /*
 PathOSAgentMemory.cs 
@@ -58,12 +59,17 @@ public class PathOSAgentMemory : MonoBehaviour
             if(entity.entityRef.alwaysKnown)
             {
                 EntityMemory newMemory = new EntityMemory(entity);
-                newMemory.MakeUnforgettable();
 
-                entities.Add(newMemory);
+                    newMemory.MakeUnforgettable();
+
+                    entities.Add(newMemory);
             }
 
-            if(entity.entityType == EntityType.ET_GOAL_MANDATORY)
+            if(entity.entityType == EntityType.ET_GOAL_MANDATORY||
+                entity.entityType == EntityType.ET_HAZARD_ENEMY_BOSS||
+                entity.entityType == EntityType.ET_IE_LOW_MANDATORY ||
+                entity.entityType == EntityType.ET_IE_MEDIUM_MANDATORY ||
+                entity.entityType == EntityType.ET_IE_HIGH_MANDATORY)
             {
                 EntityMemory newMemory = new EntityMemory(entity);
                 finalGoalTracker.Add(newMemory);
@@ -414,5 +420,17 @@ public class PathOSAgentMemory : MonoBehaviour
         }
 
         return penalty;
+    }
+
+    public void LogCombat(string level,int misses, float deltaH, float health)
+    {
+        if(PathOSAgent.logger!=null)
+            PathOSAgent.logger.SendCombatEvent(this.gameObject,level,agent.penaltyTimeC, misses,deltaH,health,agent.totalTime);
+    }
+
+    public void LogInteractionEvent(string level, int delta)
+    {
+        if (PathOSAgent.logger != null)
+            PathOSAgent.logger.SendInteractionEvent(this.gameObject,level, delta,agent.lowTime,agent.medTime,agent.highTime,agent.penaltyTimeC);
     }
 }

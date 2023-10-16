@@ -222,6 +222,12 @@ public class PathOSProfileWindow : EditorWindow
             PathOS.EditorUI.FullMinMaxSlider("Experience Scale",
                 ref curProfile.expRange.min, ref curProfile.expRange.max);
 
+            PathOS.EditorUI.FullMinMaxSlider("Accuracy",
+                ref curProfile.accRange.min, ref curProfile.accRange.max,0,100);
+
+            PathOS.EditorUI.FullMinMaxSlider("Evasion",
+                ref curProfile.evRange.min, ref curProfile.evRange.max,0,100);
+
             for (int i = 0; i < curProfile.heuristicRanges.Count; ++i)
             {
                 HeuristicRange hr = curProfile.heuristicRanges[i];

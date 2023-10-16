@@ -1,0 +1,23 @@
+label,Astral Cove
+lowEnemyAccuracy,60
+lowEnemyEvasion,15
+lowEnemyDamage,15,25
+medEnemyAccuracy,60
+medEnemyEvasion,40
+medEnemyDamage,15,25
+highEnemyAccuracy,75
+highEnemyEvasion,15
+highEnemyDamage,25,40
+bossEnemyAccuracy,80
+bossEnemyEvasion,25
+bossEnemyDamage,30,45
+hazardDamage,10,20
+lowIEChallenge,15
+penLowCost,1
+medIEChallenge,20
+penMedCost,2
+highIEChallenge,25
+penHighCost,3
+lowHealthGain,10,30
+medHealthGain,30,60
+highHealthGain,70,100

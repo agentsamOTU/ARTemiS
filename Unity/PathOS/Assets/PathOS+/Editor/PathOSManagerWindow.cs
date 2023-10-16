@@ -94,6 +94,18 @@ public class PathOSManagerWindow : EditorWindow
             content = new GUIContent(icon);
         }
 
+        public MarkupToggle(EntityType entityType, string label,
+           Texture2D icon, Texture2D cursor, string tooltip, bool isClear = false)
+        {
+            this.entityType = entityType;
+            this.label = label;
+            this.icon = icon;
+            this.cursor = cursor;
+            this.isClear = isClear;
+
+            content = new GUIContent(icon,tooltip);
+        }
+
         public bool Layout()
         {
             if (null == style)
@@ -291,16 +303,18 @@ public class PathOSManagerWindow : EditorWindow
             heuristicLabelList[i] = UI.heuristicLabels.Values[i];
         }
 
-
+        
         //Todo: Just in case. Remove if this gets in the way
         if (markupToggles.Count <= 0)
         {//Set up toggles for level markup.
             foreach (EntityType entype in System.Enum.GetValues(typeof(EntityType)))
             {
+                //NEW: Icon issue is here
                 markupToggles.Add(new MarkupToggle(entype,
                     managerReference.entityLabelLookup[entype],
                     Resources.Load<Texture2D>(managerReference.entityGizmoLookup[entype]),
-                    Resources.Load<Texture2D>("cursor_" + managerReference.entityGizmoLookup[entype])));
+                    Resources.Load<Texture2D>("cursor_" + managerReference.entityGizmoLookup[entype]),
+                    managerReference.entityTooltipLookup[entype]));
             }
 
 

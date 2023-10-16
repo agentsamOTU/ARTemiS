@@ -85,6 +85,12 @@ namespace PathOS
                 { EntityType.ET_HAZARD_ENEMY_HIGH,           "Enemy High" },
                 { EntityType.ET_HAZARD_ENEMY_BOSS,           "Boss" },
                 { EntityType.ET_HAZARD_ENVIRONMENT,     "Environment Hazard" },
+                { EntityType.ET_IE_LOW,          "ie_low" },
+                { EntityType.ET_IE_MEDIUM,       "ie_medium" },
+                { EntityType.ET_IE_HIGH,         "ie_high" },
+                { EntityType.ET_IE_LOW_MANDATORY,          "ie_low_mandatory" },
+                { EntityType.ET_IE_MEDIUM_MANDATORY,       "ie_medium_mandatory" },
+                { EntityType.ET_IE_HIGH_MANDATORY,         "ie_high_mandatory" },
                 { EntityType.ET_POI,                    "POI" },
                 { EntityType.ET_POI_NPC,                "NPC" }
             };
@@ -104,6 +110,12 @@ namespace PathOS
             entityLabels[EntityType.ET_HAZARD_ENEMY_HIGH],
             entityLabels[EntityType.ET_HAZARD_ENEMY_BOSS],
             entityLabels[EntityType.ET_HAZARD_ENVIRONMENT],
+            entityLabels[EntityType.ET_IE_LOW],
+            entityLabels[EntityType.ET_IE_MEDIUM],
+            entityLabels[EntityType.ET_IE_HIGH],
+            entityLabels[EntityType.ET_IE_LOW_MANDATORY],
+            entityLabels[EntityType.ET_IE_MEDIUM_MANDATORY],
+            entityLabels[EntityType.ET_IE_HIGH_MANDATORY],
             entityLabels[EntityType.ET_POI],
             entityLabels[EntityType.ET_POI_NPC]
         };
@@ -124,6 +136,12 @@ namespace PathOS
                 { "Enemy High",              EntityType.ET_HAZARD_ENEMY_HIGH },
                 { "Boss",               EntityType.ET_HAZARD_ENEMY_BOSS },
                 { "Environment Hazard", EntityType.ET_HAZARD_ENVIRONMENT },
+                { "Type 1 Challenge Event", EntityType.ET_IE_LOW },
+                { "Type 2 Challenge Event", EntityType.ET_IE_MEDIUM },
+                { "Type 3 Challenge Event", EntityType.ET_IE_HIGH },
+                { "Type 1 Mandatory Challenge Event", EntityType.ET_IE_LOW_MANDATORY },
+                { "Type 2 Mandatory Challenge Event", EntityType.ET_IE_MEDIUM_MANDATORY },
+                { "Type 3 Mandatory Challenge Event", EntityType.ET_IE_HIGH_MANDATORY },
                 { "POI",                EntityType.ET_POI },
                 { "NPC",                EntityType.ET_POI_NPC }
             };

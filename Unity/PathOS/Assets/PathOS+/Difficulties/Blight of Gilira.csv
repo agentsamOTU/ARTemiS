@@ -1,0 +1,23 @@
+label,Blight of Gilira
+lowEnemyAccuracy,40
+lowEnemyEvasion,10
+lowEnemyDamage,10,15
+medEnemyAccuracy,40
+medEnemyEvasion,20
+medEnemyDamage,15,15
+highEnemyAccuracy,50
+highEnemyEvasion,15
+highEnemyDamage,15,20
+bossEnemyAccuracy,65
+bossEnemyEvasion,25
+bossEnemyDamage,20,25
+hazardDamage,10,20
+lowIEChallenge,40
+penLowCost,4
+medIEChallenge,55
+penMedCost,6
+highIEChallenge,70
+penHighCost,8
+lowHealthGain,10,30
+medHealthGain,30,60
+highHealthGain,70,100

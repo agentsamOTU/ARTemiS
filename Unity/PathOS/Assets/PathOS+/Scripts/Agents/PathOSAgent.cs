@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using PathOS;
+using System.IO;
 
 /*
 PathOSAgent.cs 
@@ -12,7 +13,7 @@ PathOSAgent (c) Samantha Stahlke and Atiya Nova 2018
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(PathOSAgentMemory))]
 [RequireComponent(typeof(PathOSAgentEyes))]
-public class PathOSAgent : MonoBehaviour 
+public class PathOSAgent : MonoBehaviour
 {
     /* OBJECT REFERENCES AND DEBUGGING */
     private NavMeshAgent navAgent;
@@ -31,11 +32,14 @@ public class PathOSAgent : MonoBehaviour
     public bool freezeAgent;
     private bool verboseDebugging = false;
 
-    /* PLAYER CHARACTERISTICS */
+    //* COMBAT CHARACTERISTICS *\\
+    [Range(0.0f, 100.0f)]
+    public float accuracy;
+    public float evasion;
 
+    /* PLAYER CHARACTERISTICS */
     [Range(0.0f, 1.0f)]
     public float experienceScale;
-
     public List<HeuristicScale> heuristicScales, modifiableHeuristicScales;
     private Dictionary<Heuristic, float> heuristicScaleLookup;
     private Dictionary<(Heuristic, EntityType), float> entityScoringLookup;
@@ -50,7 +54,7 @@ public class PathOSAgent : MonoBehaviour
     [Tooltip("How many degrees should separate lines of " +
         "sight checked for \"explorability\" by the agent?")]
     public float exploreDegrees = 5.0f;
-    
+
     [DisplayName("Explore Degrees (Back)")]
     [Tooltip("How many degrees should separate paths checked for " +
         "\"explorability\" behind (out of sight of) the agent?")]
@@ -59,7 +63,7 @@ public class PathOSAgent : MonoBehaviour
     [Tooltip("How many degrees should the agent sway to either " +
         "side when looking around?")]
     public float lookDegrees = 60.0f;
-    
+
     [Tooltip("How close do two \"exploration\" goals have to " +
         "be to be considered the same?")]
     public float exploreThreshold = 2.0f;
@@ -111,19 +115,20 @@ public class PathOSAgent : MonoBehaviour
 
     //on a scale of 0-100
     //100 will hit 100% on an enemy with 0 evasiveness
-    public float accuracy = 90.0f;
+    //public float accuracy = 90.0f;
     //evasiveness directly modifies enemy accuracy
-    public float evasion = 10.0f;
+    //public float evasion = 10.0f;
 
     //Health variables
     private float health = 100.0f;
     private bool dead = false;
-    public TimeRange lowEnemyDamage = new TimeRange(10,30), medEnemyDamage = new TimeRange(30,50),
-        highEnemyDamage = new TimeRange(50,70), bossEnemyDamage = new TimeRange(70,100),
-        hazardDamage = new TimeRange(10,20), lowHealthGain = new TimeRange(10, 30),
-        medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70,100);
+    public TimeRange lowEnemyDamage = new TimeRange(10, 30), medEnemyDamage = new TimeRange(30, 50),
+        highEnemyDamage = new TimeRange(50, 70), bossEnemyDamage = new TimeRange(70, 100),
+        hazardDamage = new TimeRange(10, 20), lowHealthGain = new TimeRange(10, 30),
+        medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70, 100);
     private int cautionIndex, aggressionIndex, adrenalineIndex;
 
+    //Accuracy & Evasion variables (for enemies)
     public float lowEnemyAccuracy = 60.0f;
     public float lowEnemyEvasion = 5.0f;
     public float medEnemyAccuracy = 70.0f;
@@ -133,16 +138,51 @@ public class PathOSAgent : MonoBehaviour
     public float bossEnemyAccuracy = 90.0f;
     public float bossEnemyEvasion = 20.0f;
 
+    //Interaction Event Variables
+    public float lowIEChallenge = 0.0f;
+    public float lowIEInterval = 0.0f;
+
+    public float mediumIEChallenge = 0.0f;
+    public float mediumIEInterval = 0.0f;
+
+    public float highIEChallenge = 0.0f;
+    public float highIEInterval = 0.0f;
+
+    public int combatCount = 0;
+    public int penaltyTimeC = 0;
+
+    public int IECount = 0;
+    public int penaltyTimeI = 0;
+    public int penaltyTimeI1 = 0;
+    public int penaltyTimeI2 = 0;
+    public int penaltyTimeI3 = 0;
+
+    public float penLowCost = 1.0f;
+    public float penMedCost = 2.0f;
+    public float penHighCost = 4.0f;
+
+    public List<ResourceValueData> difficulties;
+    public List<string> difficultiesName;
+
+    public float lowTime;
+    public float medTime;
+    public float highTime;
+    public float totalTime;
+
+    public int difficulty = 0;
 
     private GameObject cameraObject;
     private static bool cameraFollow = false;
     private void Awake()
-    { 
+    {
         eyes = GetComponent<PathOSAgentEyes>();
         memory = GetComponent<PathOSAgentMemory>();
 
         navAgent = GetComponent<NavMeshAgent>();
         completed = false;
+
+        difficulties = new List<ResourceValueData>();
+        difficultiesName = new List<string>();
 
         cameraObject = GameObject.FindWithTag("PathOSCamera");
 
@@ -155,7 +195,7 @@ public class PathOSAgent : MonoBehaviour
         heuristicScaleLookup = new Dictionary<Heuristic, float>();
         entityScoringLookup = new Dictionary<(Heuristic, EntityType), float>();
 
-        if(null == manager)
+        if (null == manager)
             manager = PathOSManager.instance;
 
         if (null == logger)
@@ -186,23 +226,23 @@ public class PathOSAgent : MonoBehaviour
             }
         }
 
-        foreach(HeuristicWeightSet curSet in manager.heuristicWeights)
+        foreach (HeuristicWeightSet curSet in manager.heuristicWeights)
         {
-            for(int j = 0; j < curSet.weights.Count; ++j)
+            for (int j = 0; j < curSet.weights.Count; ++j)
             {
                 entityScoringLookup.Add((curSet.heuristic, curSet.weights[j].entype), curSet.weights[j].weight);
             }
         }
 
-          float avgAggressionScore =  0.2f *
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_LOW)] +
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_MED)]) +
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_HIGH)]) +
-          (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_BOSS)]) +
-          entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENVIRONMENT)]);
+        float avgAggressionScore = 0.2f *
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_LOW)] +
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_MED)]) +
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_HIGH)]) +
+        (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_BOSS)]) +
+        entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENVIRONMENT)]);
 
         float avgAdrenalineScore = 0.2f
-            * (entityScoringLookup[(Heuristic.ADRENALINE, EntityType.ET_HAZARD_ENEMY_LOW)] + 
+            * (entityScoringLookup[(Heuristic.ADRENALINE, EntityType.ET_HAZARD_ENEMY_LOW)] +
               (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_MED)]) +
               (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_HIGH)]) +
               (entityScoringLookup[(Heuristic.AGGRESSION, EntityType.ET_HAZARD_ENEMY_BOSS)]) +
@@ -238,8 +278,8 @@ public class PathOSAgent : MonoBehaviour
             PathOS.Constants.Behaviour.LOOK_TIME_MAX,
             heuristicScaleLookup[Heuristic.CURIOSITY]);
 
-        float memPathScale = (heuristicScaleLookup[Heuristic.CAUTION] 
-            + 1.0f - heuristicScaleLookup[Heuristic.CURIOSITY]) 
+        float memPathScale = (heuristicScaleLookup[Heuristic.CAUTION]
+            + 1.0f - heuristicScaleLookup[Heuristic.CURIOSITY])
             * 0.5f;
 
         memPathChance = Mathf.Lerp(PathOS.Constants.Behaviour.MEMORY_NAV_CHANCE_MIN,
@@ -252,6 +292,7 @@ public class PathOSAgent : MonoBehaviour
     private void Start()
     {
         LogAgentData();
+        LogEventCosts();
         PerceptionUpdate();
 
         //Stochastic initialization of look time.
@@ -260,14 +301,14 @@ public class PathOSAgent : MonoBehaviour
 
     private void LogAgentData()
     {
-        if(logger != null)
+        if (logger != null)
         {
             string header = "";
 
             header += "HEURISTICS,";
             header += "EXPERIENCE," + experienceScale + ",";
 
-            foreach(HeuristicScale scale in modifiableHeuristicScales)
+            foreach (HeuristicScale scale in modifiableHeuristicScales)
             {
                 header += scale.heuristic + "," + scale.scale + ",";
             }
@@ -275,6 +316,68 @@ public class PathOSAgent : MonoBehaviour
             logger.WriteHeader(this.gameObject, header);
         }
     }
+
+    private void LogEventCosts()
+    {
+        if (logger != null)
+        {
+            string header = "";
+            header += "EVENTVALUES" + ",";
+            header += "Accuracy" + ",";
+            header += accuracy + ",";
+            header += "Evasion" + ",";
+            header += evasion + ",";
+            header += "Low Cost"+",";
+            header += penLowCost + ",";
+            header += "Med Cost"+",";
+            header += penMedCost + ",";
+            header += "High Cost"+",";
+            header += penHighCost + ",";
+            header += "LEnemyDamageMin"+",";
+            header += lowEnemyDamage.min + ",";
+            header += "LEnemyDamageMax" + ",";
+            header += lowEnemyDamage.max + ",";
+            header += "LEnemyAccuracy" + ",";
+            header += lowEnemyAccuracy + ",";
+            header += "LEnemyEvasion"+",";
+            header += lowEnemyEvasion + ",";
+            header += "MEnemyDamageMin" + ",";
+            header += medEnemyDamage.min + ",";
+            header += "MEnemyDamageMax" + ",";
+            header += medEnemyDamage.max + ",";
+            header += "MEnemyAccuracy" + ",";
+            header += medEnemyAccuracy + ",";
+            header += "MEnemyEvasion" + ",";
+            header += medEnemyEvasion + ",";
+            header += "HEnemyDamageMin" + ",";
+            header += highEnemyDamage.min + ",";
+            header += "HEnemyDamageMax" + ",";
+            header += highEnemyDamage.max + ",";
+            header += "HEnemyAccuracy" + ",";
+            header += highEnemyAccuracy + ",";
+            header += "HEnemyEvasion" + ",";
+            header += highEnemyEvasion + ",";
+            header += "BEnemyDamageMin" + ",";
+            header += bossEnemyDamage.min + ",";
+            header += "BEnemyDamageMax" + ",";
+            header += bossEnemyDamage.max + ",";
+            header += "BEnemyAccuracy" + ",";
+            header += bossEnemyAccuracy + ",";
+            header += "BEnemyEvasion" + ",";
+            header += bossEnemyEvasion + ",";
+            header += "LIEChallenge" + ",";
+            header += lowIEChallenge + ",";
+            header += "MIEChallenge" + ",";
+            header += mediumIEChallenge + ",";
+            header += "HIEChallenge" + ",";
+            header += highIEChallenge + ",";
+
+
+
+            logger.WriteHeader(this.gameObject, header);
+        }
+    }
+
 
     public Vector3 GetPosition()
     {
@@ -1096,12 +1199,21 @@ public class PathOSAgent : MonoBehaviour
     //Needs to be improved/edited
     private void CalculateHealth(EntityType entityType)
     {
+        float startHealth = health;
+        float enemyAcc = 0.0f;
+        float ieChallenge = 0.0f;
+        int startPenC = penaltyTimeC;
+        int startPenI = penaltyTimeI;
+
         switch (entityType)
         {
             case EntityType.ET_HAZARD_ENEMY_LOW:
+                combatCount += 1;
+                penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((lowEnemyAccuracy - evasion), 1);
                 do
                 {
-                    if (lowEnemyAccuracy - evasion > Random.Range(0, 100))
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("Low Hit");
                         health -= GetEnemyDamage(lowEnemyDamage.min, lowEnemyDamage.max);
@@ -1110,13 +1222,18 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("Low Miss");
                     }
+                    penaltyTimeC += 1;
 
-                } while (accuracy - lowEnemyEvasion > Random.Range(0, 100));
+                } while (Mathf.Max(accuracy - lowEnemyEvasion, 1) < Random.Range(0, 100));
+                memory.LogCombat("Low",penaltyTimeC-startPenC, health-startHealth,health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_MED:
+                combatCount += 1;
+                penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((medEnemyAccuracy - evasion), 1);
                 do
-                { 
-                    if (medEnemyAccuracy - evasion > Random.Range(0, 100))
+                {
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("Med Hit");
                         health -= GetEnemyDamage(medEnemyDamage.min, medEnemyDamage.max);
@@ -1125,12 +1242,18 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("Med Miss");
                     }
-                } while (accuracy - medEnemyEvasion > Random.Range(0, 100));
+                    penaltyTimeC += 1;
+
+                } while (Mathf.Max(accuracy - medEnemyEvasion, 1) < Random.Range(0, 100));
+                memory.LogCombat("Med", penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_HIGH:
+                combatCount += 1;
+                penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((highEnemyAccuracy - evasion), 1);
                 do
                 {
-                    if (highEnemyAccuracy - evasion > Random.Range(0, 100))
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("High Hit");
                         health -= GetEnemyDamage(highEnemyDamage.min, highEnemyDamage.max);
@@ -1139,12 +1262,18 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("High Miss");
                     }
-                } while (accuracy - highEnemyEvasion > Random.Range(0, 100)) ;
+                    penaltyTimeC += 1;
+
+                } while (Mathf.Max(accuracy - highEnemyEvasion, 1) < Random.Range(0, 100));
+                memory.LogCombat("High",penaltyTimeC-startPenC, health - startHealth, health);
                 break;
             case EntityType.ET_HAZARD_ENEMY_BOSS:
+                combatCount += 1;
+                penaltyTimeC -= 1;
+                enemyAcc = Mathf.Max((bossEnemyAccuracy - evasion), 1);
                 do
                 {
-                    if (highEnemyAccuracy - evasion > Random.Range(0, 100))
+                    if (enemyAcc > Random.Range(0, 100))
                     {
                         Debug.Log("Boss Hit");
                         health -= GetEnemyDamage(bossEnemyDamage.min, bossEnemyDamage.max);
@@ -1153,7 +1282,52 @@ public class PathOSAgent : MonoBehaviour
                     {
                         Debug.Log("Boss Miss");
                     }
-                } while (accuracy - bossEnemyEvasion > Random.Range(0, 100));
+                    penaltyTimeC += 1;
+
+                } while (Mathf.Max(accuracy - bossEnemyEvasion, 1) < Random.Range(0, 100));
+                memory.LogCombat("Boss",penaltyTimeC-startPenC, health - startHealth, health);
+                break;
+            case EntityType.ET_IE_LOW:
+                penaltyTimeI -= 1;
+                IECount += 1;
+                ieChallenge = Mathf.Max((accuracy - lowIEChallenge), 1);
+                do
+                {
+                    penaltyTimeI1 += 1;
+                    Debug.Log("Low Event Failed");
+
+                }
+                while (ieChallenge < Random.Range(0, 100));
+                RecalculatePenalty();
+                memory.LogInteractionEvent("Low",penaltyTimeI-startPenI);
+                break;
+            case EntityType.ET_IE_MEDIUM:
+                penaltyTimeI2 -= 1;
+                IECount += 1;
+                ieChallenge = Mathf.Max((accuracy - mediumIEChallenge), 1);
+                do
+                {
+                    penaltyTimeI2 += 1;
+                    Debug.Log("Medium Event Failed");
+
+                }
+                while (ieChallenge < Random.Range(0, 100));
+                RecalculatePenalty();
+                memory.LogInteractionEvent("Med",penaltyTimeI-startPenI);
+                break;
+            case EntityType.ET_IE_HIGH:
+                penaltyTimeI3 -= 1;
+                IECount += 1;
+                ieChallenge = Mathf.Max((accuracy - highIEChallenge), 1);
+                do
+                {
+                    penaltyTimeI3 += 1;
+                    Debug.Log("High Event Failed");
+
+                }
+                while (ieChallenge < Random.Range(0, 100));
+                RecalculatePenalty();
+                memory.LogInteractionEvent("High",penaltyTimeI-startPenI);
                 break;
             case EntityType.ET_HAZARD_ENVIRONMENT:
                 health -= GetEnemyDamage(hazardDamage.min, hazardDamage.max);
@@ -1174,7 +1348,6 @@ public class PathOSAgent : MonoBehaviour
         //Making sure the health values don't get messed up
         if (health < 0) health = 0;
         else if (health > 100) health = 100;
-
         //Updates weights based on the player's health
         UpdateWeightsBasedOnHealth();
     }
@@ -1213,4 +1386,177 @@ public class PathOSAgent : MonoBehaviour
     {
         return dead;
     }
+
+    public void RecalculatePenalty()
+    {
+        penaltyTimeI = penaltyTimeI1 + penaltyTimeI2 + penaltyTimeI3;
+        lowTime = penaltyTimeI1 * penLowCost;
+        medTime = penaltyTimeI2 * penMedCost;
+        highTime = penaltyTimeI3 * penHighCost;
+        totalTime = lowTime + medTime + highTime;
+
+    }
+
+    public void diffSet()
+    {
+
+        lowEnemyAccuracy = difficulties[difficulty].lowEnemyAccuracy;
+        lowEnemyEvasion = difficulties[difficulty].lowEnemyEvasion;
+        medEnemyAccuracy = difficulties[difficulty].medEnemyAccuracy;
+        medEnemyEvasion = difficulties[difficulty].medEnemyEvasion;
+        highEnemyAccuracy = difficulties[difficulty].highEnemyAccuracy;
+        highEnemyEvasion = difficulties[difficulty].highEnemyEvasion;
+        bossEnemyAccuracy = difficulties[difficulty].bossEnemyAccuracy;
+        bossEnemyEvasion = difficulties[difficulty].bossEnemyEvasion;
+        lowIEChallenge = difficulties[difficulty].lowIEChallenge;
+        mediumIEChallenge = difficulties[difficulty].mediumIEChallenge;
+        highIEChallenge = difficulties[difficulty].highIEChallenge;
+        penLowCost = difficulties[difficulty].penLowCost;
+        penMedCost = difficulties[difficulty].penMedCost;
+        penHighCost = difficulties[difficulty].penHighCost;
+
+        lowEnemyDamage = difficulties[difficulty].lowEnemyDamage;
+        medEnemyDamage = difficulties[difficulty].medEnemyDamage;
+        highEnemyDamage = difficulties[difficulty].highEnemyDamage;
+        bossEnemyDamage = difficulties[difficulty].bossEnemyDamage;
+        hazardDamage = difficulties[difficulty].hazardDamage;
+        lowHealthGain = difficulties[difficulty].lowHealthGain;
+        medHealthGain = difficulties[difficulty].medHealthGain;
+        highHealthGain = difficulties[difficulty].highHealthGain;
+
+    }
+
+    public void diffLoad()
+    {
+        if(difficulties==null)
+        {
+            difficulties = new List<ResourceValueData>();
+            difficultiesName = new List<string>();
+        }
+        difficulties.Clear();
+        difficultiesName.Clear();
+        var files = Directory.EnumerateFiles(Application.dataPath + Path.DirectorySeparatorChar + "PathOS+" + Path.DirectorySeparatorChar + "Difficulties", "*.csv");
+
+        foreach(string s in files )
+        {
+            using(var csvReader = new StreamReader(s))
+            {
+                List<string> strings = new List<string>();
+                while (!csvReader.EndOfStream)
+                {
+                    var line = csvReader.ReadLine();
+                    var lineItems = line.Split(',');
+                    foreach (var item in lineItems)
+                    {
+                        if (item == "")
+                            break;
+                        strings.Add(item.Trim());
+                    }
+                }
+                difficulties.Add(new ResourceValueData(strings));
+                difficultiesName.Add(strings[1]);
+            }
+        }
+    }
+
+    public void diffSave(string name)
+    {
+        string filename = Application.dataPath + Path.DirectorySeparatorChar + "PathOS+" + Path.DirectorySeparatorChar + "Difficulties" + Path.DirectorySeparatorChar+name+".csv";
+        if (File.Exists(filename))
+        {
+            Debug.Log("File already exists, please pick a new name");
+        }
+        else
+        {
+            string content = "label," + name+"\r\n";
+            content += "lowEnemyAccuracy," + lowEnemyAccuracy + "\r\n";
+            content += "lowEnemyEvasion," + lowEnemyEvasion + "\r\n";
+            content += "lowEnemyDamage," + lowEnemyDamage.min+","+lowEnemyDamage.max + "\r\n";
+            content += "medEnemyAccuracy," + medEnemyAccuracy + "\r\n";
+            content += "medEnemyEvasion," + medEnemyEvasion + "\r\n";
+            content += "medEnemyDamage," + medEnemyDamage.min + "," + medEnemyDamage.max + "\r\n";
+            content += "highEnemyAccuracy," + highEnemyAccuracy + "\r\n";
+            content += "highEnemyEvasion," + highEnemyEvasion + "\r\n";
+            content += "highEnemyDamage," + highEnemyDamage.min + "," + highEnemyDamage.max + "\r\n";
+            content += "bossEnemyAccuracy," + bossEnemyAccuracy + "\r\n";
+            content += "bossEnemyEvasion," + bossEnemyEvasion + "\r\n";
+            content += "bossEnemyDamage," + bossEnemyDamage.min + "," + bossEnemyDamage.max + "\r\n";
+            content += "hazardDamage," + hazardDamage.min + "," + hazardDamage.max + "\r\n";
+            content += "lowIEChallenge," + lowIEChallenge + "\r\n";
+            content += "penLowCost," + penLowCost + "\r\n";
+            content += "medIEChallenge," + mediumIEChallenge + "\r\n";
+            content += "penMedCost," + penMedCost + "\r\n";
+            content += "highIEChallenge," + highIEChallenge + "\r\n";
+            content += "penHighCost," + penHighCost + "\r\n";
+            content += "lowHealthGain," + lowHealthGain.min + "," + lowHealthGain.max + "\r\n";
+            content += "medHealthGain," + medHealthGain.min + "," + medHealthGain.max + "\r\n";
+            content += "highHealthGain," + highHealthGain.min + "," + highHealthGain.max + "\r\n";
+
+
+            using (var csvWriter = new StreamWriter(filename))
+            {
+                csvWriter.Write(content);
+            }
+        }
+
+    }
+}
+
+public class ResourceValueData
+{
+    ResourceValueData() { }
+    public ResourceValueData(List<string> data)
+    {
+        lowEnemyAccuracy = System.Single.Parse(data[3]);
+        lowEnemyEvasion = System.Single.Parse(data[5]);
+        lowEnemyDamage = new TimeRange(System.Single.Parse(data[7]),System.Single.Parse(data[8]));
+        medEnemyAccuracy = System.Single.Parse(data[10]);
+        medEnemyEvasion = System.Single.Parse(data[12]);
+        medEnemyDamage = new TimeRange(System.Single.Parse(data[14]),System.Single.Parse(data[15]));
+        highEnemyAccuracy= System.Single.Parse(data[17]);
+        highEnemyEvasion = System.Single.Parse(data[19]);
+        highEnemyDamage = new TimeRange(System.Single.Parse(data[21]),System.Single.Parse(data[22]));
+        bossEnemyAccuracy = System.Single.Parse(data[24]);
+        bossEnemyEvasion = System.Single.Parse(data[26]);
+        bossEnemyDamage = new TimeRange(System.Single.Parse(data[28]), System.Single.Parse(data[29]));
+        hazardDamage = new TimeRange(System.Single.Parse(data[31]), System.Single.Parse(data[32]));
+
+        lowIEChallenge = System.Single.Parse(data[34]);
+        penLowCost = System.Single.Parse(data[36]);
+        mediumIEChallenge = System.Single.Parse(data[38]);
+        penMedCost = System.Single.Parse(data[40]);
+        highIEChallenge = System.Single.Parse(data[42]);
+        penHighCost = System.Single.Parse(data[44]);
+
+        lowHealthGain = new TimeRange(System.Single.Parse(data[46]),System.Single.Parse(data[47]));
+        medHealthGain = new TimeRange(System.Single.Parse(data[49]), System.Single.Parse(data[50]));
+        highHealthGain = new TimeRange(System.Single.Parse(data[52]), System.Single.Parse(data[53]));
+    }
+
+    public string label = "Default";
+
+    public float lowEnemyAccuracy = 60.0f;
+    public float lowEnemyEvasion = 5.0f;
+
+    public float medEnemyAccuracy = 70.0f;
+    public float medEnemyEvasion = 10.0f;
+
+    public float highEnemyAccuracy = 80.0f;
+    public float highEnemyEvasion = 15.0f;
+
+    public float bossEnemyAccuracy = 90.0f;
+    public float bossEnemyEvasion = 20.0f;
+
+    public float lowIEChallenge = 0.0f;
+    public float mediumIEChallenge = 0.0f;
+    public float highIEChallenge = 0.0f;
+
+    public float penLowCost = 1.0f;
+    public float penMedCost = 2.0f;
+    public float penHighCost = 4.0f;
+
+    public TimeRange lowEnemyDamage = new TimeRange(10, 30), medEnemyDamage = new TimeRange(30, 50),
+        highEnemyDamage = new TimeRange(50, 70), bossEnemyDamage = new TimeRange(70, 100),
+        hazardDamage = new TimeRange(10, 20), lowHealthGain = new TimeRange(10, 30),
+        medHealthGain = new TimeRange(30, 60), highHealthGain = new TimeRange(70, 100);
 }

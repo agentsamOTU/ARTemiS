@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.723456, y: 1.162, z: -3.3622823}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2783143267940123911}
   m_Father: {fileID: 0}
@@ -51,7 +52,13 @@ MonoBehaviour:
   endOnCompletionGoal: 1
   showLevelMarkup: 1
   ignoredEntities: []
-  levelEntities: []
+  levelEntities:
+  - name: space_man_model (6)
+    objectRef: {fileID: 0}
+    entityType: 300
+    alwaysKnown: 0
+    overrideVisitRadius: 0
+    objectVisitRadius: 1
   heuristicWeights:
   - heuristic: 0
     weights:
@@ -85,6 +92,12 @@ MonoBehaviour:
       weight: 0.9
     - entype: 350
       weight: 0.9
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 10
     weights:
     - entype: 0
@@ -116,6 +129,12 @@ MonoBehaviour:
     - entype: 300
       weight: 0
     - entype: 350
+      weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
       weight: 0
   - heuristic: 15
     weights:
@@ -149,6 +168,12 @@ MonoBehaviour:
       weight: 0.1
     - entype: 350
       weight: 0.1
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 20
     weights:
     - entype: 0
@@ -180,6 +205,12 @@ MonoBehaviour:
     - entype: 300
       weight: 0
     - entype: 350
+      weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
       weight: 0
   - heuristic: 25
     weights:
@@ -213,6 +244,12 @@ MonoBehaviour:
       weight: 0
     - entype: 350
       weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
   - heuristic: 30
     weights:
     - entype: 0
@@ -244,6 +281,12 @@ MonoBehaviour:
     - entype: 300
       weight: 0
     - entype: 350
+      weight: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
       weight: 0
   - heuristic: 35
     weights:
@@ -277,7 +320,13 @@ MonoBehaviour:
       weight: 0
     - entype: 350
       weight: 0
-  endSimulationOnDeath: 0
+    - entype: 400
+      weight: 0
+    - entype: 410
+      weight: 0
+    - entype: 420
+      weight: 0
+  endSimulationOnDeath: 1
 --- !u!114 &5005646905853620062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +466,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5005646905853620060}
   m_RootOrder: 0

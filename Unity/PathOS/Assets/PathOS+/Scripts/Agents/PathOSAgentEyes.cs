@@ -144,7 +144,10 @@ public class PathOSAgentEyes : MonoBehaviour
                     //Mandatory/completion/boss goals are committed to LTM automatically.
                     if (entity.entityType == EntityType.ET_GOAL_MANDATORY
                         || entity.entityType == EntityType.ET_GOAL_COMPLETION
-                         || entity.entityType == EntityType.ET_HAZARD_ENEMY_BOSS)
+                         || entity.entityType == EntityType.ET_HAZARD_ENEMY_BOSS||
+                            entity.entityType == EntityType.ET_IE_LOW_MANDATORY ||
+                            entity.entityType == EntityType.ET_IE_MEDIUM_MANDATORY ||
+                            entity.entityType == EntityType.ET_IE_HIGH_MANDATORY)
                         agent.memory.CommitUnforgettable(entity);
 
                     agent.memory.TryCommitLTM(entity);
