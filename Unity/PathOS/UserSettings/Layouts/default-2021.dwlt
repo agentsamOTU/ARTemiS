@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 110
+  controlID: 123
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 107
+  controlID: 21
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 108
+  controlID: 22
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 109
+  controlID: 122
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -363,9 +363,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 92560000
-      m_LastClickedID: 22162
-      m_ExpandedIDs: 2afbffff
+      m_SelectedIDs: a0d70100
+      m_LastClickedID: 120736
+      m_ExpandedIDs: 1c96feff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -670,9 +670,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -192.36229, y: -245.31355, z: -538.63544}
+    m_Target: {x: 112.60795, y: -12.980646, z: 7.50673}
     speed: 2
-    m_Value: {x: -192.36229, y: -245.31355, z: -538.63544}
+    m_Value: {x: 112.60795, y: -12.980646, z: 7.50673}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -719,13 +719,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.036305133, y: 0.96359324, z: -0.1801491, w: -0.19454011}
+    m_Target: {x: 0.06262506, y: 0.7172534, z: -0.06490662, w: 0.6910508}
     speed: 2
-    m_Value: {x: -0.03684303, y: 0.9629429, z: -0.18002771, w: -0.19741723}
+    m_Value: {x: 0.060264744, y: 0.7204983, z: -0.063021764, w: 0.68795246}
   m_Size:
-    m_Target: 345.72165
+    m_Target: 72.35327
     speed: 2
-    m_Value: 362.0122
+    m_Value: 69.23758
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -885,22 +885,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/User Study Project 2022/Astral Cove
+    - Assets/User Study Project 2023
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/User Study Project 2022/Astral Cove
+  - Assets/User Study Project 2023
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\UnityProjects\ARTemiS\Unity\PathOS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 153}
-    m_SelectedIDs: f2830000
-    m_LastClickedID: 33778
-    m_ExpandedIDs: 00000000627400006474000066740000687400006a7400006c7400006e74000070740000727400007474000076740000787400007a7400007c7400007e74000080740000827400008474000086740000887400008a7400008c7400008e74000090740000927400009474000096740000987400009a7400009c7400009e740000a0740000a2740000a4740000a6740000a8740000aa740000ac740000ae740000b0740000b2740000b4740000b6740000b8740000ba740000bc740000be740000c0740000c2740000c6740000c8740000ca740000cc740000ce740000d0740000d2740000d4740000d6740000d8740000da740000dc740000de740000e0740000e2740000e4740000e6740000e8740000ea740000ec740000ee740000f0740000f2740000f4740000f6740000f8740000ee83000000ca9a3b
+    scrollPos: {x: 0, y: 105}
+    m_SelectedIDs: 8ee80100
+    m_LastClickedID: 125070
+    m_ExpandedIDs: 00000000f8e70100fae70100fce70100fee7010000e8010002e8010004e8010006e8010008e801000ae801000ce801000ee8010010e8010012e8010014e8010016e8010018e801001ae801001ce801001ee8010020e8010022e8010024e8010026e8010028e801002ae801002ce801002ee8010030e8010032e8010034e8010036e8010038e801003ae801003ce801003ee8010040e8010042e8010044e8010046e8010048e801004ae801004ce801004ee8010050e8010052e8010054e8010056e8010058e801005ae801005ce801005ee8010060e8010062e8010064e8010066e8010068e801006ae801006ce801006ee8010070e8010072e8010074e8010076e8010078e801007ae801007ce801007ee8010080e8010082e8010084e8010086e8010088e801008ae801008ce8010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -928,7 +928,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000627400006474000066740000687400006a7400006c7400006e74000070740000727400007474000076740000787400007a7400007c7400007e74000080740000827400008474000086740000887400008a7400008c7400008e74000090740000927400009474000096740000987400009a7400009c7400009e740000a0740000a2740000a4740000a6740000a8740000aa740000ac740000ae740000b0740000b2740000b4740000b6740000b8740000ba740000bc740000be740000c0740000c2740000c4740000c6740000c8740000ca740000cc740000ce740000d0740000d2740000d4740000d6740000d8740000da740000dc740000de740000e0740000e2740000e4740000e6740000e8740000ea740000ec740000ee740000f0740000f2740000f4740000f6740000f8740000
+    m_ExpandedIDs: 00000000f8e70100fae70100fce70100fee7010000e8010002e8010004e8010006e8010008e801000ae801000ce801000ee8010010e8010012e8010014e8010016e8010018e801001ae801001ce801001ee8010020e8010022e8010024e8010026e8010028e801002ae801002ce801002ee8010030e8010032e8010034e8010036e8010038e801003ae801003ce801003ee8010040e8010042e8010044e8010046e8010048e801004ae801004ce801004ee8010050e8010052e8010054e8010056e8010058e801005ae801005ce801005ee8010060e8010062e8010064e8010066e8010068e801006ae801006ce801006ee8010070e8010072e8010074e8010076e8010078e801007ae801007ce801007ee8010080e8010082e8010084e8010086e8010088e801008ae801008ce801008ee80100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000a6750200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1086,6 +1086,6 @@ MonoBehaviour:
   hasScreenshot: 1
   hasManager: 1
   hasAgent: 1
-  screenshotID: 22328
-  managerID: 22168
-  agentID: 21540
+  screenshotID: 121324
+  managerID: 121306
+  agentID: 120744
